@@ -17,3 +17,18 @@ export const STRATEGIC_SERIES = Object.freeze(
     data: Object.freeze(STRATEGIC_PERIODS.map(() => null)),
   })),
 );
+
+/** Keep exact operational labels while leaving all unsupplied domain data neutral. */
+export const EXECUTIVE_METRICS = Object.freeze([
+  'IT Health Score',
+  'Availability',
+  'Security Posture',
+  'Transformation Index',
+].map((label) => Object.freeze({ label, value: null, displayState: 'not-specified' })));
+
+/** Supply no region identities, radar axes, statuses or numerical defaults. */
+export const EXECUTIVE_FIXTURES = Object.freeze({
+  metrics: EXECUTIVE_METRICS,
+  axes: Object.freeze([]),
+  regions: Object.freeze([]),
+});

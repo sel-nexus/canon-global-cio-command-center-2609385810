@@ -10,6 +10,22 @@
       "community": 4
     },
     {
+      "id": "frontend_e2e_assistant_spec",
+      "label": "assistant.spec.js",
+      "file_type": "code",
+      "source_file": "frontend/e2e/assistant.spec.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_assistant_spec_chips",
+      "label": "chips",
+      "file_type": "code",
+      "source_file": "frontend/e2e/assistant.spec.js",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_e2e_helpers",
       "label": "helpers.js",
       "file_type": "code",
@@ -537,7 +553,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L11",
+      "source_location": "L14",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -547,7 +563,7 @@
       "label": "handleSubmit()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L23",
+      "source_location": "L34",
       "_callable": true,
       "_origin": "ast",
       "community": 1
@@ -557,17 +573,35 @@
       "label": "handleLogout()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L37",
+      "source_location": "L48",
       "_callable": true,
       "_origin": "ast",
       "community": 2
+    },
+    {
+      "id": "frontend_src_app_app_respond",
+      "label": "respond()",
+      "file_type": "code",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L66",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_app_app_activatechip",
+      "label": "activateChip()",
+      "file_type": "code",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L83",
+      "_callable": true,
+      "_origin": "ast"
     },
     {
       "id": "frontend_src_app_app_selectview",
       "label": "selectView()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L50",
+      "source_location": "L92",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -590,6 +624,41 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2
+    },
+    {
+      "id": "frontend_src_components_assistantpanel",
+      "label": "AssistantPanel.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/AssistantPanel.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_components_assistantpanel_assistantpanel",
+      "label": "AssistantPanel()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/AssistantPanel.jsx",
+      "source_location": "L12",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_components_assistantpanel_assistantpanel_close",
+      "label": "close()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/AssistantPanel.jsx",
+      "source_location": "L17",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_components_assistantpanel_assistantpanel_handlekey",
+      "label": "handleKey()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/AssistantPanel.jsx",
+      "source_location": "L30",
+      "_callable": true,
+      "_origin": "ast"
     },
     {
       "id": "frontend_src_components_authform",
@@ -790,6 +859,46 @@
       "_origin": "ast"
     },
     {
+      "id": "frontend_src_data_assistantresponses",
+      "label": "assistantResponses.js",
+      "file_type": "code",
+      "source_file": "frontend/src/data/assistantResponses.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_data_assistantresponses_assistant_responses",
+      "label": "ASSISTANT_RESPONSES",
+      "file_type": "code",
+      "source_file": "frontend/src/data/assistantResponses.js",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_data_assistantresponses_assistant_chips",
+      "label": "ASSISTANT_CHIPS",
+      "file_type": "code",
+      "source_file": "frontend/src/data/assistantResponses.js",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_data_assistantresponses_assistant_fallback",
+      "label": "ASSISTANT_FALLBACK",
+      "file_type": "code",
+      "source_file": "frontend/src/data/assistantResponses.js",
+      "source_location": "L16",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_data_assistantresponses_assistant_disclosure",
+      "label": "ASSISTANT_DISCLOSURE",
+      "file_type": "code",
+      "source_file": "frontend/src/data/assistantResponses.js",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_data_dashboardfixtures",
       "label": "dashboardFixtures.js",
       "file_type": "code",
@@ -829,6 +938,50 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 0
+    },
+    {
+      "id": "frontend_src_services_localassistant",
+      "label": "localAssistant.js",
+      "file_type": "code",
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_services_localassistant_resolveassistantprompt",
+      "label": "resolveAssistantPrompt()",
+      "file_type": "code",
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L13",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_services_localassistant_validhistory",
+      "label": "validHistory()",
+      "file_type": "code",
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L30",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_services_localassistant_persistassistantmessages",
+      "label": "persistAssistantMessages()",
+      "file_type": "code",
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L58",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_services_localassistant_readassistantmessages",
+      "label": "readAssistantMessages()",
+      "file_type": "code",
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L68",
+      "_callable": true,
+      "_origin": "ast"
     },
     {
       "id": "frontend_src_services_localauth",
@@ -1007,6 +1160,82 @@
       "community": 2
     },
     {
+      "id": "frontend_src_tests_assistant_test",
+      "label": "assistant.test.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/assistant.test.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_tests_assistant_test_chips",
+      "label": "chips",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/assistant.test.jsx",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_tests_assistant_test_renderdashboard",
+      "label": "renderDashboard()",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/assistant.test.jsx",
+      "source_location": "L18",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_tests_assistant_test_history",
+      "label": "history()",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/assistant.test.jsx",
+      "source_location": "L28",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_tests_localassistant_test",
+      "label": "localAssistant.test.js",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/localAssistant.test.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_tests_localassistant_test_expected",
+      "label": "expected",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/localAssistant.test.js",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_tests_localassistant_test_message",
+      "label": "message",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/localAssistant.test.js",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_tests_localassistant_test_seed",
+      "label": "seed()",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/localAssistant.test.js",
+      "source_location": "L16",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_tests_localassistant_test_get",
+      "label": "get()",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/localAssistant.test.js",
+      "source_location": "L117",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_tests_localauth_test",
       "label": "localAuth.test.js",
       "file_type": "code",
@@ -1089,7 +1318,7 @@
       "label": "StrategicCommand()",
       "file_type": "code",
       "source_file": "frontend/src/views/StrategicCommand.jsx",
-      "source_location": "L11",
+      "source_location": "L15",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1165,6 +1394,71 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/access.spec.js",
       "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_assistant_spec",
+      "target": "ref_playwright_test",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/assistant.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_assistant_spec",
+      "target": "frontend_e2e_helpers",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/assistant.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_assistant_spec",
+      "target": "frontend_e2e_helpers_guardbrowser",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/assistant.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_assistant_spec",
+      "target": "frontend_e2e_helpers_registerdemo",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/assistant.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_assistant_spec",
+      "target": "frontend_e2e_helpers_logindemo",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/assistant.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_assistant_spec",
+      "target": "frontend_e2e_assistant_spec_chips",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/assistant.spec.js",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -1806,12 +2100,111 @@
     },
     {
       "source": "frontend_src_app",
-      "target": "frontend_src_services_localauth",
+      "target": "frontend_src_components_assistantpanel",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
       "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
+      "target": "frontend_src_components_assistantpanel_assistantpanel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
+      "target": "frontend_src_data_assistantresponses",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
+      "target": "frontend_src_data_assistantresponses_assistant_chips",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
+      "target": "frontend_src_data_assistantresponses_assistant_responses",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
+      "target": "frontend_src_services_localassistant",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
+      "target": "frontend_src_services_localassistant_readassistantmessages",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
+      "target": "frontend_src_services_localassistant_persistassistantmessages",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
+      "target": "frontend_src_services_localassistant_resolveassistantprompt",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
+      "target": "frontend_src_services_localauth",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -1822,7 +2215,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L3",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -1833,7 +2226,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L3",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -1844,7 +2237,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L3",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -1855,7 +2248,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L3",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -1866,7 +2259,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L4",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -1877,7 +2270,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L4",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -1888,7 +2281,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L5",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -1899,7 +2292,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L5",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -1910,7 +2303,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L6",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -1921,7 +2314,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L6",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -1932,7 +2325,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L6",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -1943,7 +2336,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L7",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -1954,7 +2347,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L7",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -1965,7 +2358,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L8",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -1975,7 +2368,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L11",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -1985,7 +2378,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L23",
+      "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -1995,7 +2388,27 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L37",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_app",
+      "target": "frontend_src_app_app_respond",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L66",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_app",
+      "target": "frontend_src_app_app_activatechip",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L83",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2005,7 +2418,29 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L50",
+      "source_location": "L92",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_app",
+      "target": "frontend_src_app_app_respond",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L144",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_app_activatechip",
+      "target": "frontend_src_app_app_respond",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L87",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2027,6 +2462,114 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/components/AppHeader.jsx",
       "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_assistantpanel",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/AssistantPanel.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_assistantpanel",
+      "target": "ref_prop_types",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/AssistantPanel.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_assistantpanel",
+      "target": "frontend_src_data_assistantresponses",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/AssistantPanel.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_assistantpanel",
+      "target": "frontend_src_data_assistantresponses_assistant_disclosure",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/AssistantPanel.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_assistantpanel",
+      "target": "frontend_src_components_assistantpanel_assistantpanel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/AssistantPanel.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_assistantpanel_assistantpanel",
+      "target": "frontend_src_components_assistantpanel_assistantpanel_close",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/AssistantPanel.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_assistantpanel_assistantpanel",
+      "target": "frontend_src_components_assistantpanel_assistantpanel_handlekey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/AssistantPanel.jsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_assistantpanel_assistantpanel",
+      "target": "frontend_src_components_assistantpanel_assistantpanel_handlekey",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "frontend/src/components/AssistantPanel.jsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_assistantpanel_assistantpanel",
+      "target": "frontend_src_components_assistantpanel_assistantpanel_close",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/AssistantPanel.jsx",
+      "source_location": "L93",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_assistantpanel_assistantpanel_handlekey",
+      "target": "frontend_src_components_assistantpanel_assistantpanel_close",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/AssistantPanel.jsx",
+      "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2456,6 +2999,46 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_data_assistantresponses",
+      "target": "frontend_src_data_assistantresponses_assistant_responses",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/data/assistantResponses.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_data_assistantresponses",
+      "target": "frontend_src_data_assistantresponses_assistant_chips",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/data/assistantResponses.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_data_assistantresponses",
+      "target": "frontend_src_data_assistantresponses_assistant_fallback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/data/assistantResponses.js",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_data_assistantresponses",
+      "target": "frontend_src_data_assistantresponses_assistant_disclosure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/data/assistantResponses.js",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_data_dashboardfixtures",
       "target": "frontend_src_data_dashboardfixtures_strategic_metrics",
       "relation": "contains",
@@ -2515,6 +3098,146 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/main.jsx",
       "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_services_localassistant",
+      "target": "frontend_src_data_assistantresponses",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_services_localassistant",
+      "target": "frontend_src_data_assistantresponses_assistant_responses",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_services_localassistant",
+      "target": "frontend_src_data_assistantresponses_assistant_fallback",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_services_localassistant",
+      "target": "frontend_src_services_localstorage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_services_localassistant",
+      "target": "frontend_src_services_localstorage_readjson",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_services_localassistant",
+      "target": "frontend_src_services_localstorage_writejson",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_services_localassistant",
+      "target": "frontend_src_services_localstorage_storage_keys",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_services_localassistant",
+      "target": "frontend_src_services_localassistant_resolveassistantprompt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_services_localassistant",
+      "target": "frontend_src_services_localassistant_validhistory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_services_localassistant",
+      "target": "frontend_src_services_localassistant_persistassistantmessages",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_services_localassistant",
+      "target": "frontend_src_services_localassistant_readassistantmessages",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L68",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_services_localassistant_persistassistantmessages",
+      "target": "frontend_src_services_localassistant_validhistory",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_services_localassistant_readassistantmessages",
+      "target": "frontend_src_services_localassistant_validhistory",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L69",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3045,6 +3768,263 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_tests_assistant_test",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/assistant.test.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_assistant_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/assistant.test.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_assistant_test",
+      "target": "ref_testing_library_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/assistant.test.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_assistant_test",
+      "target": "ref_testing_library_user_event",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/assistant.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_assistant_test",
+      "target": "frontend_src_app",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/assistant.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_assistant_test",
+      "target": "frontend_src_services_localstorage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/assistant.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_assistant_test",
+      "target": "frontend_src_services_localstorage_storage_keys",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/assistant.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_assistant_test",
+      "target": "frontend_src_tests_assistant_test_chips",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/assistant.test.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_assistant_test",
+      "target": "frontend_src_tests_assistant_test_renderdashboard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/assistant.test.jsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_assistant_test",
+      "target": "frontend_src_tests_assistant_test_history",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/assistant.test.jsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_assistant_test",
+      "target": "frontend_src_tests_assistant_test_renderdashboard",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/assistant.test.jsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_assistant_test",
+      "target": "frontend_src_tests_assistant_test_history",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/assistant.test.jsx",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_localassistant_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/localAssistant.test.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_localassistant_test",
+      "target": "frontend_src_services_localassistant",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/localAssistant.test.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_localassistant_test",
+      "target": "frontend_src_services_localassistant_resolveassistantprompt",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/localAssistant.test.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_localassistant_test",
+      "target": "frontend_src_services_localassistant_readassistantmessages",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/localAssistant.test.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_localassistant_test",
+      "target": "frontend_src_services_localassistant_persistassistantmessages",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/localAssistant.test.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_localassistant_test",
+      "target": "frontend_src_services_localstorage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/localAssistant.test.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_localassistant_test",
+      "target": "frontend_src_services_localstorage_storage_keys",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/localAssistant.test.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_localassistant_test",
+      "target": "frontend_src_tests_localassistant_test_expected",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/localAssistant.test.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_localassistant_test",
+      "target": "frontend_src_tests_localassistant_test_message",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/localAssistant.test.js",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_localassistant_test",
+      "target": "frontend_src_tests_localassistant_test_seed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/localAssistant.test.js",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_localassistant_test",
+      "target": "frontend_src_tests_localassistant_test_get",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/localAssistant.test.js",
+      "source_location": "L117",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_localassistant_test",
+      "target": "frontend_src_tests_localassistant_test_seed",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/localAssistant.test.js",
+      "source_location": "L67",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_tests_localauth_test",
       "target": "ref_vitest",
       "relation": "imports_from",
@@ -3504,12 +4484,45 @@
     },
     {
       "source": "frontend_src_views_strategiccommand",
-      "target": "frontend_src_components_metriccard",
+      "target": "ref_prop_types",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/views/StrategicCommand.jsx",
       "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_strategiccommand",
+      "target": "frontend_src_data_assistantresponses",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/StrategicCommand.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_strategiccommand",
+      "target": "frontend_src_data_assistantresponses_assistant_chips",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/StrategicCommand.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_strategiccommand",
+      "target": "frontend_src_components_metriccard",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/StrategicCommand.jsx",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3520,7 +4533,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/views/StrategicCommand.jsx",
-      "source_location": "L2",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3531,7 +4544,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/views/StrategicCommand.jsx",
-      "source_location": "L3",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3542,7 +4555,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/views/StrategicCommand.jsx",
-      "source_location": "L3",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3553,7 +4566,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/views/StrategicCommand.jsx",
-      "source_location": "L4",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3564,7 +4577,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/views/StrategicCommand.jsx",
-      "source_location": "L4",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3575,7 +4588,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/views/StrategicCommand.jsx",
-      "source_location": "L5",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3586,7 +4599,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/views/StrategicCommand.jsx",
-      "source_location": "L5",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3597,7 +4610,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/views/StrategicCommand.jsx",
-      "source_location": "L5",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3608,7 +4621,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/views/StrategicCommand.jsx",
-      "source_location": "L5",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3618,7 +4631,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/views/StrategicCommand.jsx",
-      "source_location": "L11",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3651,7 +4664,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L8",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3674,6 +4687,17 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/tests/access.test.jsx",
       "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_assistant_test",
+      "target": "frontend_src_app_app",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/assistant.test.jsx",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3701,12 +4725,23 @@
     },
     {
       "source": "frontend_src_app_app",
+      "target": "frontend_src_services_localassistant_readassistantmessages",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_app",
       "target": "frontend_src_services_localauth_registeraccount",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L24",
+      "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3717,7 +4752,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L24",
+      "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3728,7 +4763,29 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L38",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_app",
+      "target": "frontend_src_services_localassistant_persistassistantmessages",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_app",
+      "target": "frontend_src_services_localassistant_resolveassistantprompt",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L144",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3762,6 +4819,28 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/components/ChartPanel.jsx",
       "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_services_localassistant_persistassistantmessages",
+      "target": "frontend_src_services_localstorage_writejson",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_services_localassistant_readassistantmessages",
+      "target": "frontend_src_services_localstorage_readjson",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/services/localAssistant.js",
+      "source_location": "L69",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3839,7 +4918,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L12",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3851,7 +4930,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L57",
+      "source_location": "L99",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3863,7 +4942,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L61",
+      "source_location": "L103",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3875,7 +4954,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L73",
+      "source_location": "L115",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3887,7 +4966,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L83",
+      "source_location": "L125",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3899,7 +4978,19 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L85",
+      "source_location": "L127",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_app",
+      "target": "frontend_src_components_assistantpanel_assistantpanel",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L135",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3911,7 +5002,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L24",
+      "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3923,7 +5014,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L24",
+      "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3935,7 +5026,19 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L38",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_app_respond",
+      "target": "frontend_src_services_localassistant_persistassistantmessages",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3976,6 +5079,18 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_tests_assistant_test_renderdashboard",
+      "target": "frontend_src_app_app",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/tests/assistant.test.jsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_tests_strategic_test",
       "target": "frontend_src_components_panelerrorboundary_panelerrorboundary_render",
       "relation": "calls",
@@ -3995,7 +5110,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/views/StrategicCommand.jsx",
-      "source_location": "L14",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4007,7 +5122,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/views/StrategicCommand.jsx",
-      "source_location": "L19",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4019,16 +5134,16 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/views/StrategicCommand.jsx",
-      "source_location": "L36",
+      "source_location": "L55",
       "weight": 1.0,
       "_origin": "ast"
     }
   ],
   "metadata": {
-    "built_at": "2026-11-12T12:16:37.512860+00:00",
+    "built_at": "2026-11-12T12:24:51.953600+00:00",
     "version": "graph_update-v1",
     "codebase_root": "C:\\artifacts-v2\\T0132PcJVCRTV000412112609385810\\developer",
     "force": true,
-    "files_scanned": 27
+    "files_scanned": 33
   }
 }

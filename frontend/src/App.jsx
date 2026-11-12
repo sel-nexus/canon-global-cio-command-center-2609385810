@@ -9,6 +9,7 @@ import { AppHeader } from './components/AppHeader.jsx';
 import { DashboardTabs, DASHBOARD_VIEWS } from './components/DashboardTabs.jsx';
 import { PanelErrorBoundary } from './components/PanelErrorBoundary.jsx';
 import StrategicCommand from './views/StrategicCommand.jsx';
+import ExecutiveSummary from './views/ExecutiveSummary.jsx';
 
 /** Restore demo state once and handle authentication only on explicit activation. */
 export default function App() {
@@ -125,6 +126,9 @@ export default function App() {
               <PanelErrorBoundary key={activeView}>
                 {activeView === 'strategic' && (
                   <StrategicCommand onAssistantChip={activateChip} />
+                )}
+                {activeView === 'executive' && (
+                  <ExecutiveSummary />
                 )}
               </PanelErrorBoundary>
             </section>
