@@ -12,6 +12,7 @@ import StrategicCommand from './views/StrategicCommand.jsx';
 import ExecutiveSummary from './views/ExecutiveSummary.jsx';
 import BusinessImpact from './views/BusinessImpact.jsx';
 import Operations from './views/Operations.jsx';
+import RiskGovernance from './views/RiskGovernance.jsx';
 
 /** Restore demo state once and handle authentication only on explicit activation. */
 export default function App() {
@@ -137,6 +138,9 @@ export default function App() {
                 )}
                 {activeView === 'operations' && (
                   <Operations />
+                )}
+                {activeView === 'riskGovernance' && (
+                  <RiskGovernance />
                 )}
               </PanelErrorBoundary>
             </section>

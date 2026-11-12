@@ -74,3 +74,13 @@ export const OPERATIONS_FIXTURES = Object.freeze({
     data: Object.freeze([]),
   }))),
 });
+
+/** Preserve exact risk measures without inventing scores or their definitions. */
+export const RISK_METRICS = Object.freeze([
+  'Compliance Score',
+  'Cybersecurity Maturity',
+  'Data Governance Score',
+].map((label) => Object.freeze({ label, value: null, displayState: 'not-specified' })));
+
+/** Supply no risk values, framework, severity scale, source or calculation. */
+export const RISK_FIXTURES = Object.freeze({ metrics: RISK_METRICS });
