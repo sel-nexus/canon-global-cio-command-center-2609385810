@@ -88,6 +88,20 @@ input[aria-invalid='true'] { border-color: var(--error); }
 .strategic-controls { display: grid; gap: 16px; }
 .action-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
 .action-buttons [aria-disabled='true'] { color: var(--muted); cursor: default; }
+/* Assistant disclosure: reuse inherited tokens and keep the dashboard non-modal. */
+.assistant-disclosure { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 15; display: grid; justify-items: end; gap: 12px; max-width: calc(100vw - 32px); }
+.assistant-panel { width: min(440px, calc(100vw - 32px)); max-height: calc(100dvh - 100px); overflow-y: auto; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow-wrap: anywhere; }
+.assistant-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.assistant-heading h2 { font-size: 1.25rem; }
+.assistant-panel .muted { font-size: 0.75rem; margin-top: 8px; }
+.assistant-panel form { margin-top: 24px; }
+.assistant-panel .field { margin-bottom: 16px; }
+.assistant-history { margin-top: 24px; max-height: 200px; overflow-y: auto; font-size: 0.875rem; }
+.assistant-history ol { margin: 0; padding-left: 24px; }
+.assistant-history li + li { margin-top: 16px; }
+.assistant-prompt { margin-top: 16px; font-size: 0.875rem; white-space: pre-wrap; }
+.assistant-chips .button { white-space: normal; text-align: left; overflow-wrap: anywhere; }
+.assistant-toggle { white-space: normal; }
 @media (max-width: 640px) {
   .metric-grid, .strategic-sections { grid-template-columns: minmax(0, 1fr); }
   .strategic-content { gap: 24px; }
