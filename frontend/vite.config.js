@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => {
       setupFiles: ['./src/tests/setup.js'],
       include: ['src/tests/**/*.test.{js,jsx}'],
       pool: 'forks',
-      poolOptions: { forks: { singleFork: true } },
+      maxWorkers: 1,
     },
   };
 });

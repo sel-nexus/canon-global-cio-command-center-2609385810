@@ -90,6 +90,7 @@ input[aria-invalid='true'] { border-color: var(--error); }
 .action-buttons [aria-disabled='true'] { color: var(--muted); cursor: default; }
 /* Assistant disclosure: reuse inherited tokens and keep the dashboard non-modal. */
 .assistant-disclosure { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 15; display: grid; justify-items: end; gap: 12px; max-width: calc(100vw - 32px); }
+.assistant-disclosure.is-open { position: relative; right: auto; bottom: auto; z-index: auto; margin: 24px 16px; justify-items: end; }
 .assistant-panel { width: min(440px, calc(100vw - 32px)); max-height: calc(100dvh - 100px); overflow-y: auto; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow-wrap: anywhere; }
 .assistant-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
 .assistant-heading h2 { font-size: 1.25rem; }

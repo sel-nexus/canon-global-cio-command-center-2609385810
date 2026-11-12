@@ -38,7 +38,7 @@ export function AssistantPanel({ open, input, messages, prompt, error = '', load
   });
 
   return (
-    <aside className="assistant-disclosure" aria-label="Local assistant controls">
+    <aside className={`assistant-disclosure${open ? " is-open" : ""}`} aria-label="Local assistant controls">
       {open && (
         <section id="assistant-panel" className="assistant-panel" aria-labelledby="assistant-title" aria-describedby="assistant-disclosure">
           <div className="assistant-heading">

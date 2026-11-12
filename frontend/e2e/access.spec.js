@@ -77,7 +77,7 @@ for (const viewport of [{ width: 1280, height: 900 }, { width: 320, height: 720 
       method: 'performance.now; navigation timeOrigin to usable DOM at requestAnimationFrame; capture-phase trusted click to first DOM result and usable result at requestAnimationFrame. Auth also records request timing through response.finished(), including responseEnd; no static auth threshold. No Node wall-clock or Playwright assertion latency.',
       browser: { name: testInfo.project.use.browserName || 'chromium', version: browser.version(), headless: testInfo.project.use.headless !== false },
       viewport, network: 'Local loopback, unthrottled; fresh browser context then repeat navigation; browser HTTP caching left at defaults.',
-      environment: { node: process.version, platform: os.platform(), arch: os.arch(), playwright: '1.48.2', vite: '6.0.11', baseURL: testInfo.project.use.baseURL, build: buildEvidence() },
+      environment: { node: process.version, platform: os.platform(), arch: os.arch(), playwright: '1.65.0', vite: '7.3.8', baseURL: testInfo.project.use.baseURL, build: buildEvidence() },
       measurements: [],
     };
     try {
@@ -173,7 +173,7 @@ test('signup, invalid login, valid login, restore, all tabs, logout and retained
     await tab.click();
     await expect(tab).toHaveAttribute('aria-selected', 'true');
     await expect(page.getByRole('tabpanel')).toHaveCount(1);
-    await expect(page.getByRole('tabpanel', { name: label }).getByRole('heading', { name: label })).toBeVisible();
+    await expect(page.getByRole('tabpanel', { name: label }).getByRole('heading', { name: label, exact: true })).toBeVisible();
     await expect(page.getByText(account.username, { exact: true })).toBeVisible();
   }
   await page.getByRole('tab', { name: 'Partnerships', exact: true }).focus();

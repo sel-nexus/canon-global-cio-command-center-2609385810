@@ -19,3 +19,6 @@ graphify-out/cache/
 graphify-out/cost.json
 frontend/test-results/
 frontend/playwright-report/
+
+.env.prod
+prod-env.json

@@ -90,6 +90,7 @@ describe('server-wired assistant controls', () => {
     await waitFor(() => expect(screen.getByRole('button', { name: 'Get local response' })).toBeEnabled());
     expect(screen.getByLabelText('Assistant prompt')).toHaveFocus();
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    expect(screen.getByLabelText('Local assistant controls')).toHaveClass('is-open');
     await user.type(screen.getByLabelText('Assistant prompt'), 'risk');
     await user.keyboard('{Enter}');
     await settled(1);
