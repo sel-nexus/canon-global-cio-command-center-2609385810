@@ -84,3 +84,17 @@ export const RISK_METRICS = Object.freeze([
 
 /** Supply no risk values, framework, severity scale, source or calculation. */
 export const RISK_FIXTURES = Object.freeze({ metrics: RISK_METRICS });
+
+/** Preserve the three requested innovation measures without supplying values. */
+export const INNOVATION_METRICS = Object.freeze([
+  'AI models in production',
+  'Innovation pipeline value',
+  'Patents',
+].map((label) => Object.freeze({ label, value: null, displayState: 'not-specified' })));
+
+/** Leave portfolio taxonomy and distribution values absent, not calculated. */
+export const INNOVATION_FIXTURES = Object.freeze({
+  metrics: INNOVATION_METRICS,
+  labels: Object.freeze([]),
+  distribution: Object.freeze({ displayState: 'not-specified', data: Object.freeze([]) }),
+});

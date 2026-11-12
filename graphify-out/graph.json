@@ -89,6 +89,14 @@
       "_origin": "ast"
     },
     {
+      "id": "frontend_e2e_risk_spec",
+      "label": "risk.spec.js",
+      "file_type": "code",
+      "source_file": "frontend/e2e/risk.spec.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_e2e_strategic_spec",
       "label": "strategic.spec.js",
       "file_type": "code",
@@ -577,7 +585,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -587,7 +595,7 @@
       "label": "handleSubmit()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L37",
+      "source_location": "L38",
       "_callable": true,
       "_origin": "ast",
       "community": 1
@@ -597,7 +605,7 @@
       "label": "handleLogout()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L51",
+      "source_location": "L52",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -607,7 +615,7 @@
       "label": "respond()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L69",
+      "source_location": "L70",
       "_callable": true,
       "_origin": "ast"
     },
@@ -616,7 +624,7 @@
       "label": "activateChip()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L86",
+      "source_location": "L87",
       "_callable": true,
       "_origin": "ast"
     },
@@ -625,7 +633,7 @@
       "label": "selectView()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L95",
+      "source_location": "L96",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -1016,6 +1024,22 @@
       "file_type": "code",
       "source_file": "frontend/src/data/dashboardFixtures.js",
       "source_location": "L68",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_data_dashboardfixtures_risk_metrics",
+      "label": "RISK_METRICS",
+      "file_type": "code",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L79",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_data_dashboardfixtures_risk_fixtures",
+      "label": "RISK_FIXTURES",
+      "file_type": "code",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L86",
       "_origin": "ast"
     },
     {
@@ -1440,6 +1464,22 @@
       "_origin": "ast"
     },
     {
+      "id": "frontend_src_tests_risk_test",
+      "label": "risk.test.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/risk.test.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_tests_risk_test_labels",
+      "label": "labels",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/risk.test.jsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_tests_setup",
       "label": "setup.js",
       "file_type": "code",
@@ -1564,6 +1604,23 @@
       "file_type": "code",
       "source_file": "frontend/src/views/Operations.jsx",
       "source_location": "L34",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_views_riskgovernance",
+      "label": "RiskGovernance.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/views/RiskGovernance.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_views_riskgovernance_riskgovernance",
+      "label": "RiskGovernance()",
+      "file_type": "code",
+      "source_file": "frontend/src/views/RiskGovernance.jsx",
+      "source_location": "L16",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1926,6 +1983,61 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/operations.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_risk_spec",
+      "target": "ref_playwright_test",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/risk.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_risk_spec",
+      "target": "frontend_e2e_helpers",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/risk.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_risk_spec",
+      "target": "frontend_e2e_helpers_guardbrowser",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/risk.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_risk_spec",
+      "target": "frontend_e2e_helpers_registerdemo",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/risk.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_risk_spec",
+      "target": "frontend_e2e_helpers_logindemo",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/risk.spec.js",
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast"
@@ -2824,11 +2936,22 @@
     },
     {
       "source": "frontend_src_app",
+      "target": "frontend_src_views_riskgovernance",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
       "target": "frontend_src_app_app",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2838,7 +2961,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L37",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2848,7 +2971,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L51",
+      "source_location": "L52",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2858,7 +2981,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L69",
+      "source_location": "L70",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2868,7 +2991,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L86",
+      "source_location": "L87",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2878,7 +3001,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L95",
+      "source_location": "L96",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2889,7 +3012,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L156",
+      "source_location": "L160",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2900,7 +3023,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L90",
+      "source_location": "L91",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3605,6 +3728,26 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/data/dashboardFixtures.js",
       "source_location": "L68",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_data_dashboardfixtures",
+      "target": "frontend_src_data_dashboardfixtures_risk_metrics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_data_dashboardfixtures",
+      "target": "frontend_src_data_dashboardfixtures_risk_fixtures",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L86",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5106,6 +5249,126 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_tests_risk_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/risk.test.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_risk_test",
+      "target": "ref_testing_library_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/risk.test.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_risk_test",
+      "target": "ref_testing_library_user_event",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/risk.test.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_risk_test",
+      "target": "frontend_src_app",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/risk.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_risk_test",
+      "target": "frontend_src_views_riskgovernance",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/risk.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_risk_test",
+      "target": "frontend_src_data_dashboardfixtures",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/risk.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_risk_test",
+      "target": "frontend_src_data_dashboardfixtures_risk_fixtures",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/risk.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_risk_test",
+      "target": "frontend_src_services_localauth",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/risk.test.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_risk_test",
+      "target": "frontend_src_services_localauth_registeraccount",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/risk.test.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_risk_test",
+      "target": "frontend_src_services_localauth_login",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/risk.test.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_risk_test",
+      "target": "frontend_src_tests_risk_test_labels",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/risk.test.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_tests_setup",
       "target": "ref_testing_library_jest_dom",
       "relation": "imports_from",
@@ -5935,6 +6198,115 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_views_riskgovernance",
+      "target": "ref_prop_types",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/RiskGovernance.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_riskgovernance",
+      "target": "frontend_src_components_metriccard",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/RiskGovernance.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_riskgovernance",
+      "target": "frontend_src_components_metriccard_metriccard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/RiskGovernance.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_riskgovernance",
+      "target": "frontend_src_components_metriccard_displayvalue",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/RiskGovernance.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_riskgovernance",
+      "target": "frontend_src_components_mockdatanotice",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/RiskGovernance.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_riskgovernance",
+      "target": "frontend_src_components_mockdatanotice_mockdatanotice",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/RiskGovernance.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_riskgovernance",
+      "target": "frontend_src_data_dashboardfixtures",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/RiskGovernance.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_riskgovernance",
+      "target": "frontend_src_data_dashboardfixtures_risk_fixtures",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/RiskGovernance.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_riskgovernance",
+      "target": "frontend_src_data_dashboardfixtures_risk_metrics",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/RiskGovernance.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_riskgovernance",
+      "target": "frontend_src_views_riskgovernance_riskgovernance",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/RiskGovernance.jsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_views_strategiccommand",
       "target": "ref_prop_types",
       "relation": "imports_from",
@@ -6154,6 +6526,17 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_app",
+      "target": "frontend_src_views_riskgovernance_riskgovernance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_main",
       "target": "frontend_src_app_app",
       "relation": "imports",
@@ -6253,6 +6636,28 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_tests_risk_test",
+      "target": "frontend_src_app_app",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/risk.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_risk_test",
+      "target": "frontend_src_views_riskgovernance_riskgovernance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/risk.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_tests_strategic_test",
       "target": "frontend_src_app_app",
       "relation": "imports",
@@ -6281,7 +6686,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6292,7 +6697,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6303,7 +6708,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6314,7 +6719,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L52",
+      "source_location": "L53",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6325,7 +6730,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L74",
+      "source_location": "L75",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6336,7 +6741,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L156",
+      "source_location": "L160",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6495,6 +6900,17 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_views_riskgovernance_riskgovernance",
+      "target": "frontend_src_components_metriccard_displayvalue",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/RiskGovernance.jsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_app_app",
       "target": "frontend_src_services_localauth_readsession",
       "relation": "indirect_call",
@@ -6502,7 +6918,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6514,7 +6930,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L102",
+      "source_location": "L103",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6526,7 +6942,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L106",
+      "source_location": "L107",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6538,7 +6954,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L118",
+      "source_location": "L119",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6550,7 +6966,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L128",
+      "source_location": "L129",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6562,7 +6978,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L130",
+      "source_location": "L131",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6574,7 +6990,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L133",
+      "source_location": "L134",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6586,7 +7002,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L136",
+      "source_location": "L137",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6598,7 +7014,19 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L139",
+      "source_location": "L140",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_app",
+      "target": "frontend_src_views_riskgovernance_riskgovernance",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L143",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6610,7 +7038,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L147",
+      "source_location": "L151",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6622,7 +7050,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6634,7 +7062,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6646,7 +7074,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L52",
+      "source_location": "L53",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6658,7 +7086,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L74",
+      "source_location": "L75",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6831,6 +7259,30 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_views_riskgovernance_riskgovernance",
+      "target": "frontend_src_components_mockdatanotice_mockdatanotice",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/views/RiskGovernance.jsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_riskgovernance_riskgovernance",
+      "target": "frontend_src_components_metriccard_metriccard",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/views/RiskGovernance.jsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_views_strategiccommand_strategiccommand",
       "target": "frontend_src_components_mockdatanotice_mockdatanotice",
       "relation": "calls",
@@ -6868,10 +7320,10 @@
     }
   ],
   "metadata": {
-    "built_at": "2026-11-12T12:38:26.789386+00:00",
+    "built_at": "2026-11-12T12:42:40.969071+00:00",
     "version": "graph_update-v1",
     "codebase_root": "C:\\artifacts-v2\\T0132PcJVCRTV000412112609385810\\developer",
     "force": true,
-    "files_scanned": 42
+    "files_scanned": 45
   }
 }
