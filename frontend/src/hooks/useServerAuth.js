@@ -78,5 +78,16 @@ export function useServerAuth() {
     } finally { busy.current = false; setPending(false); }
   }
 
-  return { account, loading, pending, error, submit, logout };
+  /** Fail closed when a protected assistant request reports session expiry. */
+  function expireSession(token) {
+    if (tokenRef.current !== token) return;
+    tokenRef.current = null;
+    setAccount(null);
+    let message = 'Your session has expired. Log in again.';
+    try { storeToken(null); }
+    catch (failure) { message += ` ${failure.message}`; }
+    setError(message);
+  }
+
+  return { account, token: tokenRef.current, loading, pending, error, submit, logout, expireSession };
 }

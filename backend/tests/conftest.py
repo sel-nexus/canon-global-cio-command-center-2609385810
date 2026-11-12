@@ -18,7 +18,7 @@ from app.main import create_app
 def settings() -> Iterator[Settings]:
     """Provision an isolated test database and remove only that database afterward."""
     original = get_settings()
-    prefix = os.getenv("TEST_DB_NAME", "canon_auth_test")
+    prefix = os.getenv("TEST_DB_NAME", "canon_history_test")
     if "test" not in prefix.lower():
         raise ValueError("TEST_DB_NAME must contain test")
     name = f"{prefix[:35]}_{uuid4().hex[:12]}"

@@ -1,8 +1,8 @@
 /** Gate server access and isolate the selected dashboard content from the shared shell. */
 import { useRef, useState } from 'react';
 import { AssistantPanel } from './components/AssistantPanel.jsx';
-import { ASSISTANT_CHIPS, ASSISTANT_RESPONSES } from './data/assistantResponses.js';
-import { readAssistantMessages, persistAssistantMessages, resolveAssistantPrompt } from './services/localAssistant.js';
+import { ASSISTANT_CHIPS } from './data/assistantResponses.js';
+import { useServerAssistant } from './hooks/useServerAssistant.js';
 import { useServerAuth } from './hooks/useServerAuth.js';
 import { AuthForm } from './components/AuthForm.jsx';
 import { AppHeader } from './components/AppHeader.jsx';
@@ -23,13 +23,7 @@ export default function App() {
   const [mode, setMode] = useState('login');
   const [activeView, setActiveView] = useState('strategic');
   const [notice, setNotice] = useState('');
-  const [assistant, setAssistant] = useState(() => {
-    const restored = readAssistantMessages();
-    return {
-      open: false, input: '', prompt: '', messages: restored.messages, focusRequest: 0,
-      notice: restored.available ? '' : 'Saved assistant history is unavailable or unsupported. No saved data was changed.',
-    };
-  });
+  const assistant = useServerAssistant(auth.account, auth.token, auth.expireSession);
   const returnFocus = useRef(null);
   const view = DASHBOARD_VIEWS.find((item) => item.key === activeView);
   /** Route successful server registration to login without automatic account migration. */
@@ -49,39 +43,17 @@ export default function App() {
   async function handleLogout() {
     const result = await auth.logout();
     if (!result.ok) return;
-    setAssistant((current) => ({ ...current, open: false, input: '', prompt: '' }));
+    assistant.closePanel();
     setMode('login');
     setNotice('Logged out. Your account remains on the server.');
   }
 
-  /** Append a response after activation, retaining memory even when saving fails.
-   * Args:
-   *   prompt: Current user text, kept in memory only.
-   *   text: Fixed local response selected by a chip or resolver.
-   */
-  function respond(prompt, text) {
-    const nextId = assistant.messages.reduce((largest, message) => Math.max(largest, Number(message.id.slice(6))), 0) + 1;
-    const messages = [...assistant.messages, {
-      id: `local-${nextId}`, role: 'assistant', text, createdAt: new Date().toISOString(),
-    }];
-    const result = persistAssistantMessages(messages);
-    setAssistant((current) => ({
-      ...current, open: true, input: prompt, prompt, messages,
-      notice: result.ok ? '' : 'This response remains available now, but could not be saved and will not survive reload.',
-    }));
-  }
-
-  /** Open and prefill only an approved chip, bypassing general prompt ambiguity.
-   * Args:
-   *   keyword: Approved chip mapping.
-   *   trigger: Activated button to receive focus when closed.
-   */
+  /** Prefill an approved chip and request its fixed narrative from the server. */
   function activateChip(keyword, trigger) {
     const chip = ASSISTANT_CHIPS.find((item) => item.keyword === keyword);
     if (!chip) return;
     returnFocus.current = trigger;
-    respond(chip.label, ASSISTANT_RESPONSES[keyword]);
-    setAssistant((current) => ({ ...current, focusRequest: current.focusRequest + 1 }));
+    assistant.respond(chip.label);
   }
 
   /** Select only a supported panel without persisting preferences or fetching content. */
@@ -154,11 +126,12 @@ export default function App() {
           returnFocus={returnFocus}
           onToggle={(trigger) => {
             returnFocus.current = trigger;
-            setAssistant((current) => ({ ...current, open: true }));
+            assistant.openPanel();
           }}
-          onClose={() => setAssistant((current) => ({ ...current, open: false }))}
-          onInput={(input) => setAssistant((current) => ({ ...current, input }))}
-          onSubmit={() => respond(assistant.input, resolveAssistantPrompt(assistant.input).text)}
+          onClose={assistant.closePanel}
+          onInput={assistant.setInput}
+          onSubmit={() => assistant.respond(assistant.input)}
+          onRetry={assistant.retry}
         />
       )}
     </div>

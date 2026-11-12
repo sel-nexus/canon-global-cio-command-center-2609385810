@@ -9,7 +9,7 @@ import { ASSISTANT_DISCLOSURE } from '../data/assistantResponses.js';
  * Returns:
  *   A toggle and an optional named non-modal region, without persistence on render.
  */
-export function AssistantPanel({ open, input, messages, prompt, notice, focusRequest, returnFocus, onToggle, onClose, onInput, onSubmit }) {
+export function AssistantPanel({ open, input, messages, prompt, error = '', loading = false, pending = false, focusRequest, returnFocus, onToggle, onClose, onInput, onSubmit, onRetry }) {
   const inputRef = useRef(null);
   const toggleRef = useRef(null);
 
@@ -47,7 +47,7 @@ export function AssistantPanel({ open, input, messages, prompt, notice, focusReq
               Close assistant
             </button>
           </div>
-          <p id="assistant-disclosure" className="muted">{ASSISTANT_DISCLOSURE}</p>
+          <p id="assistant-disclosure" className="muted">{ASSISTANT_DISCLOSURE.replace('Local rule-based', 'Server rule-based')}</p>
           <p className="muted">Non-modal panel. Dashboard controls remain available. Escape closes this panel.</p>
           <div className="assistant-history" role="log" aria-label="Assistant response history" aria-live="polite" tabIndex={0}>
             {messages.length === 0 ? (
@@ -63,7 +63,16 @@ export function AssistantPanel({ open, input, messages, prompt, notice, focusReq
             )}
           </div>
           {prompt && <p className="assistant-prompt">Current prompt: {prompt}</p>}
-          {notice && <p role="status" className="notice">{notice}</p>}
+          {loading && <p role="status" className="notice">Loading server history…</p>}
+          {pending && <p role="status" className="notice">Saving server response…</p>}
+          {error && (
+            <div>
+              <p role="alert" className="error">{error}</p>
+              <button type="button" className="button secondary" onClick={onRetry} disabled={loading || pending}>
+                Retry server history
+              </button>
+            </div>
+          )}
           <form onSubmit={(event) => { event.preventDefault(); onSubmit(); }}>
             <div className="field">
               <label htmlFor="assistant-input">Assistant prompt</label>
@@ -78,7 +87,7 @@ export function AssistantPanel({ open, input, messages, prompt, notice, focusReq
                 aria-describedby="assistant-disclosure"
               />
             </div>
-            <button type="submit" className="button primary">
+            <button type="submit" className="button primary" disabled={loading || pending}>
               Get local response
             </button>
           </form>
@@ -105,10 +114,13 @@ AssistantPanel.propTypes = {
     id: PropTypes.string.isRequired,
     role: PropTypes.oneOf(['assistant']).isRequired,
     text: PropTypes.string.isRequired,
-    createdAt: PropTypes.string.isRequired,
+    created_at: PropTypes.string.isRequired,
   })).isRequired,
   prompt: PropTypes.string.isRequired,
-  notice: PropTypes.string.isRequired,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
+  pending: PropTypes.bool,
+  onRetry: PropTypes.func,
   focusRequest: PropTypes.number.isRequired,
   returnFocus: PropTypes.shape({ current: PropTypes.any }).isRequired,
   onToggle: PropTypes.func.isRequired,

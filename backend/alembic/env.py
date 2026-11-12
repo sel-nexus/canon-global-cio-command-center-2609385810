@@ -3,6 +3,7 @@ from alembic import context
 from app.core.config import get_settings
 from app.core.database import Base, build_engine, database_url
 from app.auth.model import User, AuthSession
+from app.assistant.model import AssistantMessage
 
 config = context.config
 settings = get_settings()

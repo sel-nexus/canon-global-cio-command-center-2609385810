@@ -12,6 +12,7 @@ from sqlalchemy.orm import sessionmaker
 from app.core.config import Settings, get_settings
 from app.core.database import build_engine, provision_database
 from app.auth.router import router
+from app.assistant.router import router as assistant_router
 from app.auth.service import AuthService, InvalidCredentials
 
 logger = logging.getLogger(__name__)
@@ -40,6 +41,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     application.add_middleware(CORSMiddleware, allow_origins=configuration.allowed_origins,
                                allow_methods=["GET", "POST"], allow_headers=["Authorization", "Content-Type"])
     application.include_router(router)
+    application.include_router(assistant_router)
 
     @application.exception_handler(InvalidCredentials)
     async def invalid_credentials(request: Request, exc: InvalidCredentials) -> JSONResponse:
