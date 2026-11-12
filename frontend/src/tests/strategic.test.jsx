@@ -98,9 +98,21 @@ describe('Strategic acceptance', () => {
     expect(screen.getByRole('tabpanel', { name: 'Strategic Command' })).toContainElement(screen.getByRole('article', { name: 'Risk' }));
     const user = userEvent.setup();
     await user.click(screen.getByRole('tab', { name: 'Operations' }));
-    expect(screen.queryByRole('article')).not.toBeInTheDocument();
+    expect(screen.getAllByRole('tabpanel')).toHaveLength(1);
+    const operations = within(screen.getByRole('tabpanel', { name: 'Operations' }));
+    expect(operations.getAllByRole('article')).toHaveLength(3);
+    for (const name of ['Total incidents (MTD)', 'MTTR', 'Efficiency metrics']) {
+      expect(operations.getByRole('article', { name, exact: true })).toBeVisible();
+    }
+    for (const name of ['Business Impact', 'Risk', 'Innovation']) {
+      expect(operations.queryByRole('article', { name, exact: true })).not.toBeInTheDocument();
+    }
+    expect(operations.queryByRole('heading', { name: 'Strategic Priorities' })).not.toBeInTheDocument();
+    expect(operations.queryByRole('table', { name: 'Twelve-Month Strategic Trends — textual data' })).not.toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Operations' })).toBeVisible();
     await user.click(screen.getByRole('tab', { name: 'Strategic Command' }));
+    expect(screen.getAllByRole('tabpanel')).toHaveLength(1);
+    expect(screen.getByRole('tabpanel', { name: 'Strategic Command' })).toContainElement(screen.getByRole('article', { name: 'Risk' }));
     expect(screen.getAllByRole('article')).toHaveLength(3);
   });
 
@@ -188,7 +200,9 @@ describe('Shared display boundaries', () => {
   });
 
   it.each(['line', 'bar', 'radar', 'doughnut', 'pie', 'polarArea', 'scatter', 'bubble'])('passes safe synthetic %s data to real integration boundary and preserves equivalents', (type) => {
-    const values = type === 'scatter' || type === 'bubble' ? [{ x: 1, y: 2 }, null] : [7, null];
+    const values = type === 'bubble'
+      ? [{ x: 1, y: 2, r: 3 }, null]
+      : type === 'scatter' ? [{ x: 1, y: 2 }, null] : [7, null];
     render(
       <ChartPanel
         title="Synthetic chart"
@@ -203,6 +217,10 @@ describe('Shared display boundaries', () => {
     expect(chart.props.type).toBe(type);
     expect(chart.props.data.datasets[0].data).toEqual(values);
     expect(screen.getByRole('table')).toHaveTextContent(type === 'scatter' || type === 'bubble' ? 'x: 1; y: 2' : '7');
+    if (type === 'bubble') {
+      expect(chart.props.data.datasets[0].data[0]).toEqual({ x: 1, y: 2, r: 3 });
+      expect(within(screen.getByRole('table')).getByRole('cell', { name: 'x: 1; y: 2; r: 3', exact: true })).toBeVisible();
+    }
     expect(screen.getByRole('table')).toHaveTextContent('Not specified');
     expect(screen.getByText('Synthetic purpose')).toBeVisible();
   });

@@ -4,6 +4,7 @@ import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from '../App.jsx';
 import { AuthForm } from '../components/AuthForm.jsx';
+import { AppHeader } from '../components/AppHeader.jsx';
 import { DashboardTabs } from '../components/DashboardTabs.jsx';
 import { registerAccount, login } from '../services/localAuth.js';
 import { STORAGE_KEYS } from '../services/localStorage.js';
@@ -14,6 +15,53 @@ async function submit(user, username, password, button = 'Log in') {
   await user.type(screen.getByLabelText('Password'), password);
   await user.click(screen.getByRole('button', { name: button, exact: true }));
 }
+
+describe('header presentation', () => {
+  it('keeps the brand visible without signed-in identity or notification presentation', () => {
+    render(<AppHeader />);
+    const header = within(screen.getByRole('banner'));
+    expect(header.getByText('Canon')).toBeVisible();
+    expect(header.getByRole('heading', { level: 1 })).toHaveTextContent('Global CIO Command Center');
+    expect(header.queryByRole('img')).not.toBeInTheDocument();
+    expect(header.queryByText(/Global CIO · Demo/)).not.toBeInTheDocument();
+    expect(header.queryByText(/Notifications/)).not.toBeInTheDocument();
+    expect(header.queryByRole('button')).not.toBeInTheDocument();
+  });
+
+  it.each([
+    ['Alex Morgan', 'AM'],
+    ['demo', 'D'],
+  ])('shows inert initials for %s and unavailable demo notifications without invented counts or actions', async (username, initials) => {
+    const user = userEvent.setup();
+    const onLogout = vi.fn();
+    const { container } = render(<AppHeader username={username} onLogout={onLogout} />);
+    const header = within(screen.getByRole('banner'));
+    const avatar = header.getByRole('img', { name: `${username} initials avatar` });
+    const notifications = header.getByText('Notifications unavailable in demo', { exact: true });
+    expect(avatar).toHaveTextContent(initials);
+    expect(avatar.tagName).toBe('SPAN');
+    expect(container.querySelector('img')).toBeNull();
+    expect(header.getByText(username, { exact: true })).toBeVisible();
+    expect(header.getByText('Global CIO · Demo')).toBeVisible();
+    expect(notifications.tagName).toBe('P');
+    expect(notifications.textContent).toBe('Notifications unavailable in demo');
+    expect(header.queryByRole('alert')).not.toBeInTheDocument();
+    expect(header.queryByRole('status')).not.toBeInTheDocument();
+    expect(header.queryByRole('link')).not.toBeInTheDocument();
+    expect(header.getAllByRole('button')).toHaveLength(1);
+    for (const presentation of [avatar, notifications]) {
+      expect(presentation).not.toHaveAttribute('tabindex');
+      expect(presentation).not.toHaveAttribute('aria-live');
+      expect(presentation.closest('button, a')).toBeNull();
+      await user.click(presentation);
+    }
+    expect(onLogout).not.toHaveBeenCalled();
+    await user.tab();
+    expect(header.getByRole('button', { name: 'Log out' })).toHaveFocus();
+    await user.keyboard('{Enter}');
+    expect(onLogout).toHaveBeenCalledTimes(1);
+  });
+});
 
 describe('demo form', () => {
   it('labels required fields and blocks blank username with associated focus/error', async () => {

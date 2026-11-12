@@ -147,6 +147,51 @@ describe('assistant controls and chip journeys', () => {
 });
 
 describe('assistant restoration and recoverable failures', () => {
+  it('renders long supported and unsupported prompts safely and restores only assistant responses', async () => {
+    const view = renderDashboard();
+    const user = userEvent.setup();
+    const hostile = '<img src=x onerror="window.hacked=true"><script>alert(1)</script>';
+    const padding = 'x'.repeat(10000);
+    const prompts = [
+      [`${hostile}${padding} innovation risk TCS Q4`, chips[0][1]],
+      [`${hostile}${padding} brisk innovations q40 tcs2`, fallback],
+    ];
+    await user.click(screen.getByRole('button', { name: 'Open local assistant' }));
+    const responses = [];
+    for (const [prompt, response] of prompts) {
+      await user.clear(screen.getByLabelText('Assistant prompt'));
+      await user.paste(prompt);
+      expect(screen.getByLabelText('Assistant prompt')).toHaveValue(prompt);
+      await user.keyboard('{Enter}');
+      responses.push(response);
+      expect(screen.getByText(`Current prompt: ${prompt}`).textContent).toBe(`Current prompt: ${prompt}`);
+      expect(within(history()).getAllByRole('listitem').map((item) => item.textContent)).toEqual(responses);
+      expect(document.querySelector('.assistant-panel img, .assistant-panel script')).toBeNull();
+      expect(window.hacked).toBeUndefined();
+      const raw = window.localStorage.getItem(STORAGE_KEYS.assistant);
+      expect(JSON.parse(raw)).toEqual({
+        version: 1,
+        messages: responses.map((text, index) => ({
+          id: `local-${index + 1}`, role: 'assistant', text, createdAt: expect.any(String),
+        })),
+      });
+      for (let index = 0; index < window.localStorage.length; index += 1) {
+        const stored = window.localStorage.getItem(window.localStorage.key(index));
+        expect(stored).not.toContain(prompt);
+        expect(stored).not.toContain(padding);
+        expect(stored).not.toContain(hostile);
+      }
+    }
+    const saved = window.localStorage.getItem(STORAGE_KEYS.assistant);
+    view.unmount();
+    renderDashboard();
+    await user.click(screen.getByRole('button', { name: 'Open local assistant' }));
+    expect(screen.getByLabelText('Assistant prompt')).toHaveValue('');
+    expect(screen.queryByText(/^Current prompt:/)).not.toBeInTheDocument();
+    expect(within(history()).getAllByRole('listitem').map((item) => item.textContent)).toEqual(responses);
+    expect(window.localStorage.getItem(STORAGE_KEYS.assistant)).toBe(saved);
+  });
+
   it('restores response-only history on remount and keeps IDs unique after reload', async () => {
     const view = renderDashboard();
     const user = userEvent.setup();

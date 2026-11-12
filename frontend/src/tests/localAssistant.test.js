@@ -18,6 +18,23 @@ function seed(value) {
 }
 
 describe('local prompt resolution', () => {
+  it.each(Object.keys(expected))('maps %s deterministically at the end of a long supported prompt', (keyword) => {
+    const prompt = `${'x'.repeat(10000)} (${keyword.toUpperCase()})!`;
+    expect(resolveAssistantPrompt(prompt)).toEqual({ keyword, text: expected[keyword] });
+    expect(resolveAssistantPrompt(prompt)).toEqual({ keyword, text: expected[keyword] });
+    expect(window.localStorage.length).toBe(0);
+  });
+
+  it('keeps fixed topic priority and fallback for long supported and unsupported prompts', () => {
+    const supported = `innovation ${'x'.repeat(10000)} risk TCS Q4`;
+    const unsupported = `${'x'.repeat(10000)} brisk innovations q40 tcs2 <script>alert(1)</script>`;
+    for (let repeat = 0; repeat < 2; repeat += 1) {
+      expect(resolveAssistantPrompt(supported)).toEqual({ keyword: 'q4', text: expected.q4 });
+      expect(resolveAssistantPrompt(unsupported)).toEqual({ keyword: null, text: fallback });
+    }
+    expect(window.localStorage.length).toBe(0);
+  });
+
   it.each(Object.keys(expected))('matches %s case-insensitively with punctuation and whitespace boundaries', (keyword) => {
     for (const prompt of [keyword, keyword.toUpperCase(), `\n(${keyword})!`, `plan: ${keyword}-ready`]) {
       expect(resolveAssistantPrompt(prompt)).toEqual({ keyword, text: expected[keyword] });

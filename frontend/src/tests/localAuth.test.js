@@ -28,6 +28,64 @@ describe('required credential validation', () => {
 });
 
 describe('local demo account lifecycle', () => {
+  it('round-trips 10000-character credentials without truncating usernames or exact passwords', () => {
+    const username = `Demo${'u'.repeat(9995)}Z`;
+    const password = ` ${'p'.repeat(9997)}Z `;
+    const longCredentials = { username: ` ${username} `, password };
+    expect(validateCredentials(longCredentials)).toEqual({ ok: true });
+    const registered = registerAccount(longCredentials);
+    expect(registered).toEqual({ ok: true, account: { username, createdAt: expect.any(String) } });
+    expect(registered.account).not.toHaveProperty('password');
+    const saved = window.localStorage.getItem(STORAGE_KEYS.accounts);
+    expect(JSON.parse(saved)).toEqual({
+      version: 1,
+      accounts: [{ username, password, createdAt: registered.account.createdAt }],
+    });
+    expect(readSession()).toEqual({ signedIn: false, storageAvailable: true });
+    for (const changed of [
+      { username: username.slice(0, -1), password },
+      { username, password: password.slice(0, -2) + 'Y ' },
+      { username, password: password.trim() },
+    ]) {
+      expect(login(changed)).toEqual({ ok: false, code: 'INVALID_CREDENTIALS' });
+      expect(window.localStorage.getItem(STORAGE_KEYS.session)).toBeNull();
+    }
+    expect(login({ username: ` ${username.toUpperCase()} `, password })).toEqual(registered);
+    expect(JSON.parse(window.localStorage.getItem(STORAGE_KEYS.session))).toEqual({ version: 1, username });
+    expect(readSession()).toEqual({ signedIn: true, username, storageAvailable: true });
+    expect(logout()).toEqual({ ok: true });
+    expect(window.localStorage.getItem(STORAGE_KEYS.accounts)).toBe(saved);
+    expect(login(longCredentials)).toEqual(registered);
+  });
+
+  it('preserves prior accounts and stays signed out when long account or session writes exceed quota', () => {
+    expect(registerAccount(credentials).ok).toBe(true);
+    const longCredentials = { username: `long-${'u'.repeat(9995)}`, password: 'p'.repeat(10000) };
+    const previous = window.localStorage.getItem(STORAGE_KEYS.accounts);
+    const writes = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+      throw new DOMException('synthetic quota failure', 'QuotaExceededError');
+    });
+    expect(registerAccount(longCredentials)).toEqual({ ok: false, code: 'STORAGE_WRITE_FAILED' });
+    expect(window.localStorage.getItem(STORAGE_KEYS.accounts)).toBe(previous);
+    expect(login(longCredentials)).toEqual({ ok: false, code: 'INVALID_CREDENTIALS' });
+    expect(readSession()).toEqual({ signedIn: false, storageAvailable: true });
+    expect(window.localStorage.getItem(STORAGE_KEYS.session)).toBeNull();
+    writes.mockRestore();
+    expect(registerAccount(longCredentials).ok).toBe(true);
+    const saved = window.localStorage.getItem(STORAGE_KEYS.accounts);
+    expect(JSON.parse(saved).accounts).toEqual([
+      ...JSON.parse(previous).accounts,
+      { ...longCredentials, createdAt: expect.any(String) },
+    ]);
+    vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+      throw new DOMException('synthetic quota failure', 'QuotaExceededError');
+    });
+    expect(login(longCredentials)).toEqual({ ok: false, code: 'STORAGE_WRITE_FAILED' });
+    expect(window.localStorage.getItem(STORAGE_KEYS.accounts)).toBe(saved);
+    expect(window.localStorage.getItem(STORAGE_KEYS.session)).toBeNull();
+    expect(readSession()).toEqual({ signedIn: false, storageAvailable: true });
+  });
+
   it('registers, appends, matches normalized username, restores, and logs out without deleting accounts/history', () => {
     const result = registerAccount({ ...credentials, username: ' CIO.demo ' });
     expect(result).toEqual({ ok: true, account: { username: 'CIO.demo', createdAt: expect.any(String) } });

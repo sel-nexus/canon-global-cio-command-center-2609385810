@@ -97,6 +97,14 @@
       "_origin": "ast"
     },
     {
+      "id": "frontend_e2e_partnerships_spec",
+      "label": "partnerships.spec.js",
+      "file_type": "code",
+      "source_file": "frontend/e2e/partnerships.spec.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_e2e_risk_spec",
       "label": "risk.spec.js",
       "file_type": "code",
@@ -593,7 +601,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -603,7 +611,7 @@
       "label": "handleSubmit()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L39",
+      "source_location": "L40",
       "_callable": true,
       "_origin": "ast",
       "community": 1
@@ -613,7 +621,7 @@
       "label": "handleLogout()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L53",
+      "source_location": "L54",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -623,7 +631,7 @@
       "label": "respond()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L71",
+      "source_location": "L72",
       "_callable": true,
       "_origin": "ast"
     },
@@ -632,7 +640,7 @@
       "label": "activateChip()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L88",
+      "source_location": "L89",
       "_callable": true,
       "_origin": "ast"
     },
@@ -641,7 +649,7 @@
       "label": "selectView()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L97",
+      "source_location": "L98",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -1064,6 +1072,30 @@
       "file_type": "code",
       "source_file": "frontend/src/data/dashboardFixtures.js",
       "source_location": "L96",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_data_dashboardfixtures_partnership_metrics",
+      "label": "PARTNERSHIP_METRICS",
+      "file_type": "code",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L103",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_data_dashboardfixtures_partnership_chart_labels",
+      "label": "PARTNERSHIP_CHART_LABELS",
+      "file_type": "code",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L111",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_data_dashboardfixtures_partnership_fixtures",
+      "label": "PARTNERSHIP_FIXTURES",
+      "file_type": "code",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L114",
       "_origin": "ast"
     },
     {
@@ -1512,6 +1544,30 @@
       "_origin": "ast"
     },
     {
+      "id": "frontend_src_tests_partnerships_test",
+      "label": "partnerships.test.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/partnerships.test.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_tests_partnerships_test_chart",
+      "label": "chart",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/partnerships.test.jsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_tests_partnerships_test_metriclabels",
+      "label": "metricLabels",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/partnerships.test.jsx",
+      "source_location": "L27",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_tests_risk_test",
       "label": "risk.test.jsx",
       "file_type": "code",
@@ -1678,6 +1734,40 @@
       "file_type": "code",
       "source_file": "frontend/src/views/Operations.jsx",
       "source_location": "L34",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_views_partnerships",
+      "label": "Partnerships.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_views_partnerships_timeline_options",
+      "label": "TIMELINE_OPTIONS",
+      "file_type": "code",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_views_partnerships_hastimelabel",
+      "label": "hasTimeLabel()",
+      "file_type": "code",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L17",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_views_partnerships_partnerships",
+      "label": "Partnerships()",
+      "file_type": "code",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L31",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2112,6 +2202,61 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/operations.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_partnerships_spec",
+      "target": "ref_playwright_test",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/partnerships.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_partnerships_spec",
+      "target": "frontend_e2e_helpers",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/partnerships.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_partnerships_spec",
+      "target": "frontend_e2e_helpers_guardbrowser",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/partnerships.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_partnerships_spec",
+      "target": "frontend_e2e_helpers_registerdemo",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/partnerships.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_partnerships_spec",
+      "target": "frontend_e2e_helpers_logindemo",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/partnerships.spec.js",
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast"
@@ -3087,11 +3232,22 @@
     },
     {
       "source": "frontend_src_app",
+      "target": "frontend_src_views_partnerships",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
       "target": "frontend_src_app_app",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3101,7 +3257,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L39",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3111,7 +3267,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L53",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3121,7 +3277,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L71",
+      "source_location": "L72",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3131,7 +3287,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L88",
+      "source_location": "L89",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3141,7 +3297,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L97",
+      "source_location": "L98",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3152,7 +3308,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L164",
+      "source_location": "L168",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3163,7 +3319,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L92",
+      "source_location": "L93",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3908,6 +4064,36 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/data/dashboardFixtures.js",
       "source_location": "L96",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_data_dashboardfixtures",
+      "target": "frontend_src_data_dashboardfixtures_partnership_metrics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_data_dashboardfixtures",
+      "target": "frontend_src_data_dashboardfixtures_partnership_chart_labels",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L111",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_data_dashboardfixtures",
+      "target": "frontend_src_data_dashboardfixtures_partnership_fixtures",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L114",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5528,6 +5714,125 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_tests_partnerships_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/partnerships.test.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_partnerships_test",
+      "target": "ref_testing_library_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/partnerships.test.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_partnerships_test",
+      "target": "ref_testing_library_user_event",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/partnerships.test.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_partnerships_test",
+      "target": "frontend_src_app",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/partnerships.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_partnerships_test",
+      "target": "frontend_src_views_partnerships",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/partnerships.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_partnerships_test",
+      "target": "frontend_src_data_dashboardfixtures",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/partnerships.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_partnerships_test",
+      "target": "frontend_src_data_dashboardfixtures_partnership_fixtures",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/partnerships.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_partnerships_test",
+      "target": "frontend_src_services_localstorage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/partnerships.test.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_partnerships_test",
+      "target": "frontend_src_services_localstorage_storage_keys",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/partnerships.test.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_partnerships_test",
+      "target": "frontend_src_tests_partnerships_test_chart",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/partnerships.test.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_partnerships_test",
+      "target": "frontend_src_tests_partnerships_test_metriclabels",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/partnerships.test.jsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_tests_risk_test",
       "target": "ref_vitest",
       "relation": "imports_from",
@@ -6627,6 +6932,191 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_views_partnerships",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_partnerships",
+      "target": "ref_prop_types",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_partnerships",
+      "target": "frontend_src_components_chartpanel",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_partnerships",
+      "target": "frontend_src_components_chartpanel_chartpanel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_partnerships",
+      "target": "frontend_src_components_metriccard",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_partnerships",
+      "target": "frontend_src_components_metriccard_metriccard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_partnerships",
+      "target": "frontend_src_components_metriccard_displayvalue",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_partnerships",
+      "target": "frontend_src_components_mockdatanotice",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_partnerships",
+      "target": "frontend_src_components_mockdatanotice_mockdatanotice",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_partnerships",
+      "target": "frontend_src_data_dashboardfixtures",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_partnerships",
+      "target": "frontend_src_data_dashboardfixtures_partnership_chart_labels",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_partnerships",
+      "target": "frontend_src_data_dashboardfixtures_partnership_fixtures",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_partnerships",
+      "target": "frontend_src_data_dashboardfixtures_partnership_metrics",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_partnerships",
+      "target": "frontend_src_views_partnerships_timeline_options",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_partnerships",
+      "target": "frontend_src_views_partnerships_hastimelabel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_partnerships",
+      "target": "frontend_src_views_partnerships_partnerships",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_partnerships_partnerships",
+      "target": "frontend_src_views_partnerships_hastimelabel",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_views_riskgovernance",
       "target": "ref_prop_types",
       "relation": "imports_from",
@@ -6977,6 +7467,17 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_app",
+      "target": "frontend_src_views_partnerships_partnerships",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_main",
       "target": "frontend_src_app_app",
       "relation": "imports",
@@ -7098,6 +7599,28 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_tests_partnerships_test",
+      "target": "frontend_src_app_app",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/partnerships.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_partnerships_test",
+      "target": "frontend_src_views_partnerships_partnerships",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/partnerships.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_tests_risk_test",
       "target": "frontend_src_app_app",
       "relation": "imports",
@@ -7148,7 +7671,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7159,7 +7682,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L40",
+      "source_location": "L41",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7170,7 +7693,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L40",
+      "source_location": "L41",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7181,7 +7704,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L54",
+      "source_location": "L55",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7192,7 +7715,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L76",
+      "source_location": "L77",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7203,7 +7726,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L164",
+      "source_location": "L168",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7373,6 +7896,17 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_views_partnerships_partnerships",
+      "target": "frontend_src_components_metriccard_displayvalue",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L65",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_views_riskgovernance_riskgovernance",
       "target": "frontend_src_components_metriccard_displayvalue",
       "relation": "calls",
@@ -7391,7 +7925,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7403,7 +7937,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L104",
+      "source_location": "L105",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7415,7 +7949,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L108",
+      "source_location": "L109",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7427,7 +7961,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L120",
+      "source_location": "L121",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7439,7 +7973,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L130",
+      "source_location": "L131",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7451,7 +7985,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L132",
+      "source_location": "L133",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7463,7 +7997,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L135",
+      "source_location": "L136",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7475,7 +8009,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L138",
+      "source_location": "L139",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7487,7 +8021,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L141",
+      "source_location": "L142",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7499,7 +8033,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L144",
+      "source_location": "L145",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7511,7 +8045,19 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L147",
+      "source_location": "L148",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_app",
+      "target": "frontend_src_views_partnerships_partnerships",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L151",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7523,7 +8069,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L155",
+      "source_location": "L159",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7535,7 +8081,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L40",
+      "source_location": "L41",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7547,7 +8093,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L40",
+      "source_location": "L41",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7559,7 +8105,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L54",
+      "source_location": "L55",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7571,7 +8117,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L76",
+      "source_location": "L77",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7780,6 +8326,42 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_views_partnerships_partnerships",
+      "target": "frontend_src_components_mockdatanotice_mockdatanotice",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_partnerships_partnerships",
+      "target": "frontend_src_components_metriccard_metriccard",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_partnerships_partnerships",
+      "target": "frontend_src_components_chartpanel_chartpanel",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/views/Partnerships.jsx",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_views_riskgovernance_riskgovernance",
       "target": "frontend_src_components_mockdatanotice_mockdatanotice",
       "relation": "calls",
@@ -7841,10 +8423,10 @@
     }
   ],
   "metadata": {
-    "built_at": "2026-11-12T12:46:07.439523+00:00",
+    "built_at": "2026-11-12T12:50:55.814741+00:00",
     "version": "graph_update-v1",
     "codebase_root": "C:\\artifacts-v2\\T0132PcJVCRTV000412112609385810\\developer",
     "force": true,
-    "files_scanned": 48
+    "files_scanned": 51
   }
 }

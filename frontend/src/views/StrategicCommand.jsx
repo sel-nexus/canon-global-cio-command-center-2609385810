@@ -62,8 +62,22 @@ export default function StrategicCommand({ onAssistantChip }) {
       <div className="strategic-controls">
         <p id="strategic-actions-note" className="muted">These demonstration controls are inactive; no export or predictive analysis is performed.</p>
         <div className="action-buttons">
-          <button type="button" className="button secondary" aria-disabled="true" aria-describedby="strategic-actions-note">Export Data</button>
-          <button type="button" className="button secondary" aria-disabled="true" aria-describedby="strategic-actions-note">Predictive Analysis</button>
+          <button
+            type="button"
+            className="button secondary"
+            aria-disabled="true"
+            aria-describedby="strategic-actions-note"
+          >
+            Export Data
+          </button>
+          <button
+            type="button"
+            className="button secondary"
+            aria-disabled="true"
+            aria-describedby="strategic-actions-note"
+          >
+            Predictive Analysis
+          </button>
         </div>
       </div>
     </div>
