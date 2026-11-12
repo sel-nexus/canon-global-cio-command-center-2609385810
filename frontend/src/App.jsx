@@ -1,9 +1,11 @@
-/** Gate the local shell and mount only its selected heading; feature views are separate slices. */
+/** Gate local access and isolate the selected dashboard content from the shared shell. */
 import { useState } from 'react';
 import { login, logout, readSession, registerAccount } from './services/localAuth.js';
 import { AuthForm } from './components/AuthForm.jsx';
 import { AppHeader } from './components/AppHeader.jsx';
 import { DashboardTabs, DASHBOARD_VIEWS } from './components/DashboardTabs.jsx';
+import { PanelErrorBoundary } from './components/PanelErrorBoundary.jsx';
+import StrategicCommand from './views/StrategicCommand.jsx';
 
 /** Restore demo state once and handle authentication only on explicit activation. */
 export default function App() {
@@ -78,6 +80,11 @@ export default function App() {
             >
               <p className="eyebrow">Command center</p>
               <h2>{view.label}</h2>
+              <PanelErrorBoundary key={activeView}>
+                {activeView === 'strategic' && (
+                  <StrategicCommand />
+                )}
+              </PanelErrorBoundary>
             </section>
           </div>
         )}
