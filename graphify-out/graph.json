@@ -81,6 +81,14 @@
       "community": 4
     },
     {
+      "id": "frontend_e2e_innovation_spec",
+      "label": "innovation.spec.js",
+      "file_type": "code",
+      "source_file": "frontend/e2e/innovation.spec.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_e2e_operations_spec",
       "label": "operations.spec.js",
       "file_type": "code",
@@ -585,7 +593,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L18",
+      "source_location": "L19",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -595,7 +603,7 @@
       "label": "handleSubmit()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L38",
+      "source_location": "L39",
       "_callable": true,
       "_origin": "ast",
       "community": 1
@@ -605,7 +613,7 @@
       "label": "handleLogout()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L52",
+      "source_location": "L53",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -615,7 +623,7 @@
       "label": "respond()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L70",
+      "source_location": "L71",
       "_callable": true,
       "_origin": "ast"
     },
@@ -624,7 +632,7 @@
       "label": "activateChip()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L87",
+      "source_location": "L88",
       "_callable": true,
       "_origin": "ast"
     },
@@ -633,7 +641,7 @@
       "label": "selectView()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L96",
+      "source_location": "L97",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -1043,6 +1051,22 @@
       "_origin": "ast"
     },
     {
+      "id": "frontend_src_data_dashboardfixtures_innovation_metrics",
+      "label": "INNOVATION_METRICS",
+      "file_type": "code",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L89",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_data_dashboardfixtures_innovation_fixtures",
+      "label": "INNOVATION_FIXTURES",
+      "file_type": "code",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L96",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_main",
       "label": "main.jsx",
       "file_type": "code",
@@ -1362,6 +1386,30 @@
       "_origin": "ast"
     },
     {
+      "id": "frontend_src_tests_innovation_test",
+      "label": "innovation.test.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/innovation.test.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_tests_innovation_test_chart",
+      "label": "chart",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/innovation.test.jsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_tests_innovation_test_metriclabels",
+      "label": "metricLabels",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/innovation.test.jsx",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_tests_localassistant_test",
       "label": "localAssistant.test.js",
       "file_type": "code",
@@ -1571,6 +1619,32 @@
       "source_file": "frontend/src/views/ExecutiveSummary.jsx",
       "source_location": "L25",
       "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_views_innovation",
+      "label": "Innovation.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_views_innovation_innovation",
+      "label": "Innovation()",
+      "file_type": "code",
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "source_location": "L22",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "react",
+      "label": "react",
+      "file_type": "code",
+      "source_file": "react",
+      "confidence": "EXTRACTED",
+      "type": "module",
       "_origin": "ast"
     },
     {
@@ -1929,6 +2003,61 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/helpers.js",
       "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_innovation_spec",
+      "target": "ref_playwright_test",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/innovation.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_innovation_spec",
+      "target": "frontend_e2e_helpers",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/innovation.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_innovation_spec",
+      "target": "frontend_e2e_helpers_guardbrowser",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/innovation.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_innovation_spec",
+      "target": "frontend_e2e_helpers_registerdemo",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/innovation.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_innovation_spec",
+      "target": "frontend_e2e_helpers_logindemo",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/innovation.spec.js",
+      "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2947,11 +3076,22 @@
     },
     {
       "source": "frontend_src_app",
+      "target": "frontend_src_views_innovation",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
       "target": "frontend_src_app_app",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2961,7 +3101,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2971,7 +3111,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L52",
+      "source_location": "L53",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2981,7 +3121,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L70",
+      "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2991,7 +3131,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L87",
+      "source_location": "L88",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3001,7 +3141,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L96",
+      "source_location": "L97",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3012,7 +3152,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L160",
+      "source_location": "L164",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3023,7 +3163,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L91",
+      "source_location": "L92",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3748,6 +3888,26 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/data/dashboardFixtures.js",
       "source_location": "L86",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_data_dashboardfixtures",
+      "target": "frontend_src_data_dashboardfixtures_innovation_metrics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L89",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_data_dashboardfixtures",
+      "target": "frontend_src_data_dashboardfixtures_innovation_fixtures",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L96",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4824,6 +4984,125 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/tests/executive.test.jsx",
       "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_innovation_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/innovation.test.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_innovation_test",
+      "target": "ref_testing_library_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/innovation.test.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_innovation_test",
+      "target": "ref_testing_library_user_event",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/innovation.test.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_innovation_test",
+      "target": "frontend_src_app",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/innovation.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_innovation_test",
+      "target": "frontend_src_views_innovation",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/innovation.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_innovation_test",
+      "target": "frontend_src_data_dashboardfixtures",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/innovation.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_innovation_test",
+      "target": "frontend_src_data_dashboardfixtures_innovation_fixtures",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/innovation.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_innovation_test",
+      "target": "frontend_src_services_localstorage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/innovation.test.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_innovation_test",
+      "target": "frontend_src_services_localstorage_storage_keys",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/innovation.test.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_innovation_test",
+      "target": "frontend_src_tests_innovation_test_chart",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/innovation.test.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_innovation_test",
+      "target": "frontend_src_tests_innovation_test_metriclabels",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/innovation.test.jsx",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6013,6 +6292,156 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_views_innovation",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_innovation",
+      "target": "ref_prop_types",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_innovation",
+      "target": "frontend_src_components_chartpanel",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_innovation",
+      "target": "frontend_src_components_chartpanel_chartpanel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_innovation",
+      "target": "frontend_src_components_metriccard",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_innovation",
+      "target": "frontend_src_components_metriccard_metriccard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_innovation",
+      "target": "frontend_src_components_metriccard_displayvalue",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_innovation",
+      "target": "frontend_src_components_mockdatanotice",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_innovation",
+      "target": "frontend_src_components_mockdatanotice_mockdatanotice",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_innovation",
+      "target": "frontend_src_data_dashboardfixtures",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_innovation",
+      "target": "frontend_src_data_dashboardfixtures_innovation_fixtures",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_innovation",
+      "target": "frontend_src_data_dashboardfixtures_innovation_metrics",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_innovation",
+      "target": "frontend_src_views_innovation_innovation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_innovation",
+      "target": "react",
+      "relation": "dynamic_import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_views_operations",
       "target": "ref_react",
       "relation": "imports_from",
@@ -6537,6 +6966,17 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_app",
+      "target": "frontend_src_views_innovation_innovation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_main",
       "target": "frontend_src_app_app",
       "relation": "imports",
@@ -6614,6 +7054,28 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_tests_innovation_test",
+      "target": "frontend_src_app_app",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/innovation.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_innovation_test",
+      "target": "frontend_src_views_innovation_innovation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/innovation.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_tests_operations_test",
       "target": "frontend_src_app_app",
       "relation": "imports",
@@ -6686,7 +7148,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6697,7 +7159,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L39",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6708,7 +7170,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L39",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6719,7 +7181,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L53",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6730,7 +7192,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L75",
+      "source_location": "L76",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6741,7 +7203,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L160",
+      "source_location": "L164",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6889,6 +7351,17 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_views_innovation_innovation",
+      "target": "frontend_src_components_metriccard_displayvalue",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_views_operations_operations",
       "target": "frontend_src_components_metriccard_displayvalue",
       "relation": "calls",
@@ -6918,7 +7391,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6930,7 +7403,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L103",
+      "source_location": "L104",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6942,7 +7415,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L107",
+      "source_location": "L108",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6954,7 +7427,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L119",
+      "source_location": "L120",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6966,7 +7439,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L129",
+      "source_location": "L130",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6978,7 +7451,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L131",
+      "source_location": "L132",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6990,7 +7463,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L134",
+      "source_location": "L135",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7002,7 +7475,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L137",
+      "source_location": "L138",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7014,7 +7487,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L140",
+      "source_location": "L141",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7026,7 +7499,19 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L143",
+      "source_location": "L144",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_app",
+      "target": "frontend_src_views_innovation_innovation",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L147",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7038,7 +7523,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L151",
+      "source_location": "L155",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7050,7 +7535,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L39",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7062,7 +7547,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L39",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7074,7 +7559,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L53",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7086,7 +7571,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L75",
+      "source_location": "L76",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7223,6 +7708,42 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_views_innovation_innovation",
+      "target": "frontend_src_components_mockdatanotice_mockdatanotice",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_innovation_innovation",
+      "target": "frontend_src_components_metriccard_metriccard",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_innovation_innovation",
+      "target": "frontend_src_components_chartpanel_chartpanel",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/views/Innovation.jsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_views_operations_operations",
       "target": "frontend_src_components_mockdatanotice_mockdatanotice",
       "relation": "calls",
@@ -7320,10 +7841,10 @@
     }
   ],
   "metadata": {
-    "built_at": "2026-11-12T12:42:40.969071+00:00",
+    "built_at": "2026-11-12T12:46:07.439523+00:00",
     "version": "graph_update-v1",
     "codebase_root": "C:\\artifacts-v2\\T0132PcJVCRTV000412112609385810\\developer",
     "force": true,
-    "files_scanned": 45
+    "files_scanned": 48
   }
 }

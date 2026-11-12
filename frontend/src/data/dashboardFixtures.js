@@ -98,3 +98,25 @@ export const INNOVATION_FIXTURES = Object.freeze({
   labels: Object.freeze([]),
   distribution: Object.freeze({ displayState: 'not-specified', data: Object.freeze([]) }),
 });
+
+/** Preserve the four exact partnership KPIs without supplying performance values. */
+export const PARTNERSHIP_METRICS = Object.freeze([
+  'SLA performance',
+  'ROI',
+  'innovation velocity',
+  'delivery excellence',
+].map((label) => Object.freeze({ label, value: null, displayState: 'not-specified' })));
+
+/** Identify timeline series without inventing time periods, units or outcomes. */
+export const PARTNERSHIP_CHART_LABELS = Object.freeze(['Investment', 'Value']);
+
+/** Leave partnership intelligence and action definitions unresolved. */
+export const PARTNERSHIP_FIXTURES = Object.freeze({
+  metrics: PARTNERSHIP_METRICS,
+  labels: Object.freeze([]),
+  charts: Object.freeze(PARTNERSHIP_CHART_LABELS.map((label) => Object.freeze({
+    label,
+    displayState: 'not-specified',
+    data: Object.freeze([]),
+  }))),
+});

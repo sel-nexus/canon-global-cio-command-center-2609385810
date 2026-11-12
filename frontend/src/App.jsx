@@ -14,6 +14,7 @@ import BusinessImpact from './views/BusinessImpact.jsx';
 import Operations from './views/Operations.jsx';
 import RiskGovernance from './views/RiskGovernance.jsx';
 import Innovation from './views/Innovation.jsx';
+import Partnerships from './views/Partnerships.jsx';
 
 /** Restore demo state once and handle authentication only on explicit activation. */
 export default function App() {
@@ -145,6 +146,9 @@ export default function App() {
                 )}
                 {activeView === 'innovation' && (
                   <Innovation />
+                )}
+                {activeView === 'partnerships' && (
+                  <Partnerships />
                 )}
               </PanelErrorBoundary>
             </section>
