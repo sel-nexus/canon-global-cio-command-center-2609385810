@@ -13,7 +13,7 @@
       "label": "run_migrations_offline()",
       "file_type": "code",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L13",
+      "source_location": "L16",
       "_callable": true,
       "_origin": "ast"
     },
@@ -22,7 +22,7 @@
       "label": "run_migrations_online()",
       "file_type": "code",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L21",
+      "source_location": "L25",
       "_callable": true,
       "_origin": "ast"
     },
@@ -35,19 +35,19 @@
       "_origin": "ast"
     },
     {
-      "id": "backend_alembic_env_rationale_14",
+      "id": "backend_alembic_env_rationale_17",
       "label": "Render reviewed SQL without opening a database connection.",
       "file_type": "rationale",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L14",
+      "source_location": "L17",
       "_origin": "ast"
     },
     {
-      "id": "backend_alembic_env_rationale_22",
+      "id": "backend_alembic_env_rationale_26",
       "label": "Apply each version in a transaction using a temporary pooled engine.",
       "file_type": "rationale",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L22",
+      "source_location": "L26",
       "_origin": "ast"
     },
     {
@@ -1703,7 +1703,7 @@
       "label": "create_app()",
       "file_type": "code",
       "source_file": "backend/app/main.py",
-      "source_location": "L21",
+      "source_location": "L24",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1720,7 +1720,7 @@
       "label": "lifespan()",
       "file_type": "code",
       "source_file": "backend/app/main.py",
-      "source_location": "L26",
+      "source_location": "L29",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1729,7 +1729,7 @@
       "label": "invalid_credentials()",
       "file_type": "code",
       "source_file": "backend/app/main.py",
-      "source_location": "L47",
+      "source_location": "L51",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1738,7 +1738,7 @@
       "label": "validation_error()",
       "file_type": "code",
       "source_file": "backend/app/main.py",
-      "source_location": "L53",
+      "source_location": "L57",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1747,7 +1747,7 @@
       "label": "database_error()",
       "file_type": "code",
       "source_file": "backend/app/main.py",
-      "source_location": "L59",
+      "source_location": "L63",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1756,7 +1756,7 @@
       "label": "unexpected_error()",
       "file_type": "code",
       "source_file": "backend/app/main.py",
-      "source_location": "L65",
+      "source_location": "L69",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1765,7 +1765,16 @@
       "label": "health()",
       "file_type": "code",
       "source_file": "backend/app/main.py",
-      "source_location": "L71",
+      "source_location": "L75",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_main_upgrade_database",
+      "label": "upgrade_database()",
+      "file_type": "code",
+      "source_file": "backend/app/main.py",
+      "source_location": "L82",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1774,7 +1783,7 @@
       "label": "seed_account()",
       "file_type": "code",
       "source_file": "backend/app/main.py",
-      "source_location": "L78",
+      "source_location": "L89",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1787,19 +1796,27 @@
       "_origin": "ast"
     },
     {
-      "id": "backend_app_main_rationale_22",
+      "id": "backend_app_main_rationale_25",
       "label": "Build a separately deployable API without opening connections at import.",
       "file_type": "rationale",
       "source_file": "backend/app/main.py",
-      "source_location": "L22",
+      "source_location": "L25",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_main_rationale_79",
+      "id": "backend_app_main_rationale_83",
+      "label": "Apply reviewed migrations to this app's database without changing the\u2026",
+      "file_type": "rationale",
+      "source_file": "backend/app/main.py",
+      "source_location": "L83",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_main_rationale_90",
       "label": "Seed development credentials only when explicitly enabled.",
       "file_type": "rationale",
       "source_file": "backend/app/main.py",
-      "source_location": "L79",
+      "source_location": "L90",
       "_origin": "ast"
     },
     {
@@ -1994,6 +2011,15 @@
       "_origin": "ast"
     },
     {
+      "id": "backend_tests_test_assistant_api_test_long_unicode_prompt_returns_201_and_persists_only_exact_response",
+      "label": "test_long_unicode_prompt_returns_201_and_persists_only_exact_response()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_assistant_api.py",
+      "source_location": "L107",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
       "id": "backend_tests_test_assistant_api_rationale_1",
       "label": "Exercise history HTTP validation, authorization and real PostgreSQL state.",
       "file_type": "rationale",
@@ -2055,6 +2081,14 @@
       "file_type": "rationale",
       "source_file": "backend/tests/test_assistant_api.py",
       "source_location": "L85",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_assistant_api_rationale_108",
+      "label": "Accept long Unicode HTTP input and reread only its resolved response from SQL.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_assistant_api.py",
+      "source_location": "L108",
       "_origin": "ast"
     },
     {
@@ -2162,7 +2196,7 @@
       "label": "test_register_login_me_logout_http_contract_and_persisted_state()",
       "file_type": "code",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L10",
+      "source_location": "L17",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2171,7 +2205,7 @@
       "label": "test_duplicate_registration_is_409_and_leaves_saved_hash_unchanged()",
       "file_type": "code",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L42",
+      "source_location": "L49",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2188,7 +2222,7 @@
       "label": "test_invalid_credentials_are_422_without_echoing_password()",
       "file_type": "code",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L57",
+      "source_location": "L64",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2197,7 +2231,7 @@
       "label": "test_wrong_password_and_absent_user_share_generic_401()",
       "file_type": "code",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L64",
+      "source_location": "L71",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2206,7 +2240,7 @@
       "label": "test_missing_or_malformed_bearer_is_generic_401()",
       "file_type": "code",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L74",
+      "source_location": "L81",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2215,7 +2249,7 @@
       "label": "test_signed_invalid_session_is_rejected_over_http()",
       "file_type": "code",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L84",
+      "source_location": "L91",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2224,7 +2258,7 @@
       "label": "test_health_is_dependency_free_and_account_text_is_not_executable()",
       "file_type": "code",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L100",
+      "source_location": "L107",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2233,7 +2267,34 @@
       "label": "test_health_requires_no_database_or_lifespan()",
       "file_type": "code",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L110",
+      "source_location": "L117",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database",
+      "label": "test_http_failures_are_sanitized_without_substituting_database()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L132",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database_fail_registration",
+      "label": "fail_registration()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L141",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database_real_database",
+      "label": "real_database()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L150",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2246,67 +2307,75 @@
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_auth_api_rationale_11",
+      "id": "backend_tests_test_auth_api_rationale_18",
       "label": "Exercise public account serialization, restoration and revocation over HTTP.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L11",
+      "source_location": "L18",
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_auth_api_rationale_43",
+      "id": "backend_tests_test_auth_api_rationale_50",
       "label": "Do not overwrite canonical duplicates or leak private account fields.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L43",
-      "_origin": "ast"
-    },
-    {
-      "id": "backend_tests_test_auth_api_rationale_58",
-      "label": "Reject missing, typed, empty, oversized and owner-injection inputs safely.",
-      "file_type": "rationale",
-      "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L58",
+      "source_location": "L50",
       "_origin": "ast"
     },
     {
       "id": "backend_tests_test_auth_api_rationale_65",
-      "label": "Make username existence indistinguishable in response bodies and status.",
+      "label": "Reject missing, typed, empty, oversized and owner-injection inputs safely.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_auth_api.py",
       "source_location": "L65",
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_auth_api_rationale_75",
+      "id": "backend_tests_test_auth_api_rationale_72",
+      "label": "Make username existence indistinguishable in response bodies and status.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L72",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_auth_api_rationale_82",
       "label": "Reject both protected auth operations without valid server credentials.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L75",
+      "source_location": "L82",
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_auth_api_rationale_85",
+      "id": "backend_tests_test_auth_api_rationale_92",
       "label": "Validate database ownership and lifetime in addition to signed JWT claims.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L85",
+      "source_location": "L92",
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_auth_api_rationale_101",
+      "id": "backend_tests_test_auth_api_rationale_108",
       "label": "Keep health stable and preserve potentially hostile usernames as JSON text.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L101",
+      "source_location": "L108",
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_auth_api_rationale_111",
+      "id": "backend_tests_test_auth_api_rationale_118",
       "label": "Exercise liveness with no database dependency even while PostgreSQL is down.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L111",
+      "source_location": "L118",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_auth_api_rationale_135",
+      "label": "Exercise real HTTP exception handlers with a safe service-boundary fault.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L135",
       "_origin": "ast"
     },
     {
@@ -2322,7 +2391,7 @@
       "label": "test_registration_hashes_exact_long_password_and_rejects_duplicate()",
       "file_type": "code",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L13",
+      "source_location": "L14",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2331,7 +2400,7 @@
       "label": "test_login_logout_revokes_only_current_session_and_retains_account()",
       "file_type": "code",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L31",
+      "source_location": "L32",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2348,7 +2417,7 @@
       "label": "test_invalid_login_creates_no_session()",
       "file_type": "code",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L50",
+      "source_location": "L51",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2357,7 +2426,7 @@
       "label": "test_authentication_rejects_invalid_session_states()",
       "file_type": "code",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L60",
+      "source_location": "L61",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2366,7 +2435,7 @@
       "label": "test_hashes_are_salted_and_corrupt_hashes_fail_closed()",
       "file_type": "code",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L79",
+      "source_location": "L80",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2375,7 +2444,7 @@
       "label": "test_seed_is_gated_idempotent_and_never_resets_password()",
       "file_type": "code",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L89",
+      "source_location": "L90",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2384,7 +2453,43 @@
       "label": "test_database_enforces_foreign_key_unique_not_null_and_cascade()",
       "file_type": "code",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L103",
+      "source_location": "L104",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_auth_service_test_registration_save_time_unique_race_rolls_back_and_preserves_winner",
+      "label": "test_registration_save_time_unique_race_rolls_back_and_preserves_winner()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L120",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_auth_service_test_registration_save_time_unique_race_rolls_back_and_preserves_winner_save_after_winner",
+      "label": "save_after_winner()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L127",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_auth_service_test_registration_nonunique_integrity_failure_propagates_after_rollback",
+      "label": "test_registration_nonunique_integrity_failure_propagates_after_rollback()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L149",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_auth_service_test_registration_nonunique_integrity_failure_propagates_after_rollback_save_with_missing_hash",
+      "label": "save_with_missing_hash()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L157",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2397,59 +2502,200 @@
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_auth_service_rationale_14",
+      "id": "backend_tests_test_auth_service_rationale_15",
       "label": "Persist salted full-password hashes and preserve existing credentials on\u2026",
       "file_type": "rationale",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L14",
+      "source_location": "L15",
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_auth_service_rationale_32",
+      "id": "backend_tests_test_auth_service_rationale_33",
       "label": "Save distinct sessions and preserve another login after one logout.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L32",
+      "source_location": "L33",
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_auth_service_rationale_51",
+      "id": "backend_tests_test_auth_service_rationale_52",
       "label": "Reject absent users and mismatched or trimmed passwords without session writes.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L51",
+      "source_location": "L52",
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_auth_service_rationale_61",
+      "id": "backend_tests_test_auth_service_rationale_62",
       "label": "Enforce JWT signature/expiry and the persisted jti-owner-lifetime boundary.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L61",
+      "source_location": "L62",
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_auth_service_rationale_80",
+      "id": "backend_tests_test_auth_service_rationale_81",
       "label": "Preserve full Unicode/NUL material without accepting invalid stored hashes.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L80",
+      "source_location": "L81",
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_auth_service_rationale_90",
+      "id": "backend_tests_test_auth_service_rationale_91",
       "label": "Seed only when enabled and preserve account hashes on repeated startups.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L90",
+      "source_location": "L91",
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_auth_service_rationale_104",
+      "id": "backend_tests_test_auth_service_rationale_105",
       "label": "Verify actual PostgreSQL integrity rather than repository stand-ins.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L104",
+      "source_location": "L105",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_auth_service_rationale_121",
+      "label": "Interleave a winning insert after lookup and exercise the real 23505 catch.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L121",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_auth_service_rationale_150",
+      "label": "Propagate a real PostgreSQL NOT NULL error rather than a username conflict.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L150",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_integration",
+      "label": "test_integration.py",
+      "file_type": "code",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "asyncio",
+      "label": "asyncio",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_integration_test_accounts_history_isolation_revocation_and_relogin",
+      "label": "test_accounts_history_isolation_revocation_and_relogin()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L9",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_integration_test_invalid_upstream_auth_never_writes_history",
+      "label": "test_invalid_upstream_auth_never_writes_history()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L48",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_integration_rationale_1",
+      "label": "Verify authentication, assistant persistence and revocation across real feature\u2026",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_integration_rationale_10",
+      "label": "Retain only each account's responses across logout and a new persisted session.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_integration_rationale_49",
+      "label": "Propagate missing identity and invalid credentials without orphan response\u2026",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L49",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_startup",
+      "label": "test_startup.py",
+      "file_type": "code",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_startup_py_fixture",
+      "label": "fixture",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_startup_fresh_startup_settings",
+      "label": "fresh_startup_settings()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L21",
+      "_py_fixture": "Settings",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_startup_py_parametrize",
+      "label": "parametrize",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_startup_test_fresh_startup_migrates_and_repeated_startup_disposes_pool",
+      "label": "test_fresh_startup_migrates_and_repeated_startup_disposes_pool()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L45",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_startup_rationale_1",
+      "label": "Exercise fresh and repeated startup using only lifespan-owned PostgreSQL\u2026",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_startup_rationale_22",
+      "label": "Reserve a nonexistent database and remove only that database after the test.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_startup_rationale_48",
+      "label": "Create account/history tables before seed and preserve them across clean\u2026",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L48",
       "_origin": "ast"
     },
     {
@@ -2475,7 +2721,7 @@
       "label": "buildEvidence()",
       "file_type": "code",
       "source_file": "frontend/e2e/access.spec.js",
-      "source_location": "L46",
+      "source_location": "L57",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2484,7 +2730,7 @@
       "label": "visit()",
       "file_type": "code",
       "source_file": "frontend/e2e/access.spec.js",
-      "source_location": "L49",
+      "source_location": "L60",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2502,6 +2748,47 @@
       "file_type": "code",
       "source_file": "frontend/e2e/assistant.spec.js",
       "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_assistant_spec_assertcreated",
+      "label": "assertCreated()",
+      "file_type": "code",
+      "source_file": "frontend/e2e/assistant.spec.js",
+      "source_location": "L22",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_browser_teardown",
+      "label": "browser-teardown.cjs",
+      "file_type": "code",
+      "source_file": "frontend/e2e/browser-teardown.cjs",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_browser_teardown_execfile",
+      "label": "{ execFile }",
+      "file_type": "code",
+      "source_file": "frontend/e2e/browser-teardown.cjs",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_browser_teardown_promisify",
+      "label": "{ promisify }",
+      "file_type": "code",
+      "source_file": "frontend/e2e/browser-teardown.cjs",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_browser_teardown_path",
+      "label": "path",
+      "file_type": "code",
+      "source_file": "frontend/e2e/browser-teardown.cjs",
+      "source_location": "L4",
       "_origin": "ast"
     },
     {
@@ -2554,6 +2841,39 @@
       "_origin": "ast"
     },
     {
+      "id": "frontend_e2e_drop_browser_database",
+      "label": "drop_browser_database.py",
+      "file_type": "code",
+      "source_file": "frontend/e2e/drop_browser_database.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_drop_browser_database_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "frontend/e2e/drop_browser_database.py",
+      "source_location": "L6",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_drop_browser_database_rationale_1",
+      "label": "Remove exactly one browser-run database through its configured maintenance\u2026",
+      "file_type": "rationale",
+      "source_file": "frontend/e2e/drop_browser_database.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_drop_browser_database_rationale_7",
+      "label": "Validate isolation before connecting; fail visibly rather than dropping another\u2026",
+      "file_type": "rationale",
+      "source_file": "frontend/e2e/drop_browser_database.py",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_e2e_executive_spec",
       "label": "executive.spec.js",
       "file_type": "code",
@@ -2571,34 +2891,66 @@
       "community": 4
     },
     {
+      "id": "frontend_e2e_helpers_test_password",
+      "label": "TEST_PASSWORD",
+      "file_type": "code",
+      "source_file": "frontend/e2e/helpers.js",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_helpers_accounts",
+      "label": "accounts",
+      "file_type": "code",
+      "source_file": "frontend/e2e/helpers.js",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_helpers_uniqueusername",
+      "label": "uniqueUsername()",
+      "file_type": "code",
+      "source_file": "frontend/e2e/helpers.js",
+      "source_location": "L9",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_helpers_apiresponse",
+      "label": "apiResponse()",
+      "file_type": "code",
+      "source_file": "frontend/e2e/helpers.js",
+      "source_location": "L14",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_e2e_helpers_guardbrowser",
       "label": "guardBrowser()",
       "file_type": "code",
       "source_file": "frontend/e2e/helpers.js",
-      "source_location": "L10",
+      "source_location": "L25",
       "_callable": true,
       "_origin": "ast",
       "community": 4
     },
     {
-      "id": "frontend_e2e_helpers_registerdemo",
-      "label": "registerDemo()",
+      "id": "frontend_e2e_helpers_registeraccount",
+      "label": "registerAccount()",
       "file_type": "code",
       "source_file": "frontend/e2e/helpers.js",
-      "source_location": "L27",
+      "source_location": "L74",
       "_callable": true,
-      "_origin": "ast",
-      "community": 4
+      "_origin": "ast"
     },
     {
-      "id": "frontend_e2e_helpers_logindemo",
-      "label": "loginDemo()",
+      "id": "frontend_e2e_helpers_loginaccount",
+      "label": "loginAccount()",
       "file_type": "code",
       "source_file": "frontend/e2e/helpers.js",
-      "source_location": "L36",
+      "source_location": "L95",
       "_callable": true,
-      "_origin": "ast",
-      "community": 4
+      "_origin": "ast"
     },
     {
       "id": "frontend_e2e_innovation_spec",
@@ -2649,11 +3001,20 @@
       "_origin": "ast"
     },
     {
+      "id": "frontend_e2e_server_history_spec_whilehistoryrequestpending",
+      "label": "whileHistoryRequestPending()",
+      "file_type": "code",
+      "source_file": "frontend/e2e/server-history.spec.js",
+      "source_location": "L6",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_e2e_server_history_spec_signin",
       "label": "signIn()",
       "file_type": "code",
       "source_file": "frontend/e2e/server-history.spec.js",
-      "source_location": "L6",
+      "source_location": "L40",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2662,7 +3023,7 @@
       "label": "openHistory()",
       "file_type": "code",
       "source_file": "frontend/e2e/server-history.spec.js",
-      "source_location": "L28",
+      "source_location": "L62",
       "_callable": true,
       "_origin": "ast"
     },
@@ -3106,38 +3467,84 @@
       "community": 4
     },
     {
-      "id": "frontend_playwright_config",
-      "label": "playwright.config.js",
+      "id": "frontend_playwright_config_cjs_frontend_playwright_config",
+      "label": "playwright.config.cjs",
       "file_type": "code",
-      "source_file": "frontend/playwright.config.js",
+      "source_file": "frontend/playwright.config.cjs",
       "source_location": "L1",
-      "_origin": "ast",
-      "community": 4
+      "_origin": "ast"
     },
     {
-      "id": "frontend_playwright_config_env",
-      "label": "env",
+      "id": "frontend_playwright_config_defineconfig_devices",
+      "label": "{ defineConfig, devices }",
       "file_type": "code",
-      "source_file": "frontend/playwright.config.js",
+      "source_file": "frontend/playwright.config.cjs",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_playwright_config_path",
+      "label": "path",
+      "file_type": "code",
+      "source_file": "frontend/playwright.config.cjs",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_playwright_config_os",
+      "label": "os",
+      "file_type": "code",
+      "source_file": "frontend/playwright.config.cjs",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_playwright_config_randomuuid",
+      "label": "{ randomUUID }",
+      "file_type": "code",
+      "source_file": "frontend/playwright.config.cjs",
       "source_location": "L5",
-      "_origin": "ast",
-      "community": 4
+      "_origin": "ast"
     },
     {
       "id": "frontend_playwright_config_port",
       "label": "port",
       "file_type": "code",
-      "source_file": "frontend/playwright.config.js",
-      "source_location": "L6",
+      "source_file": "frontend/playwright.config.cjs",
+      "source_location": "L9",
       "_origin": "ast",
       "community": 4
+    },
+    {
+      "id": "frontend_playwright_config_backendport",
+      "label": "backendPort",
+      "file_type": "code",
+      "source_file": "frontend/playwright.config.cjs",
+      "source_location": "L11",
+      "_origin": "ast"
     },
     {
       "id": "frontend_playwright_config_harnessport",
       "label": "harnessPort",
       "file_type": "code",
+      "source_file": "frontend/playwright.config.cjs",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_playwright_config_python",
+      "label": "python",
+      "file_type": "code",
+      "source_file": "frontend/playwright.config.cjs",
+      "source_location": "L24",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_playwright_config_js_frontend_playwright_config",
+      "label": "playwright.config.js",
+      "file_type": "code",
       "source_file": "frontend/playwright.config.js",
-      "source_location": "L9",
+      "source_location": "L1",
       "_origin": "ast"
     },
     {
@@ -4727,6 +5134,22 @@
       "source_file": "playwright-recovery.config.cjs",
       "source_location": "L4",
       "_origin": "ast"
+    },
+    {
+      "id": "verify_postgres",
+      "label": "verify-postgres.py",
+      "file_type": "code",
+      "source_file": "verify-postgres.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "verify_postgres_rationale_1",
+      "label": "Keep the real PostgreSQL process owned by the verification command.",
+      "file_type": "rationale",
+      "source_file": "verify-postgres.py",
+      "source_location": "L1",
+      "_origin": "ast"
     }
   ],
   "links": [
@@ -4737,7 +5160,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L3",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4748,7 +5171,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L4",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4759,7 +5182,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L5",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4770,7 +5193,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L6",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4780,7 +5203,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L13",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4790,7 +5213,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L21",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4805,22 +5228,22 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_alembic_env_rationale_14",
+      "source": "backend_alembic_env_rationale_17",
       "target": "backend_alembic_env_run_migrations_offline",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L14",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_alembic_env_rationale_22",
+      "source": "backend_alembic_env_rationale_26",
       "target": "backend_alembic_env_run_migrations_online",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L22",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7944,7 +8367,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L5",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7955,7 +8378,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L12",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7966,7 +8389,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L13",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7977,7 +8400,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L14",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7988,7 +8411,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L15",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7999,7 +8422,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L16",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8009,7 +8432,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L21",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8020,7 +8443,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L21",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8031,7 +8454,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L21",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8041,7 +8464,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L26",
+      "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8051,7 +8474,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L47",
+      "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8061,7 +8484,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L53",
+      "source_location": "L57",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8071,7 +8494,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L59",
+      "source_location": "L63",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8081,7 +8504,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L65",
+      "source_location": "L69",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8091,7 +8514,28 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L71",
+      "source_location": "L75",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_main",
+      "target": "backend_app_main_upgrade_database",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L82",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_main_upgrade_database",
+      "target": "backend_app_core_config_settings",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L82",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8101,7 +8545,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L78",
+      "source_location": "L89",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8112,7 +8556,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L78",
+      "source_location": "L89",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8124,7 +8568,19 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "backend/app/main.py",
-      "source_location": "L39",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_main_create_app_lifespan",
+      "target": "backend_app_main_upgrade_database",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/main.py",
+      "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8136,7 +8592,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "backend/app/main.py",
-      "source_location": "L33",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8151,22 +8607,32 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_app_main_rationale_22",
+      "source": "backend_app_main_rationale_25",
       "target": "backend_app_main_create_app",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L22",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_main_rationale_79",
+      "source": "backend_app_main_rationale_83",
+      "target": "backend_app_main_upgrade_database",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L83",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_main_rationale_90",
       "target": "backend_app_main_seed_account",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L79",
+      "source_location": "L90",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8608,6 +9074,27 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_assistant_api_test_long_unicode_prompt_returns_201_and_persists_only_exact_response",
+      "target": "backend_tests_test_assistant_api_py_parametrize",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_assistant_api.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_assistant_api",
+      "target": "backend_tests_test_assistant_api_test_long_unicode_prompt_returns_201_and_persists_only_exact_response",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_assistant_api.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_assistant_api_test_history_response_shapes_order_pagination_and_owner_isolation",
       "target": "backend_tests_test_assistant_api_headers",
       "relation": "indirect_call",
@@ -8649,6 +9136,17 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_assistant_api.py",
       "source_location": "L96",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_assistant_api_test_long_unicode_prompt_returns_201_and_persists_only_exact_response",
+      "target": "backend_tests_test_assistant_api_headers",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_assistant_api.py",
+      "source_location": "L111",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8729,6 +9227,16 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_assistant_api.py",
       "source_location": "L85",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_assistant_api_rationale_108",
+      "target": "backend_tests_test_assistant_api_test_long_unicode_prompt_returns_201_and_persists_only_exact_response",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_assistant_api.py",
+      "source_location": "L108",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8917,7 +9425,51 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L6",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api",
+      "target": "backend_app_auth_schema",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api",
+      "target": "backend_app_auth_service",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api",
+      "target": "backend_app_core_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api",
+      "target": "backend_app_main",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8928,7 +9480,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L7",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8938,7 +9490,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L10",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8948,7 +9500,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L42",
+      "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8958,7 +9510,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L51",
+      "source_location": "L58",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -8969,7 +9521,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L56",
+      "source_location": "L63",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -8980,7 +9532,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L57",
+      "source_location": "L64",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8990,7 +9542,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L64",
+      "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9000,7 +9552,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L72",
+      "source_location": "L79",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -9011,7 +9563,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L73",
+      "source_location": "L80",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -9022,7 +9574,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L74",
+      "source_location": "L81",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9032,7 +9584,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L83",
+      "source_location": "L90",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -9043,7 +9595,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L84",
+      "source_location": "L91",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9053,7 +9605,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L100",
+      "source_location": "L107",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9063,7 +9615,72 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L110",
+      "source_location": "L117",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database",
+      "target": "backend_tests_test_auth_api_py_parametrize",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L128",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api",
+      "target": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L132",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database",
+      "target": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database_fail_registration",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L141",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database",
+      "target": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database_real_database",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L150",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database",
+      "target": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database_real_database",
+      "relation": "indirect_call",
+      "context": "assignment",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L155",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database",
+      "target": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database_fail_registration",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L156",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9078,38 +9695,28 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_auth_api_rationale_11",
+      "source": "backend_tests_test_auth_api_rationale_18",
       "target": "backend_tests_test_auth_api_test_register_login_me_logout_http_contract_and_persisted_state",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L11",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_auth_api_rationale_43",
+      "source": "backend_tests_test_auth_api_rationale_50",
       "target": "backend_tests_test_auth_api_test_duplicate_registration_is_409_and_leaves_saved_hash_unchanged",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L43",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_api_rationale_58",
-      "target": "backend_tests_test_auth_api_test_invalid_credentials_are_422_without_echoing_password",
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L58",
+      "source_location": "L50",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_auth_api_rationale_65",
-      "target": "backend_tests_test_auth_api_test_wrong_password_and_absent_user_share_generic_401",
+      "target": "backend_tests_test_auth_api_test_invalid_credentials_are_422_without_echoing_password",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
@@ -9118,42 +9725,62 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_auth_api_rationale_75",
+      "source": "backend_tests_test_auth_api_rationale_72",
+      "target": "backend_tests_test_auth_api_test_wrong_password_and_absent_user_share_generic_401",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api_rationale_82",
       "target": "backend_tests_test_auth_api_test_missing_or_malformed_bearer_is_generic_401",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L75",
+      "source_location": "L82",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_auth_api_rationale_85",
+      "source": "backend_tests_test_auth_api_rationale_92",
       "target": "backend_tests_test_auth_api_test_signed_invalid_session_is_rejected_over_http",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L85",
+      "source_location": "L92",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_auth_api_rationale_101",
+      "source": "backend_tests_test_auth_api_rationale_108",
       "target": "backend_tests_test_auth_api_test_health_is_dependency_free_and_account_text_is_not_executable",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L101",
+      "source_location": "L108",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_auth_api_rationale_111",
+      "source": "backend_tests_test_auth_api_rationale_118",
       "target": "backend_tests_test_auth_api_test_health_requires_no_database_or_lifespan",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L111",
+      "source_location": "L118",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api_rationale_135",
+      "target": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L135",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9175,7 +9802,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9186,7 +9813,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9197,7 +9824,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9208,7 +9835,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9218,7 +9845,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9228,7 +9855,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9238,7 +9865,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L49",
+      "source_location": "L50",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -9249,7 +9876,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L50",
+      "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9259,7 +9886,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L59",
+      "source_location": "L60",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -9270,7 +9897,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L60",
+      "source_location": "L61",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9280,7 +9907,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L79",
+      "source_location": "L80",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9290,7 +9917,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L89",
+      "source_location": "L90",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9300,7 +9927,71 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L103",
+      "source_location": "L104",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service",
+      "target": "backend_tests_test_auth_service_test_registration_save_time_unique_race_rolls_back_and_preserves_winner",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L120",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_save_time_unique_race_rolls_back_and_preserves_winner",
+      "target": "backend_tests_test_auth_service_test_registration_save_time_unique_race_rolls_back_and_preserves_winner_save_after_winner",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L127",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service",
+      "target": "backend_tests_test_auth_service_test_registration_nonunique_integrity_failure_propagates_after_rollback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L149",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_nonunique_integrity_failure_propagates_after_rollback",
+      "target": "backend_tests_test_auth_service_test_registration_nonunique_integrity_failure_propagates_after_rollback_save_with_missing_hash",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L157",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_save_time_unique_race_rolls_back_and_preserves_winner",
+      "target": "backend_tests_test_auth_service_test_registration_save_time_unique_race_rolls_back_and_preserves_winner_save_after_winner",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L132",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_nonunique_integrity_failure_propagates_after_rollback",
+      "target": "backend_tests_test_auth_service_test_registration_nonunique_integrity_failure_propagates_after_rollback_save_with_missing_hash",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L166",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9315,72 +10006,302 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_auth_service_rationale_14",
+      "source": "backend_tests_test_auth_service_rationale_15",
       "target": "backend_tests_test_auth_service_test_registration_hashes_exact_long_password_and_rejects_duplicate",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_auth_service_rationale_32",
+      "source": "backend_tests_test_auth_service_rationale_33",
       "target": "backend_tests_test_auth_service_test_login_logout_revokes_only_current_session_and_retains_account",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_auth_service_rationale_51",
+      "source": "backend_tests_test_auth_service_rationale_52",
       "target": "backend_tests_test_auth_service_test_invalid_login_creates_no_session",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L51",
+      "source_location": "L52",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_auth_service_rationale_61",
+      "source": "backend_tests_test_auth_service_rationale_62",
       "target": "backend_tests_test_auth_service_test_authentication_rejects_invalid_session_states",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L61",
+      "source_location": "L62",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_auth_service_rationale_80",
+      "source": "backend_tests_test_auth_service_rationale_81",
       "target": "backend_tests_test_auth_service_test_hashes_are_salted_and_corrupt_hashes_fail_closed",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L80",
+      "source_location": "L81",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_auth_service_rationale_90",
+      "source": "backend_tests_test_auth_service_rationale_91",
       "target": "backend_tests_test_auth_service_test_seed_is_gated_idempotent_and_never_resets_password",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L90",
+      "source_location": "L91",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_auth_service_rationale_104",
+      "source": "backend_tests_test_auth_service_rationale_105",
       "target": "backend_tests_test_auth_service_test_database_enforces_foreign_key_unique_not_null_and_cascade",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L104",
+      "source_location": "L105",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_rationale_121",
+      "target": "backend_tests_test_auth_service_test_registration_save_time_unique_race_rolls_back_and_preserves_winner",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L121",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_rationale_150",
+      "target": "backend_tests_test_auth_service_test_registration_nonunique_integrity_failure_propagates_after_rollback",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L150",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration",
+      "target": "backend_app_auth_model",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration",
+      "target": "backend_app_assistant_model",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_test_accounts_history_isolation_revocation_and_relogin",
+      "target": "asyncio",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration",
+      "target": "backend_tests_test_integration_test_accounts_history_isolation_revocation_and_relogin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_test_invalid_upstream_auth_never_writes_history",
+      "target": "asyncio",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration",
+      "target": "backend_tests_test_integration_test_invalid_upstream_auth_never_writes_history",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_rationale_1",
+      "target": "backend_tests_test_integration",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_rationale_10",
+      "target": "backend_tests_test_integration_test_accounts_history_isolation_revocation_and_relogin",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_rationale_49",
+      "target": "backend_tests_test_integration_test_invalid_upstream_auth_never_writes_history",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_startup",
+      "target": "backend_app_core_config",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_startup",
+      "target": "backend_app_main",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_startup_fresh_startup_settings",
+      "target": "backend_tests_test_startup_py_fixture",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_startup",
+      "target": "backend_tests_test_startup_fresh_startup_settings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_startup_fresh_startup_settings",
+      "target": "backend_app_core_config_settings",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_startup_test_fresh_startup_migrates_and_repeated_startup_disposes_pool",
+      "target": "backend_tests_test_startup_py_parametrize",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_startup",
+      "target": "backend_tests_test_startup_test_fresh_startup_migrates_and_repeated_startup_disposes_pool",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_startup_test_fresh_startup_migrates_and_repeated_startup_disposes_pool",
+      "target": "backend_app_core_config_settings",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_startup_rationale_1",
+      "target": "backend_tests_test_startup",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_startup_rationale_22",
+      "target": "backend_tests_test_startup_fresh_startup_settings",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_startup_rationale_48",
+      "target": "backend_tests_test_startup_test_fresh_startup_migrates_and_repeated_startup_disposes_pool",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L48",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9419,7 +10340,7 @@
     },
     {
       "source": "frontend_e2e_access_spec",
-      "target": "frontend_e2e_helpers_registerdemo",
+      "target": "frontend_e2e_helpers_registeraccount",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9430,7 +10351,40 @@
     },
     {
       "source": "frontend_e2e_access_spec",
-      "target": "frontend_e2e_helpers_logindemo",
+      "target": "frontend_e2e_helpers_loginaccount",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/access.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_access_spec",
+      "target": "frontend_e2e_helpers_apiresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/access.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_access_spec",
+      "target": "frontend_e2e_helpers_uniqueusername",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/access.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_access_spec",
+      "target": "frontend_e2e_helpers_test_password",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9455,7 +10409,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/access.spec.js",
-      "source_location": "L46",
+      "source_location": "L57",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9465,7 +10419,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/access.spec.js",
-      "source_location": "L49",
+      "source_location": "L60",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9476,7 +10430,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/access.spec.js",
-      "source_location": "L56",
+      "source_location": "L67",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9487,7 +10441,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/access.spec.js",
-      "source_location": "L52",
+      "source_location": "L63",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9498,7 +10452,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/access.spec.js",
-      "source_location": "L69",
+      "source_location": "L80",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9509,7 +10463,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/access.spec.js",
-      "source_location": "L97",
+      "source_location": "L111",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9548,7 +10502,7 @@
     },
     {
       "source": "frontend_e2e_assistant_spec",
-      "target": "frontend_e2e_helpers_registerdemo",
+      "target": "frontend_e2e_helpers_registeraccount",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9559,7 +10513,18 @@
     },
     {
       "source": "frontend_e2e_assistant_spec",
-      "target": "frontend_e2e_helpers_logindemo",
+      "target": "frontend_e2e_helpers_loginaccount",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/assistant.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_assistant_spec",
+      "target": "frontend_e2e_helpers_apiresponse",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9579,6 +10544,57 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_e2e_assistant_spec",
+      "target": "frontend_e2e_assistant_spec_assertcreated",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/assistant.spec.js",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_assistant_spec",
+      "target": "frontend_e2e_assistant_spec_assertcreated",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/assistant.spec.js",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_browser_teardown",
+      "target": "frontend_e2e_browser_teardown_execfile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/browser-teardown.cjs",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_browser_teardown",
+      "target": "frontend_e2e_browser_teardown_promisify",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/browser-teardown.cjs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_browser_teardown",
+      "target": "frontend_e2e_browser_teardown_path",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/browser-teardown.cjs",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_e2e_business_spec",
       "target": "ref_playwright_test",
       "relation": "imports_from",
@@ -9613,7 +10629,7 @@
     },
     {
       "source": "frontend_e2e_business_spec",
-      "target": "frontend_e2e_helpers_registerdemo",
+      "target": "frontend_e2e_helpers_registeraccount",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9624,7 +10640,7 @@
     },
     {
       "source": "frontend_e2e_business_spec",
-      "target": "frontend_e2e_helpers_logindemo",
+      "target": "frontend_e2e_helpers_loginaccount",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9730,6 +10746,36 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_e2e_drop_browser_database",
+      "target": "frontend_e2e_drop_browser_database_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/drop_browser_database.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_drop_browser_database_rationale_1",
+      "target": "frontend_e2e_drop_browser_database",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/drop_browser_database.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_drop_browser_database_rationale_7",
+      "target": "frontend_e2e_drop_browser_database_main",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/drop_browser_database.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_e2e_executive_spec",
       "target": "ref_playwright_test",
       "relation": "imports_from",
@@ -9764,7 +10810,7 @@
     },
     {
       "source": "frontend_e2e_executive_spec",
-      "target": "frontend_e2e_helpers_registerdemo",
+      "target": "frontend_e2e_helpers_registeraccount",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9775,7 +10821,7 @@
     },
     {
       "source": "frontend_e2e_executive_spec",
-      "target": "frontend_e2e_helpers_logindemo",
+      "target": "frontend_e2e_helpers_loginaccount",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9792,6 +10838,46 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/helpers.js",
       "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_helpers",
+      "target": "frontend_e2e_helpers_test_password",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/helpers.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_helpers",
+      "target": "frontend_e2e_helpers_accounts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/helpers.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_helpers",
+      "target": "frontend_e2e_helpers_uniqueusername",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/helpers.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_helpers",
+      "target": "frontend_e2e_helpers_apiresponse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/helpers.js",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9801,27 +10887,49 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/helpers.js",
-      "source_location": "L10",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
       "source": "frontend_e2e_helpers",
-      "target": "frontend_e2e_helpers_registerdemo",
+      "target": "frontend_e2e_helpers_registeraccount",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/helpers.js",
-      "source_location": "L27",
+      "source_location": "L74",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
       "source": "frontend_e2e_helpers",
-      "target": "frontend_e2e_helpers_logindemo",
+      "target": "frontend_e2e_helpers_loginaccount",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/helpers.js",
-      "source_location": "L36",
+      "source_location": "L95",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_helpers_registeraccount",
+      "target": "frontend_e2e_helpers_apiresponse",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/helpers.js",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_helpers_loginaccount",
+      "target": "frontend_e2e_helpers_apiresponse",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/helpers.js",
+      "source_location": "L101",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9860,7 +10968,7 @@
     },
     {
       "source": "frontend_e2e_innovation_spec",
-      "target": "frontend_e2e_helpers_registerdemo",
+      "target": "frontend_e2e_helpers_registeraccount",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9871,7 +10979,7 @@
     },
     {
       "source": "frontend_e2e_innovation_spec",
-      "target": "frontend_e2e_helpers_logindemo",
+      "target": "frontend_e2e_helpers_loginaccount",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9915,7 +11023,7 @@
     },
     {
       "source": "frontend_e2e_operations_spec",
-      "target": "frontend_e2e_helpers_registerdemo",
+      "target": "frontend_e2e_helpers_registeraccount",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9926,7 +11034,7 @@
     },
     {
       "source": "frontend_e2e_operations_spec",
-      "target": "frontend_e2e_helpers_logindemo",
+      "target": "frontend_e2e_helpers_loginaccount",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9970,7 +11078,7 @@
     },
     {
       "source": "frontend_e2e_partnerships_spec",
-      "target": "frontend_e2e_helpers_registerdemo",
+      "target": "frontend_e2e_helpers_registeraccount",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9981,7 +11089,7 @@
     },
     {
       "source": "frontend_e2e_partnerships_spec",
-      "target": "frontend_e2e_helpers_logindemo",
+      "target": "frontend_e2e_helpers_loginaccount",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10025,7 +11133,7 @@
     },
     {
       "source": "frontend_e2e_risk_spec",
-      "target": "frontend_e2e_helpers_registerdemo",
+      "target": "frontend_e2e_helpers_registeraccount",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10036,7 +11144,7 @@
     },
     {
       "source": "frontend_e2e_risk_spec",
-      "target": "frontend_e2e_helpers_logindemo",
+      "target": "frontend_e2e_helpers_loginaccount",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10053,6 +11161,28 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/server-access.spec.js",
       "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_server_access_spec",
+      "target": "frontend_e2e_helpers",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/server-access.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_server_access_spec",
+      "target": "frontend_e2e_helpers_guardbrowser",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/server-access.spec.js",
+      "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10113,7 +11243,7 @@
     },
     {
       "source": "frontend_e2e_server_history_spec",
-      "target": "frontend_e2e_server_history_spec_signin",
+      "target": "frontend_e2e_server_history_spec_whilehistoryrequestpending",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/server-history.spec.js",
@@ -10123,11 +11253,32 @@
     },
     {
       "source": "frontend_e2e_server_history_spec",
+      "target": "frontend_e2e_server_history_spec_signin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/server-history.spec.js",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_server_history_spec",
       "target": "frontend_e2e_server_history_spec_openhistory",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/server-history.spec.js",
-      "source_location": "L28",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_server_history_spec_openhistory",
+      "target": "frontend_e2e_server_history_spec_whilehistoryrequestpending",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/server-history.spec.js",
+      "source_location": "L65",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10138,7 +11289,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/server-history.spec.js",
-      "source_location": "L54",
+      "source_location": "L93",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10149,7 +11300,18 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/server-history.spec.js",
-      "source_location": "L56",
+      "source_location": "L95",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_server_history_spec",
+      "target": "frontend_e2e_server_history_spec_whilehistoryrequestpending",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/server-history.spec.js",
+      "source_location": "L100",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10188,7 +11350,7 @@
     },
     {
       "source": "frontend_e2e_strategic_spec",
-      "target": "frontend_e2e_helpers_registerdemo",
+      "target": "frontend_e2e_helpers_registeraccount",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10199,7 +11361,7 @@
     },
     {
       "source": "frontend_e2e_strategic_spec",
-      "target": "frontend_e2e_helpers_logindemo",
+      "target": "frontend_e2e_helpers_loginaccount",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10696,54 +11858,104 @@
       "_origin": "ast"
     },
     {
-      "source": "frontend_playwright_config",
+      "source": "frontend_playwright_config_cjs_frontend_playwright_config",
       "target": "ref_playwright_test",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/playwright.config.js",
+      "source_file": "frontend/playwright.config.cjs",
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "frontend_playwright_config",
-      "target": "ref_vite",
-      "relation": "imports_from",
-      "context": "import",
+      "source": "frontend_playwright_config_cjs_frontend_playwright_config",
+      "target": "frontend_playwright_config_defineconfig_devices",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/playwright.config.js",
+      "source_file": "frontend/playwright.config.cjs",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_playwright_config_cjs_frontend_playwright_config",
+      "target": "frontend_playwright_config_path",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/playwright.config.cjs",
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "frontend_playwright_config",
-      "target": "frontend_playwright_config_env",
+      "source": "frontend_playwright_config_cjs_frontend_playwright_config",
+      "target": "frontend_playwright_config_os",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/playwright.config.js",
+      "source_file": "frontend/playwright.config.cjs",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_playwright_config_cjs_frontend_playwright_config",
+      "target": "frontend_playwright_config_randomuuid",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/playwright.config.cjs",
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "frontend_playwright_config",
+      "source": "frontend_playwright_config_cjs_frontend_playwright_config",
       "target": "frontend_playwright_config_port",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/playwright.config.js",
-      "source_location": "L6",
+      "source_file": "frontend/playwright.config.cjs",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "frontend_playwright_config",
+      "source": "frontend_playwright_config_cjs_frontend_playwright_config",
+      "target": "frontend_playwright_config_backendport",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/playwright.config.cjs",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_playwright_config_cjs_frontend_playwright_config",
       "target": "frontend_playwright_config_harnessport",
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "frontend/playwright.config.cjs",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_playwright_config_cjs_frontend_playwright_config",
+      "target": "frontend_playwright_config_python",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/playwright.config.cjs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_playwright_config_js_frontend_playwright_config",
+      "target": "frontend_playwright_config_cjs_frontend_playwright_config",
+      "relation": "imports_from",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
       "source_file": "frontend/playwright.config.js",
-      "source_location": "L9",
+      "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -16166,6 +17378,27 @@
       "_origin": "ast"
     },
     {
+      "source": "verify_postgres_rationale_1",
+      "target": "verify_postgres",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "verify-postgres.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_playwright_config_js_frontend_playwright_config",
+      "target": "frontend_playwright_config_cjs_frontend_playwright_config",
+      "relation": "re_exports",
+      "context": "export",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/playwright.config.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_app",
       "target": "frontend_src_views_strategiccommand_strategiccommand",
       "relation": "imports",
@@ -16458,7 +17691,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L3",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -16469,7 +17702,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L4",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -16480,7 +17713,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L4",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -16491,7 +17724,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L4",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -16502,7 +17735,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L5",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -16513,7 +17746,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L5",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -16524,7 +17757,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L6",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -16964,7 +18197,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L12",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -16975,7 +18208,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L12",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -16986,7 +18219,18 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L13",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_main",
+      "target": "backend_app_core_database_database_url",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -16997,7 +18241,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L13",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17008,7 +18252,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L16",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17019,7 +18263,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L16",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17217,7 +18461,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L6",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17228,29 +18472,40 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L6",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_auth_api",
-      "target": "backend_app_core_security_issue_token",
+      "target": "backend_app_auth_schema_credentials",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L7",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_auth_api",
-      "target": "backend_app_core_security_decode_token",
+      "target": "backend_app_auth_service_authservice",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L7",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api",
+      "target": "backend_app_core_database_get_db",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17261,7 +18516,29 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L113",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api",
+      "target": "backend_app_core_security_issue_token",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api",
+      "target": "backend_app_core_security_decode_token",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17272,7 +18549,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17283,7 +18560,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17294,7 +18571,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17305,7 +18582,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17316,7 +18593,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17327,7 +18604,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17338,7 +18615,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17349,7 +18626,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17360,7 +18637,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17371,7 +18648,73 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L10",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration",
+      "target": "backend_app_auth_model_user",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration",
+      "target": "backend_app_assistant_model_assistantmessage",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_startup",
+      "target": "backend_app_core_config_settings",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_startup",
+      "target": "backend_app_core_config_get_settings",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_startup",
+      "target": "backend_app_main_create_app",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_access_spec_measureactivation",
+      "target": "frontend_e2e_helpers_apiresponse",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/access.spec.js",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17602,7 +18945,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L15",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17613,7 +18956,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L23",
+      "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17635,7 +18978,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L23",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17646,7 +18989,18 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L29",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_main_upgrade_database",
+      "target": "backend_app_core_database_database_url",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L85",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17657,7 +19011,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L81",
+      "source_location": "L92",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17745,7 +19099,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L31",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17756,7 +19110,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L114",
+      "source_location": "L121",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17767,7 +19121,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17778,7 +19132,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17789,24 +19143,13 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_auth_service_test_login_logout_revokes_only_current_session_and_retains_account",
       "target": "backend_app_auth_service_authservice",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L33",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_login_logout_revokes_only_current_session_and_retains_account",
-      "target": "backend_app_auth_schema_credentials",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -17817,12 +19160,23 @@
     },
     {
       "source": "backend_tests_test_auth_service_test_login_logout_revokes_only_current_session_and_retains_account",
+      "target": "backend_app_auth_schema_credentials",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_login_logout_revokes_only_current_session_and_retains_account",
       "target": "backend_app_core_security_decode_token",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17833,7 +19187,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L82",
+      "source_location": "L83",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17844,7 +19198,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L84",
+      "source_location": "L85",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17855,7 +19209,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L91",
+      "source_location": "L92",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17866,7 +19220,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L105",
+      "source_location": "L106",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17877,7 +19231,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L106",
+      "source_location": "L107",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17888,7 +19242,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L109",
+      "source_location": "L110",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -17899,7 +19253,84 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L110",
+      "source_location": "L111",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_save_time_unique_race_rolls_back_and_preserves_winner",
+      "target": "backend_app_auth_service_authservice",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L122",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_save_time_unique_race_rolls_back_and_preserves_winner",
+      "target": "backend_app_core_security_hash_password",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L124",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_save_time_unique_race_rolls_back_and_preserves_winner",
+      "target": "backend_app_auth_model_user",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L125",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_save_time_unique_race_rolls_back_and_preserves_winner",
+      "target": "backend_app_auth_schema_credentials",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L134",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_save_time_unique_race_rolls_back_and_preserves_winner",
+      "target": "backend_app_core_security_verify_password",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L145",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_nonunique_integrity_failure_propagates_after_rollback",
+      "target": "backend_app_auth_service_authservice",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L151",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_nonunique_integrity_failure_propagates_after_rollback",
+      "target": "backend_app_auth_schema_credentials",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L152",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -18372,7 +19803,18 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "backend/app/main.py",
-      "source_location": "L21",
+      "source_location": "L24",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_main_upgrade_database",
+      "target": "backend_app_core_config_settings",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/main.py",
+      "source_location": "L82",
       "weight": 0.8,
       "_origin": "ast"
     },
@@ -18383,7 +19825,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "backend/app/main.py",
-      "source_location": "L81",
+      "source_location": "L92",
       "weight": 0.8,
       "_origin": "ast"
     },
@@ -18394,7 +19836,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "backend/app/main.py",
-      "source_location": "L46",
+      "source_location": "L50",
       "weight": 0.8,
       "_origin": "ast"
     },
@@ -18509,6 +19951,17 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_assistant_api_test_long_unicode_prompt_returns_201_and_persists_only_exact_response",
+      "target": "backend_app_assistant_model_assistantmessage",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_assistant_api.py",
+      "source_location": "L120",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_assistant_service_test_response_only_storage_owner_pages_and_timestamp_ties",
       "target": "backend_app_auth_model_user",
       "relation": "uses",
@@ -18614,7 +20067,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L18",
+      "source_location": "L25",
       "weight": 0.8,
       "_origin": "ast"
     },
@@ -18625,7 +20078,18 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L45",
+      "source_location": "L52",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database",
+      "target": "backend_app_auth_model_user",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L137",
       "weight": 0.8,
       "_origin": "ast"
     },
@@ -18636,7 +20100,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L33",
+      "source_location": "L40",
       "weight": 0.8,
       "_origin": "ast"
     },
@@ -18647,13 +20111,178 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L94",
+      "source_location": "L101",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database",
+      "target": "backend_app_auth_model_authsession",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L176",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database",
+      "target": "backend_app_auth_schema_credentials",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L136",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database",
+      "target": "backend_app_auth_service_authservice",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L136",
       "weight": 0.8,
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_auth_service_test_registration_hashes_exact_long_password_and_rejects_duplicate",
       "target": "backend_app_auth_model_user",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L19",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_login_logout_revokes_only_current_session_and_retains_account",
+      "target": "backend_app_auth_model_user",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L44",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_seed_is_gated_idempotent_and_never_resets_password",
+      "target": "backend_app_auth_model_user",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L94",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_database_enforces_foreign_key_unique_not_null_and_cascade",
+      "target": "backend_app_auth_model_user",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L110",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_save_time_unique_race_rolls_back_and_preserves_winner",
+      "target": "backend_app_auth_model_user",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L125",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_nonunique_integrity_failure_propagates_after_rollback",
+      "target": "backend_app_auth_model_user",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L153",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_login_logout_revokes_only_current_session_and_retains_account",
+      "target": "backend_app_auth_model_authsession",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L41",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_invalid_login_creates_no_session",
+      "target": "backend_app_auth_model_authsession",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L57",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_authentication_rejects_invalid_session_states",
+      "target": "backend_app_auth_model_authsession",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L68",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_database_enforces_foreign_key_unique_not_null_and_cascade",
+      "target": "backend_app_auth_model_authsession",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L111",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_save_time_unique_race_rolls_back_and_preserves_winner",
+      "target": "backend_app_auth_model_authsession",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L127",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_nonunique_integrity_failure_propagates_after_rollback",
+      "target": "backend_app_auth_model_authsession",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L157",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_hashes_exact_long_password_and_rejects_duplicate",
+      "target": "backend_app_auth_schema_credentials",
       "relation": "uses",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
@@ -18664,227 +20293,18 @@
     },
     {
       "source": "backend_tests_test_auth_service_test_login_logout_revokes_only_current_session_and_retains_account",
-      "target": "backend_app_auth_model_user",
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L43",
-      "weight": 0.8,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_seed_is_gated_idempotent_and_never_resets_password",
-      "target": "backend_app_auth_model_user",
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L93",
-      "weight": 0.8,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_database_enforces_foreign_key_unique_not_null_and_cascade",
-      "target": "backend_app_auth_model_user",
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L109",
-      "weight": 0.8,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_login_logout_revokes_only_current_session_and_retains_account",
-      "target": "backend_app_auth_model_authsession",
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L40",
-      "weight": 0.8,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_invalid_login_creates_no_session",
-      "target": "backend_app_auth_model_authsession",
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L56",
-      "weight": 0.8,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_authentication_rejects_invalid_session_states",
-      "target": "backend_app_auth_model_authsession",
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L67",
-      "weight": 0.8,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_database_enforces_foreign_key_unique_not_null_and_cascade",
-      "target": "backend_app_auth_model_authsession",
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L110",
-      "weight": 0.8,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_registration_hashes_exact_long_password_and_rejects_duplicate",
       "target": "backend_app_auth_schema_credentials",
       "relation": "uses",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L17",
-      "weight": 0.8,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_login_logout_revokes_only_current_session_and_retains_account",
-      "target": "backend_app_auth_schema_credentials",
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 0.8,
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_auth_service_test_invalid_login_creates_no_session",
       "target": "backend_app_auth_schema_credentials",
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L53",
-      "weight": 0.8,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_authentication_rejects_invalid_session_states",
-      "target": "backend_app_auth_schema_credentials",
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L63",
-      "weight": 0.8,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_database_enforces_foreign_key_unique_not_null_and_cascade",
-      "target": "backend_app_auth_schema_credentials",
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L106",
-      "weight": 0.8,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_registration_hashes_exact_long_password_and_rejects_duplicate",
-      "target": "backend_app_auth_service_authservice",
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L15",
-      "weight": 0.8,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_login_logout_revokes_only_current_session_and_retains_account",
-      "target": "backend_app_auth_service_authservice",
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L33",
-      "weight": 0.8,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_invalid_login_creates_no_session",
-      "target": "backend_app_auth_service_authservice",
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L52",
-      "weight": 0.8,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_authentication_rejects_invalid_session_states",
-      "target": "backend_app_auth_service_authservice",
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L62",
-      "weight": 0.8,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_seed_is_gated_idempotent_and_never_resets_password",
-      "target": "backend_app_auth_service_authservice",
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L91",
-      "weight": 0.8,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_database_enforces_foreign_key_unique_not_null_and_cascade",
-      "target": "backend_app_auth_service_authservice",
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L105",
-      "weight": 0.8,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_registration_hashes_exact_long_password_and_rejects_duplicate",
-      "target": "backend_app_auth_service_duplicateusername",
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L25",
-      "weight": 0.8,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_login_logout_revokes_only_current_session_and_retains_account",
-      "target": "backend_app_auth_service_invalidcredentials",
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L44",
-      "weight": 0.8,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_invalid_login_creates_no_session",
-      "target": "backend_app_auth_service_invalidcredentials",
       "relation": "uses",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
@@ -18895,12 +20315,243 @@
     },
     {
       "source": "backend_tests_test_auth_service_test_authentication_rejects_invalid_session_states",
+      "target": "backend_app_auth_schema_credentials",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L64",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_database_enforces_foreign_key_unique_not_null_and_cascade",
+      "target": "backend_app_auth_schema_credentials",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L107",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_save_time_unique_race_rolls_back_and_preserves_winner",
+      "target": "backend_app_auth_schema_credentials",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L134",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_nonunique_integrity_failure_propagates_after_rollback",
+      "target": "backend_app_auth_schema_credentials",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L152",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_hashes_exact_long_password_and_rejects_duplicate",
+      "target": "backend_app_auth_service_authservice",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L16",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_login_logout_revokes_only_current_session_and_retains_account",
+      "target": "backend_app_auth_service_authservice",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_invalid_login_creates_no_session",
+      "target": "backend_app_auth_service_authservice",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L53",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_authentication_rejects_invalid_session_states",
+      "target": "backend_app_auth_service_authservice",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L63",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_seed_is_gated_idempotent_and_never_resets_password",
+      "target": "backend_app_auth_service_authservice",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L92",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_database_enforces_foreign_key_unique_not_null_and_cascade",
+      "target": "backend_app_auth_service_authservice",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L106",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_save_time_unique_race_rolls_back_and_preserves_winner",
+      "target": "backend_app_auth_service_authservice",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L122",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_nonunique_integrity_failure_propagates_after_rollback",
+      "target": "backend_app_auth_service_authservice",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L151",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_hashes_exact_long_password_and_rejects_duplicate",
+      "target": "backend_app_auth_service_duplicateusername",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L26",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_save_time_unique_race_rolls_back_and_preserves_winner",
+      "target": "backend_app_auth_service_duplicateusername",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L133",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_login_logout_revokes_only_current_session_and_retains_account",
       "target": "backend_app_auth_service_invalidcredentials",
       "relation": "uses",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L76",
+      "source_location": "L45",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_invalid_login_creates_no_session",
+      "target": "backend_app_auth_service_invalidcredentials",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L55",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_authentication_rejects_invalid_session_states",
+      "target": "backend_app_auth_service_invalidcredentials",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L77",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_test_accounts_history_isolation_revocation_and_relogin",
+      "target": "backend_app_auth_model_user",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L43",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_test_accounts_history_isolation_revocation_and_relogin",
+      "target": "backend_app_assistant_model_assistantmessage",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L44",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_test_invalid_upstream_auth_never_writes_history",
+      "target": "backend_app_assistant_model_assistantmessage",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L54",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_startup_fresh_startup_settings",
+      "target": "backend_app_core_config_settings",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L21",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_startup_test_fresh_startup_migrates_and_repeated_startup_disposes_pool",
+      "target": "backend_app_core_config_settings",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L46",
       "weight": 0.8,
       "_origin": "ast"
     },
@@ -18912,7 +20563,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "backend/alembic/env.py",
-      "source_location": "L15",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -18924,7 +20575,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "backend/alembic/env.py",
-      "source_location": "L23",
+      "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -19056,7 +20707,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "backend/app/main.py",
-      "source_location": "L28",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -19068,7 +20719,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/app/main.py",
-      "source_location": "L29",
+      "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -19080,7 +20731,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "backend/app/main.py",
-      "source_location": "L81",
+      "source_location": "L92",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -19157,6 +20808,18 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_assistant_api_test_long_unicode_prompt_returns_201_and_persists_only_exact_response",
+      "target": "backend_app_core_security_decode_token",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_assistant_api.py",
+      "source_location": "L125",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_assistant_service_test_exact_resolution_boundaries_priority_and_safe_fallback",
       "target": "backend_app_assistant_service_resolve_prompt",
       "relation": "calls",
@@ -19176,7 +20839,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L89",
+      "source_location": "L96",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -19188,7 +20851,31 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_auth_api.py",
-      "source_location": "L95",
+      "source_location": "L102",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database",
+      "target": "backend_app_main_create_app",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L154",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_api_test_http_failures_are_sanitized_without_substituting_database_real_database",
+      "target": "backend_tests_conftest_db",
+      "relation": "indirect_call",
+      "context": "return",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/tests/test_auth_api.py",
+      "source_location": "L152",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -19200,7 +20887,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L66",
+      "source_location": "L67",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -19212,7 +20899,31 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L70",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_startup_fresh_startup_settings",
+      "target": "backend_app_core_config_get_settings",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_startup_test_fresh_startup_migrates_and_repeated_startup_disposes_pool",
+      "target": "backend_app_main_create_app",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_startup.py",
+      "source_location": "L50",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -19896,25 +21607,13 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_auth_service_test_login_logout_revokes_only_current_session_and_retains_account",
       "target": "backend_app_auth_service_authservice_register",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L35",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_login_logout_revokes_only_current_session_and_retains_account",
-      "target": "backend_app_auth_service_authservice_login",
       "relation": "calls",
       "context": "call",
       "confidence": "INFERRED",
@@ -19926,13 +21625,25 @@
     },
     {
       "source": "backend_tests_test_auth_service_test_login_logout_revokes_only_current_session_and_retains_account",
+      "target": "backend_app_auth_service_authservice_login",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_login_logout_revokes_only_current_session_and_retains_account",
       "target": "backend_app_auth_service_authservice_logout",
       "relation": "calls",
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L41",
+      "source_location": "L42",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -19944,7 +21655,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L45",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -19956,7 +21667,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L53",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -19968,25 +21679,13 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L55",
+      "source_location": "L56",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_auth_service_test_authentication_rejects_invalid_session_states",
       "target": "backend_app_auth_service_authservice_register",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L64",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_auth_service_test_authentication_rejects_invalid_session_states",
-      "target": "backend_app_auth_service_authservice_login",
       "relation": "calls",
       "context": "call",
       "confidence": "INFERRED",
@@ -19998,13 +21697,25 @@
     },
     {
       "source": "backend_tests_test_auth_service_test_authentication_rejects_invalid_session_states",
+      "target": "backend_app_auth_service_authservice_login",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L66",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_authentication_rejects_invalid_session_states",
       "target": "backend_app_auth_service_authservice_logout",
       "relation": "calls",
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L75",
+      "source_location": "L76",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -20016,7 +21727,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L76",
+      "source_location": "L77",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -20028,7 +21739,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L92",
+      "source_location": "L93",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -20040,7 +21751,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L107",
+      "source_location": "L108",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -20052,9 +21763,215 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "backend/tests/test_auth_service.py",
-      "source_location": "L108",
+      "source_location": "L109",
       "weight": 1.0,
       "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_save_time_unique_race_rolls_back_and_preserves_winner",
+      "target": "backend_app_auth_service_authservice_register",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L134",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_service_test_registration_nonunique_integrity_failure_propagates_after_rollback",
+      "target": "backend_app_auth_service_authservice_register",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/tests/test_auth_service.py",
+      "source_location": "L152",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_assistant_model_assistantmessage",
+      "target": "backend_app_assistant_repository_assistantrepository_history",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/assistant/repository.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_assistant_repository_assistantrepository_history",
+      "_tgt": "backend_app_assistant_model_assistantmessage"
+    },
+    {
+      "source": "backend_app_assistant_model_assistantmessage",
+      "target": "backend_app_assistant_repository_assistantrepository_save",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/assistant/repository.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_assistant_repository_assistantrepository_save",
+      "_tgt": "backend_app_assistant_model_assistantmessage"
+    },
+    {
+      "source": "backend_app_assistant_repository_py_uuid",
+      "target": "backend_app_assistant_repository_assistantrepository_history",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/assistant/repository.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_assistant_repository_assistantrepository_history",
+      "_tgt": "backend_app_assistant_repository_py_uuid"
+    },
+    {
+      "source": "backend_app_assistant_router_current_user",
+      "target": "backend_app_assistant_router_history",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/assistant/router.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_assistant_router_history",
+      "_tgt": "backend_app_assistant_router_current_user"
+    },
+    {
+      "source": "backend_app_assistant_router_current_user",
+      "target": "backend_app_assistant_router_respond",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/assistant/router.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_assistant_router_respond",
+      "_tgt": "backend_app_assistant_router_current_user"
+    },
+    {
+      "source": "backend_app_assistant_router_py_depends",
+      "target": "backend_app_assistant_router_history",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/assistant/router.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_assistant_router_history",
+      "_tgt": "backend_app_assistant_router_py_depends"
+    },
+    {
+      "source": "backend_app_assistant_router_py_depends",
+      "target": "backend_app_assistant_router_respond",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/assistant/router.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_assistant_router_respond",
+      "_tgt": "backend_app_assistant_router_py_depends"
+    },
+    {
+      "source": "backend_app_assistant_router_py_post",
+      "target": "backend_app_assistant_router_respond",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/assistant/router.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_assistant_router_respond",
+      "_tgt": "backend_app_assistant_router_py_post"
+    },
+    {
+      "source": "backend_app_assistant_router_py_session",
+      "target": "backend_app_assistant_router_history",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/assistant/router.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_assistant_router_history",
+      "_tgt": "backend_app_assistant_router_py_session"
+    },
+    {
+      "source": "backend_app_assistant_router_py_get",
+      "target": "backend_app_assistant_router_history",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/assistant/router.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_assistant_router_history",
+      "_tgt": "backend_app_assistant_router_py_get"
+    },
+    {
+      "source": "backend_app_assistant_schema_promptrequest",
+      "target": "backend_app_assistant_service_assistantservice_respond",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/assistant/service.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_assistant_service_assistantservice_respond",
+      "_tgt": "backend_app_assistant_schema_promptrequest"
+    },
+    {
+      "source": "backend_app_assistant_schema_message",
+      "target": "backend_app_assistant_service_assistantservice_respond",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/assistant/service.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_assistant_service_assistantservice_respond",
+      "_tgt": "backend_app_assistant_schema_message"
+    },
+    {
+      "source": "backend_app_assistant_schema_history",
+      "target": "backend_app_assistant_service_assistantservice_history",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/assistant/service.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_assistant_service_assistantservice_history",
+      "_tgt": "backend_app_assistant_schema_history"
+    },
+    {
+      "source": "backend_app_assistant_service_py_uuid",
+      "target": "backend_app_assistant_service_assistantservice_history",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/assistant/service.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_assistant_service_assistantservice_history",
+      "_tgt": "backend_app_assistant_service_py_uuid"
     },
     {
       "source": "backend_app_auth_model_user",
@@ -20066,8 +21983,8 @@
       "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_auth_repository_authrepository_find_user",
-      "_tgt": "backend_app_auth_model_user"
+      "_src": "backend_app_auth_model_user",
+      "_tgt": "backend_app_auth_repository_authrepository_find_user"
     },
     {
       "source": "backend_app_auth_model_user",
@@ -20079,8 +21996,8 @@
       "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_auth_repository_authrepository_find_username",
-      "_tgt": "backend_app_auth_model_user"
+      "_src": "backend_app_auth_model_user",
+      "_tgt": "backend_app_auth_repository_authrepository_find_username"
     },
     {
       "source": "backend_app_auth_model_user",
@@ -20092,8 +22009,8 @@
       "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_auth_repository_authrepository_save",
-      "_tgt": "backend_app_auth_model_user"
+      "_src": "backend_app_auth_model_user",
+      "_tgt": "backend_app_auth_repository_authrepository_save"
     },
     {
       "source": "backend_app_auth_model_user",
@@ -20105,8 +22022,8 @@
       "source_location": "L58",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_auth_service_authservice_authenticate",
-      "_tgt": "backend_app_auth_model_user"
+      "_src": "backend_app_auth_model_user",
+      "_tgt": "backend_app_auth_service_authservice_authenticate"
     },
     {
       "source": "backend_app_auth_model_authsession",
@@ -20118,8 +22035,8 @@
       "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_auth_repository_authrepository_find_session",
-      "_tgt": "backend_app_auth_model_authsession"
+      "_src": "backend_app_auth_model_authsession",
+      "_tgt": "backend_app_auth_repository_authrepository_find_session"
     },
     {
       "source": "backend_app_auth_model_authsession",
@@ -20131,8 +22048,8 @@
       "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_auth_repository_authrepository_save",
-      "_tgt": "backend_app_auth_model_authsession"
+      "_src": "backend_app_auth_model_authsession",
+      "_tgt": "backend_app_auth_repository_authrepository_save"
     },
     {
       "source": "backend_app_auth_model_authsession",
@@ -20144,8 +22061,8 @@
       "source_location": "L58",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_auth_service_authservice_authenticate",
-      "_tgt": "backend_app_auth_model_authsession"
+      "_src": "backend_app_auth_model_authsession",
+      "_tgt": "backend_app_auth_service_authservice_authenticate"
     },
     {
       "source": "backend_app_auth_repository_py_uuid",
@@ -20170,8 +22087,8 @@
       "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_auth_router_login",
-      "_tgt": "backend_app_auth_router_get_service"
+      "_src": "backend_app_auth_router_get_service",
+      "_tgt": "backend_app_auth_router_login"
     },
     {
       "source": "backend_app_auth_router_get_service",
@@ -20183,8 +22100,8 @@
       "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_auth_router_logout",
-      "_tgt": "backend_app_auth_router_get_service"
+      "_src": "backend_app_auth_router_get_service",
+      "_tgt": "backend_app_auth_router_logout"
     },
     {
       "source": "backend_app_auth_router_get_service",
@@ -20196,8 +22113,8 @@
       "source_location": "L42",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_auth_router_me",
-      "_tgt": "backend_app_auth_router_get_service"
+      "_src": "backend_app_auth_router_get_service",
+      "_tgt": "backend_app_auth_router_me"
     },
     {
       "source": "backend_app_auth_router_get_service",
@@ -20209,8 +22126,73 @@
       "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast",
+      "_src": "backend_app_auth_router_get_service",
+      "_tgt": "backend_app_auth_router_register"
+    },
+    {
+      "source": "backend_app_auth_router_py_depends",
+      "target": "backend_app_auth_router_get_token",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/auth/router.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_auth_router_get_token",
+      "_tgt": "backend_app_auth_router_py_depends"
+    },
+    {
+      "source": "backend_app_auth_router_py_depends",
+      "target": "backend_app_auth_router_login",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/auth/router.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_auth_router_login",
+      "_tgt": "backend_app_auth_router_py_depends"
+    },
+    {
+      "source": "backend_app_auth_router_py_depends",
+      "target": "backend_app_auth_router_logout",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/auth/router.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_auth_router_logout",
+      "_tgt": "backend_app_auth_router_py_depends"
+    },
+    {
+      "source": "backend_app_auth_router_py_depends",
+      "target": "backend_app_auth_router_me",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/auth/router.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_auth_router_me",
+      "_tgt": "backend_app_auth_router_py_depends"
+    },
+    {
+      "source": "backend_app_auth_router_py_depends",
+      "target": "backend_app_auth_router_register",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/auth/router.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast",
       "_src": "backend_app_auth_router_register",
-      "_tgt": "backend_app_auth_router_get_service"
+      "_tgt": "backend_app_auth_router_py_depends"
     },
     {
       "source": "backend_app_auth_router_get_token",
@@ -20222,8 +22204,8 @@
       "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_auth_router_logout",
-      "_tgt": "backend_app_auth_router_get_token"
+      "_src": "backend_app_auth_router_get_token",
+      "_tgt": "backend_app_auth_router_logout"
     },
     {
       "source": "backend_app_auth_router_get_token",
@@ -20235,8 +22217,60 @@
       "source_location": "L42",
       "weight": 1.0,
       "_origin": "ast",
+      "_src": "backend_app_auth_router_get_token",
+      "_tgt": "backend_app_auth_router_me"
+    },
+    {
+      "source": "backend_app_auth_router_py_post",
+      "target": "backend_app_auth_router_login",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/auth/router.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_auth_router_login",
+      "_tgt": "backend_app_auth_router_py_post"
+    },
+    {
+      "source": "backend_app_auth_router_py_post",
+      "target": "backend_app_auth_router_logout",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/auth/router.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_auth_router_logout",
+      "_tgt": "backend_app_auth_router_py_post"
+    },
+    {
+      "source": "backend_app_auth_router_py_post",
+      "target": "backend_app_auth_router_register",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/auth/router.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_auth_router_register",
+      "_tgt": "backend_app_auth_router_py_post"
+    },
+    {
+      "source": "backend_app_auth_router_py_get",
+      "target": "backend_app_auth_router_me",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/auth/router.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
       "_src": "backend_app_auth_router_me",
-      "_tgt": "backend_app_auth_router_get_token"
+      "_tgt": "backend_app_auth_router_py_get"
     },
     {
       "source": "backend_app_auth_schema_credentials",
@@ -20248,8 +22282,8 @@
       "source_location": "L43",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_auth_service_authservice_login",
-      "_tgt": "backend_app_auth_schema_credentials"
+      "_src": "backend_app_auth_schema_credentials",
+      "_tgt": "backend_app_auth_service_authservice_login"
     },
     {
       "source": "backend_app_auth_schema_credentials",
@@ -20261,8 +22295,8 @@
       "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_auth_service_authservice_register",
-      "_tgt": "backend_app_auth_schema_credentials"
+      "_src": "backend_app_auth_schema_credentials",
+      "_tgt": "backend_app_auth_service_authservice_register"
     },
     {
       "source": "backend_app_auth_schema_py_field_validator",
@@ -20287,8 +22321,8 @@
       "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_auth_service_authservice_register",
-      "_tgt": "backend_app_auth_schema_account"
+      "_src": "backend_app_auth_schema_account",
+      "_tgt": "backend_app_auth_service_authservice_register"
     },
     {
       "source": "backend_app_auth_schema_loginresponse",
@@ -20300,8 +22334,8 @@
       "source_location": "L43",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_auth_service_authservice_login",
-      "_tgt": "backend_app_auth_schema_loginresponse"
+      "_src": "backend_app_auth_schema_loginresponse",
+      "_tgt": "backend_app_auth_service_authservice_login"
     },
     {
       "source": "backend_app_core_config_py_field_validator",
@@ -20313,8 +22347,8 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "_src": "backend_app_core_config_settings_validate_db_name",
-      "_tgt": "backend_app_core_config_py_field_validator"
+      "_src": "backend_app_core_config_py_field_validator",
+      "_tgt": "backend_app_core_config_settings_validate_db_name"
     },
     {
       "source": "backend_app_core_security_py_uuid",
@@ -20336,11 +22370,50 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L76",
+      "source_location": "L78",
       "weight": 1.0,
       "_origin": "ast",
       "_src": "backend_app_main_seed_account",
       "_tgt": "fastapi"
+    },
+    {
+      "source": "backend_tests_conftest_py_fixture",
+      "target": "backend_tests_conftest_client",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/conftest.py",
+      "source_location": "L66",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_conftest_client",
+      "_tgt": "backend_tests_conftest_py_fixture"
+    },
+    {
+      "source": "backend_tests_conftest_py_fixture",
+      "target": "backend_tests_conftest_db",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/conftest.py",
+      "source_location": "L54",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_conftest_db",
+      "_tgt": "backend_tests_conftest_py_fixture"
+    },
+    {
+      "source": "backend_tests_conftest_py_fixture",
+      "target": "backend_tests_conftest_settings",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/conftest.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_conftest_settings",
+      "_tgt": "backend_tests_conftest_py_fixture"
     },
     {
       "source": "backend_tests_conftest_settings",
@@ -20382,6 +22455,97 @@
       "_tgt": "backend_tests_conftest_py_session"
     },
     {
+      "source": "backend_tests_test_assistant_api_py_fixture",
+      "target": "backend_tests_test_assistant_api_tokens",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_assistant_api.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_assistant_api_tokens",
+      "_tgt": "backend_tests_test_assistant_api_py_fixture"
+    },
+    {
+      "source": "backend_tests_test_assistant_api_py_parametrize",
+      "target": "backend_tests_test_assistant_api_test_invalid_page_bounds_are_422",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_assistant_api.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_assistant_api_test_invalid_page_bounds_are_422",
+      "_tgt": "backend_tests_test_assistant_api_py_parametrize"
+    },
+    {
+      "source": "backend_tests_test_assistant_api_py_parametrize",
+      "target": "backend_tests_test_assistant_api_test_invalid_persisted_sessions_cannot_access_history",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_assistant_api.py",
+      "source_location": "L83",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_assistant_api_test_invalid_persisted_sessions_cannot_access_history",
+      "_tgt": "backend_tests_test_assistant_api_py_parametrize"
+    },
+    {
+      "source": "backend_tests_test_assistant_api_py_parametrize",
+      "target": "backend_tests_test_assistant_api_test_invalid_prompt_shapes_are_422_without_writes_or_echo",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_assistant_api.py",
+      "source_location": "L54",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_assistant_api_test_invalid_prompt_shapes_are_422_without_writes_or_echo",
+      "_tgt": "backend_tests_test_assistant_api_py_parametrize"
+    },
+    {
+      "source": "backend_tests_test_assistant_api_py_parametrize",
+      "target": "backend_tests_test_assistant_api_test_missing_malformed_auth_cannot_read_or_write",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_assistant_api.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_assistant_api_test_missing_malformed_auth_cannot_read_or_write",
+      "_tgt": "backend_tests_test_assistant_api_py_parametrize"
+    },
+    {
+      "source": "backend_tests_test_assistant_service_py_parametrize",
+      "target": "backend_tests_test_assistant_service_test_exact_resolution_boundaries_priority_and_safe_fallback",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_assistant_service.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_assistant_service_test_exact_resolution_boundaries_priority_and_safe_fallback",
+      "_tgt": "backend_tests_test_assistant_service_py_parametrize"
+    },
+    {
+      "source": "backend_tests_test_assistant_service_py_parametrize",
+      "target": "backend_tests_test_assistant_service_test_service_rejects_invalid_pagination",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_assistant_service.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_assistant_service_test_service_rejects_invalid_pagination",
+      "_tgt": "backend_tests_test_assistant_service_py_parametrize"
+    },
+    {
       "source": "backend_tests_test_auth_api_py_parametrize",
       "target": "backend_tests_test_auth_api_test_invalid_credentials_are_422_without_echoing_password",
       "relation": "references",
@@ -20391,8 +22555,8 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "_src": "backend_tests_test_auth_api_test_invalid_credentials_are_422_without_echoing_password",
-      "_tgt": "backend_tests_test_auth_api_py_parametrize"
+      "_src": "backend_tests_test_auth_api_py_parametrize",
+      "_tgt": "backend_tests_test_auth_api_test_invalid_credentials_are_422_without_echoing_password"
     },
     {
       "source": "backend_tests_test_auth_api_py_parametrize",
@@ -20404,8 +22568,8 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "_src": "backend_tests_test_auth_api_test_missing_or_malformed_bearer_is_generic_401",
-      "_tgt": "backend_tests_test_auth_api_py_parametrize"
+      "_src": "backend_tests_test_auth_api_py_parametrize",
+      "_tgt": "backend_tests_test_auth_api_test_missing_or_malformed_bearer_is_generic_401"
     },
     {
       "source": "backend_tests_test_auth_api_py_parametrize",
@@ -20417,8 +22581,8 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "_src": "backend_tests_test_auth_api_test_signed_invalid_session_is_rejected_over_http",
-      "_tgt": "backend_tests_test_auth_api_py_parametrize"
+      "_src": "backend_tests_test_auth_api_py_parametrize",
+      "_tgt": "backend_tests_test_auth_api_test_signed_invalid_session_is_rejected_over_http"
     },
     {
       "source": "backend_tests_test_auth_service_py_parametrize",
@@ -20430,8 +22594,8 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "_src": "backend_tests_test_auth_service_test_authentication_rejects_invalid_session_states",
-      "_tgt": "backend_tests_test_auth_service_py_parametrize"
+      "_src": "backend_tests_test_auth_service_py_parametrize",
+      "_tgt": "backend_tests_test_auth_service_test_authentication_rejects_invalid_session_states"
     },
     {
       "source": "backend_tests_test_auth_service_py_parametrize",
@@ -20443,15 +22607,15 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "_src": "backend_tests_test_auth_service_test_invalid_login_creates_no_session",
-      "_tgt": "backend_tests_test_auth_service_py_parametrize"
+      "_src": "backend_tests_test_auth_service_py_parametrize",
+      "_tgt": "backend_tests_test_auth_service_test_invalid_login_creates_no_session"
     }
   ],
   "metadata": {
-    "built_at": "2026-11-12T14:01:26.372985+00:00",
+    "built_at": "2026-11-12T16:14:55.134989+00:00",
     "version": "graph_update-v1",
     "codebase_root": "C:\\artifacts-v2\\T0132PcJVCRTV000412112609385810\\developer",
     "force": true,
-    "files_scanned": 89
+    "files_scanned": 95
   }
 }
