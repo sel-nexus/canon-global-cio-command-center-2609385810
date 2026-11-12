@@ -32,3 +32,24 @@ export const EXECUTIVE_FIXTURES = Object.freeze({
   axes: Object.freeze([]),
   regions: Object.freeze([]),
 });
+
+/** Keep chart indicators distinct from the three approved business value cards. */
+export const BUSINESS_CHART_LABELS = Object.freeze(['Revenue', 'Cost Avoidance', 'ROI']);
+
+/** Preserve absent financial values without attributing or calculating outcomes. */
+export const BUSINESS_METRICS = Object.freeze([
+  'Revenue Attribution',
+  'Cost Savings',
+  'Innovation ROI',
+].map((label) => Object.freeze({ label, value: null, displayState: 'not-specified' })));
+
+/** Supply no business categories, dates, units or numerical defaults. */
+export const BUSINESS_FIXTURES = Object.freeze({
+  metrics: BUSINESS_METRICS,
+  labels: Object.freeze([]),
+  charts: Object.freeze(BUSINESS_CHART_LABELS.map((label) => Object.freeze({
+    label,
+    displayState: 'not-specified',
+    data: Object.freeze([]),
+  }))),
+});
