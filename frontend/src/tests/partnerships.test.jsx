@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import App from '../App.jsx';
 import Partnerships from '../views/Partnerships.jsx';
 import { PARTNERSHIP_FIXTURES } from '../data/dashboardFixtures.js';
-import { STORAGE_KEYS } from '../services/localStorage.js';
+import { seedServerSession } from './serverAuthFixture.js';
 
 const chart = vi.hoisted(() => ({ props: null, fail: false }));
 // Mock external canvas drawing only; retain the actual ChartPanel and text table.
@@ -166,7 +166,7 @@ describe('Partnerships', () => {
   });
 
   it('mounts Partnerships by click and keyboard without writes, network requests or assistant activation', async () => {
-    window.localStorage.setItem(STORAGE_KEYS.session, '{"version":1,"username":"synthetic"}');
+    seedServerSession();
     const writes = vi.spyOn(Storage.prototype, 'setItem');
     const fetch = vi.fn();
     vi.stubGlobal('fetch', fetch);
@@ -176,6 +176,7 @@ describe('Partnerships', () => {
     render(
       <App />
     );
+    await screen.findByRole('tabpanel', { name: 'Strategic Command' });
     await user.click(screen.getByRole('tab', { name: 'Partnerships', exact: true }));
     const panel = screen.getByRole('tabpanel', { name: 'Partnerships' });
     expect(screen.getAllByRole('tabpanel')).toHaveLength(1);

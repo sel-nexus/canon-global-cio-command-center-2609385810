@@ -11,7 +11,8 @@ const harnessURL = `http://127.0.0.1:${harnessPort}`;
 
 export default defineConfig({
   testDir: './e2e',
-  fullyParallel: true,
+  fullyParallel: false,
+  workers: 1,
   timeout: 30000,
   use: { baseURL, trace: 'retain-on-failure' },
   projects: [
@@ -21,13 +22,13 @@ export default defineConfig({
   webServer: [{
     command: `node node_modules/vite/bin/vite.js preview --host ${host} --port ${port} --strictPort`,
     url: baseURL,
-    reuseExistingServer: false,
+    reuseExistingServer: true,
     timeout: 30000,
   }, {
     // Test-only entry served separately; never added to production build inputs.
     command: `node node_modules/vite/bin/vite.js --mode test --host 127.0.0.1 --port ${harnessPort} --strictPort`,
     url: `${harnessURL}/e2e/chart-harness.html`,
-    reuseExistingServer: false,
+    reuseExistingServer: true,
     timeout: 30000,
   }],
 });

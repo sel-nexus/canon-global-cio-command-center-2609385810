@@ -1,4 +1,4 @@
-/** Exercise form and shell journeys using real local authentication and storage. */
+/** Exercise form and shell journeys using the real auth hook with a stubbed server API boundary. */
 import { describe, expect, it, vi } from 'vitest';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -6,7 +6,8 @@ import App from '../App.jsx';
 import { AuthForm } from '../components/AuthForm.jsx';
 import { AppHeader } from '../components/AppHeader.jsx';
 import { DashboardTabs } from '../components/DashboardTabs.jsx';
-import { registerAccount, login } from '../services/localAuth.js';
+import { ApiError, TOKEN_KEY } from '../services/apiClient.js';
+import { mockServerAuth, seedServerSession, serverToken } from './serverAuthFixture.js';
 import { STORAGE_KEYS } from '../services/localStorage.js';
 
 /** Submit the visible two-field form as an actual keyboard/mouse user. */
@@ -63,7 +64,7 @@ describe('header presentation', () => {
   });
 });
 
-describe('demo form', () => {
+describe('server account form', () => {
   it('labels required fields and blocks blank username with associated focus/error', async () => {
     const user = userEvent.setup();
     const onSubmit = vi.fn();
@@ -103,17 +104,17 @@ describe('demo form', () => {
   });
 
   it.each([
-    ['DUPLICATE_USERNAME', 'username', /already exists/],
-    ['INVALID_CREDENTIALS', undefined, /does not match/],
-    ['STORAGE_UNAVAILABLE', undefined, /unavailable/],
-    ['STORAGE_WRITE_FAILED', undefined, /could not be saved/],
-    ['INVALID_LOCAL_STATE', undefined, /not been overwritten/],
-    ['UNKNOWN', undefined, /Demo access failed/],
-  ])('announces %s without retaining the password', async (code, field, message) => {
+    ['duplicate username', 'username', 'This username already exists. Log in instead.', /already exists/],
+    ['invalid credentials', undefined, 'Username or password does not match.', /does not match/],
+    ['network failure', undefined, 'The server is unavailable. Try again.', /unavailable/],
+    ['server failure', undefined, 'The server could not complete this request. Try again.', /could not complete/],
+    ['validation failure', 'username', 'Check your username and password lengths.', /lengths/],
+    ['unknown failure', undefined, undefined, /Account access failed/],
+  ])('announces %s without retaining the password', async (label, field, message, expected) => {
     const user = userEvent.setup();
-    render(<AuthForm mode="login" onSubmit={() => ({ ok: false, code, field })} onModeChange={vi.fn()} />);
+    render(<AuthForm mode="login" onSubmit={async () => ({ ok: false, message, field })} onModeChange={vi.fn()} />);
     await submit(user, 'demo', 'a');
-    expect(screen.getByRole('alert')).toHaveTextContent(message);
+    expect(await screen.findByRole('alert')).toHaveTextContent(expected);
     expect(screen.getByLabelText('Password')).toHaveValue('');
     if (field) expect(screen.getByLabelText('Username')).toHaveFocus();
   });
@@ -122,7 +123,7 @@ describe('demo form', () => {
     const user = userEvent.setup();
     const onModeChange = vi.fn();
     const { rerender } = render(<AuthForm mode="login" onSubmit={vi.fn()} onModeChange={onModeChange} />);
-    await user.click(screen.getByRole('button', { name: 'Create a demo account' }));
+    await user.click(screen.getByRole('button', { name: 'Create an account' }));
     expect(onModeChange).toHaveBeenLastCalledWith('signup');
     rerender(<AuthForm mode="signup" onSubmit={vi.fn()} onModeChange={onModeChange} />);
     await user.click(screen.getByRole('button', { name: 'Back to login' }));
@@ -130,119 +131,143 @@ describe('demo form', () => {
   });
 });
 
-describe('local access shell', () => {
-  it('completes signup, negative login, normalized login, restore, logout and signed-out reload while accounts remain', async () => {
+describe('server access shell', () => {
+  it('completes server signup, negative login, login, restore, logout and signed-out reload', async () => {
+    const boundary = mockServerAuth({ id: 'cio', username: 'CIO.demo', created_at: '2025-01-01T00:00:00Z' });
     const user = userEvent.setup();
     const { unmount } = render(<App />);
     expect(screen.queryByRole('tab')).not.toBeInTheDocument();
-    expect(screen.getByText(/stored unencrypted/)).toBeInTheDocument();
-    await user.click(screen.getByRole('button', { name: 'Create a demo account' }));
+    expect(await screen.findByText(/Passwords are hashed/)).toBeVisible();
+    await user.click(screen.getByRole('button', { name: 'Create an account', exact: true }));
     await submit(user, ' CIO.demo ', 'a', 'Create account');
-    expect(screen.getByRole('status')).toHaveTextContent('Demo account saved');
+    expect(await screen.findByRole('status')).toHaveTextContent('Account saved on the server');
+    expect(boundary.register).toHaveBeenCalledWith({ username: ' CIO.demo ', password: 'a' });
     expect(screen.getByLabelText('Password')).toHaveValue('');
     expect(screen.getByLabelText('Username')).toHaveValue('');
+    boundary.login.mockRejectedValueOnce(new ApiError('Username or password does not match.', 401));
     await submit(user, 'cio.demo', 'wrong');
-    expect(screen.getByRole('alert')).toHaveTextContent('does not match');
+    expect(await screen.findByRole('alert')).toHaveTextContent('does not match');
     expect(screen.queryByRole('tab')).not.toBeInTheDocument();
-    expect(window.localStorage.getItem(STORAGE_KEYS.session)).toBeNull();
+    expect(window.localStorage.getItem(TOKEN_KEY)).toBeNull();
     await user.clear(screen.getByLabelText('Username'));
     await submit(user, 'cIo.DeMo', 'a');
-    expect(screen.getByRole('tabpanel', { name: 'Strategic Command' })).toBeVisible();
+    expect(await screen.findByRole('tabpanel', { name: 'Strategic Command' })).toBeVisible();
+    expect(boundary.login).toHaveBeenLastCalledWith({ username: 'cIo.DeMo', password: 'a' });
     expect(screen.getAllByRole('tab')).toHaveLength(7);
     expect(screen.getByText('CIO.demo')).toBeInTheDocument();
-    const saved = window.localStorage.getItem(STORAGE_KEYS.accounts);
+    expect(window.localStorage.getItem(STORAGE_KEYS.accounts)).toBeNull();
     unmount();
     const restored = render(<App />);
-    expect(screen.getByRole('tabpanel', { name: 'Strategic Command' })).toBeVisible();
+    expect(await screen.findByRole('tabpanel', { name: 'Strategic Command' })).toBeVisible();
+    expect(boundary.me).toHaveBeenCalledWith(serverToken, expect.any(AbortSignal));
     await user.click(screen.getByRole('button', { name: 'Log out' }));
-    expect(screen.getByRole('status')).toHaveTextContent('account remains');
-    expect(window.localStorage.getItem(STORAGE_KEYS.accounts)).toBe(saved);
-    expect(window.localStorage.getItem(STORAGE_KEYS.session)).toBeNull();
+    expect(await screen.findByRole('status')).toHaveTextContent('account remains on the server');
+    expect(boundary.logout).toHaveBeenCalledWith(serverToken);
+    expect(window.localStorage.getItem(STORAGE_KEYS.accounts)).toBeNull();
+    expect(window.localStorage.getItem(TOKEN_KEY)).toBeNull();
     restored.unmount();
     render(<App />);
-    expect(screen.getByRole('button', { name: 'Log in' })).toBeVisible();
+    expect(await screen.findByRole('button', { name: 'Log in', exact: true })).toBeVisible();
     expect(screen.queryByRole('tabpanel')).not.toBeInTheDocument();
   });
 
-  it('rejects duplicate signup without overwrite or false routing', async () => {
-    registerAccount({ username: 'demo', password: 'a' });
-    const saved = window.localStorage.getItem(STORAGE_KEYS.accounts);
+  it('reports server duplicate signup without altering local data or false routing', async () => {
+    const boundary = mockServerAuth();
+    boundary.register.mockRejectedValueOnce(new ApiError('This username already exists. Log in instead.', 409, 'username'));
+    const saved = '{"legacy":"untouched"}';
+    window.localStorage.setItem(STORAGE_KEYS.accounts, saved);
     const user = userEvent.setup();
     render(<App />);
-    await user.click(screen.getByRole('button', { name: 'Create a demo account' }));
+    await user.click(await screen.findByRole('button', { name: 'Create an account', exact: true }));
     await submit(user, ' DEMO ', 'b', 'Create account');
-    expect(screen.getByRole('alert')).toHaveTextContent('already exists');
+    expect(await screen.findByRole('alert')).toHaveTextContent('already exists');
     expect(screen.getByLabelText('Password')).toHaveValue('');
     expect(window.localStorage.getItem(STORAGE_KEYS.accounts)).toBe(saved);
     expect(screen.getByRole('button', { name: 'Create account' })).toBeVisible();
+    expect(screen.queryByRole('tabpanel')).not.toBeInTheDocument();
   });
 
-  it.each(['signup', 'login'])('keeps %s signed out when writes fail', async (mode) => {
-    registerAccount({ username: 'demo', password: 'a' });
+  it.each(['signup', 'login'])('keeps %s signed out when the server request fails', async (mode) => {
+    const boundary = mockServerAuth();
+    boundary[mode === 'signup' ? 'register' : 'login'].mockRejectedValueOnce(new ApiError('The server could not complete this request. Try again.', 503));
     const user = userEvent.setup();
     render(<App />);
-    if (mode === 'signup') await user.click(screen.getByRole('button', { name: 'Create a demo account' }));
-    vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new Error('full'); });
+    await screen.findByRole('button', { name: 'Log in', exact: true });
+    if (mode === 'signup') await user.click(screen.getByRole('button', { name: 'Create an account', exact: true }));
     await submit(user, mode === 'signup' ? 'new' : 'demo', 'a', mode === 'signup' ? 'Create account' : 'Log in');
-    expect(screen.getByRole('alert')).toHaveTextContent('could not be saved');
+    expect(await screen.findByRole('alert')).toHaveTextContent('could not complete');
+    expect(screen.queryByRole('tabpanel')).not.toBeInTheDocument();
+    expect(screen.getByLabelText('Password')).toHaveValue('');
+    expect(window.localStorage.getItem(TOKEN_KEY)).toBeNull();
+  });
+
+  it('ignores corrupt local accounts and reports server login rejection without overwriting them', async () => {
+    const boundary = mockServerAuth();
+    boundary.login.mockRejectedValueOnce(new ApiError('Username or password does not match.', 401));
+    window.localStorage.setItem(STORAGE_KEYS.accounts, '{');
+    const user = userEvent.setup();
+    render(<App />);
+    await screen.findByRole('button', { name: 'Log in', exact: true });
+    await submit(user, 'demo', 'a');
+    expect(await screen.findByRole('alert')).toHaveTextContent('does not match');
+    expect(window.localStorage.getItem(STORAGE_KEYS.accounts)).toBe('{');
+    expect(boundary.login).toHaveBeenCalledWith({ username: 'demo', password: 'a' });
+    expect(screen.queryByRole('tabpanel')).not.toBeInTheDocument();
+  });
+
+  it('rejects a revoked server token while preserving legacy accounts and session', async () => {
+    const boundary = seedServerSession();
+    boundary.me.mockRejectedValueOnce(new ApiError('Expired session', 401));
+    const saved = '{"legacy":"untouched"}';
+    window.localStorage.setItem(STORAGE_KEYS.accounts, saved);
+    window.localStorage.setItem(STORAGE_KEYS.session, '{');
+    render(<App />);
+    expect(await screen.findByRole('alert')).toHaveTextContent('session has expired');
+    expect(screen.queryByRole('tabpanel')).not.toBeInTheDocument();
+    expect(window.localStorage.getItem(STORAGE_KEYS.accounts)).toBe(saved);
+    expect(window.localStorage.getItem(STORAGE_KEYS.session)).toBe('{');
+    expect(window.localStorage.getItem(TOKEN_KEY)).toBeNull();
+  });
+
+  it('reports denied token restore and server submit failure without a crash or false session', async () => {
+    const boundary = mockServerAuth();
+    boundary.login.mockRejectedValueOnce(new ApiError('The server is unavailable. Try again.'));
+    vi.spyOn(Storage.prototype, 'getItem').mockImplementation(() => { throw new Error('denied'); });
+    const user = userEvent.setup();
+    render(<App />);
+    expect(await screen.findByRole('alert')).toHaveTextContent('storage is unavailable');
+    await submit(user, 'demo', 'a');
+    expect(screen.getAllByRole('alert').some((alert) => alert.textContent.includes('server is unavailable'))).toBe(true);
     expect(screen.queryByRole('tabpanel')).not.toBeInTheDocument();
     expect(screen.getByLabelText('Password')).toHaveValue('');
   });
 
-  it('reports corrupt accounts without overwriting or entering the shell', async () => {
-    window.localStorage.setItem(STORAGE_KEYS.accounts, '{');
+  it('keeps signed-in state on failed server logout and permits successful retry', async () => {
+    const boundary = seedServerSession();
+    boundary.logout.mockRejectedValueOnce(new ApiError('The server is unavailable. Try again.'));
     const user = userEvent.setup();
     render(<App />);
-    await submit(user, 'demo', 'a');
-    expect(screen.getByRole('alert')).toHaveTextContent('not been overwritten');
-    expect(window.localStorage.getItem(STORAGE_KEYS.accounts)).toBe('{');
-    expect(screen.queryByRole('tabpanel')).not.toBeInTheDocument();
-  });
-
-  it('reports damaged session restore while preserving accounts', () => {
-    registerAccount({ username: 'demo', password: 'a' });
-    const saved = window.localStorage.getItem(STORAGE_KEYS.accounts);
-    window.localStorage.setItem(STORAGE_KEYS.session, '{');
-    render(<App />);
-    expect(screen.getByRole('status')).toHaveTextContent('session is damaged');
-    expect(screen.queryByRole('tabpanel')).not.toBeInTheDocument();
-    expect(window.localStorage.getItem(STORAGE_KEYS.accounts)).toBe(saved);
-  });
-
-  it('reports denied restore and denied submit without a crash or false session', async () => {
-    vi.spyOn(Storage.prototype, 'getItem').mockImplementation(() => { throw new Error('denied'); });
-    const user = userEvent.setup();
-    render(<App />);
-    expect(screen.getByRole('status')).toHaveTextContent('could not be restored');
-    await submit(user, 'demo', 'a');
-    expect(screen.getByRole('alert')).toHaveTextContent('unavailable');
-    expect(screen.queryByRole('tabpanel')).not.toBeInTheDocument();
-  });
-
-  it('keeps signed-in state on failed logout and permits successful retry', async () => {
-    registerAccount({ username: 'demo', password: 'a' });
-    login({ username: 'demo', password: 'a' });
-    const user = userEvent.setup();
-    render(<App />);
-    const removal = vi.spyOn(Storage.prototype, 'removeItem').mockImplementation(() => { throw new Error('denied'); });
+    await screen.findByRole('tabpanel');
     await user.click(screen.getByRole('button', { name: 'Log out' }));
-    expect(screen.getByRole('alert')).toHaveTextContent('still signed in');
+    expect(await screen.findByRole('alert')).toHaveTextContent('still signed in');
     expect(screen.getByRole('tabpanel')).toBeVisible();
-    expect(window.localStorage.getItem(STORAGE_KEYS.session)).not.toBeNull();
-    removal.mockRestore();
+    expect(window.localStorage.getItem(TOKEN_KEY)).toBe(serverToken);
     await user.click(screen.getByRole('button', { name: 'Log out' }));
+    await screen.findByRole('button', { name: 'Log in', exact: true });
     expect(screen.queryByRole('tabpanel')).not.toBeInTheDocument();
     expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    expect(window.localStorage.getItem(TOKEN_KEY)).toBeNull();
   });
 
   it('selects all seven panels, preserves header, and never fetches or persists tab state', async () => {
-    window.localStorage.setItem(STORAGE_KEYS.session, '{"version":1,"username":"<demo>"}');
+    seedServerSession('<demo>');
     const fetch = vi.fn();
     vi.stubGlobal('fetch', fetch);
     const xhr = vi.spyOn(XMLHttpRequest.prototype, 'open');
     const user = userEvent.setup();
     render(<App />);
-    const saved = window.localStorage.getItem(STORAGE_KEYS.session);
+    await screen.findByRole('tabpanel');
+    const saved = window.localStorage.getItem(TOKEN_KEY);
     for (const tab of screen.getAllByRole('tab')) {
       await user.click(tab);
       expect(screen.getAllByRole('tabpanel')).toHaveLength(1);
@@ -256,13 +281,14 @@ describe('local access shell', () => {
     expect(fetch).not.toHaveBeenCalled();
     expect(xhr).not.toHaveBeenCalled();
     expect(window.localStorage.length).toBe(1);
-    expect(window.localStorage.getItem(STORAGE_KEYS.session)).toBe(saved);
+    expect(window.localStorage.getItem(TOKEN_KEY)).toBe(saved);
   });
 
   it('supports roving focus, arrow wrap, Home/End, Enter/Space and ignores unrelated keys', async () => {
-    window.localStorage.setItem(STORAGE_KEYS.session, '{"version":1,"username":"demo"}');
+    seedServerSession('demo');
     const user = userEvent.setup();
     render(<App />);
+    await screen.findByRole('tabpanel');
     const tabs = screen.getAllByRole('tab');
     tabs[0].focus();
     await user.keyboard('{ArrowLeft}');

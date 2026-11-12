@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import App from '../App.jsx';
 import Operations from '../views/Operations.jsx';
 import { OPERATIONS_FIXTURES } from '../data/dashboardFixtures.js';
-import { STORAGE_KEYS } from '../services/localStorage.js';
+import { seedServerSession } from './serverAuthFixture.js';
 
 const chart = vi.hoisted(() => ({ props: null, fail: false }));
 // Replace only external canvas drawing; retain the real chart wrapper and table.
@@ -178,7 +178,7 @@ describe('Operations', () => {
   });
 
   it('selects Operations by click and keyboard without calls or writes, preserving previous views and shell', async () => {
-    window.localStorage.setItem(STORAGE_KEYS.session, '{"version":1,"username":"synthetic"}');
+    seedServerSession();
     const writes = vi.spyOn(Storage.prototype, 'setItem');
     const fetch = vi.fn();
     vi.stubGlobal('fetch', fetch);
@@ -188,6 +188,7 @@ describe('Operations', () => {
     render(
       <App />
     );
+    await screen.findByRole('tabpanel', { name: 'Strategic Command' });
     expect(screen.getByRole('tabpanel', { name: 'Strategic Command' })).toBeVisible();
     await user.click(screen.getByRole('tab', { name: 'Operations', exact: true }));
     expect(screen.getAllByRole('tabpanel')).toHaveLength(1);

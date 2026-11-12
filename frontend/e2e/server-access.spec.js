@@ -1,0 +1,62 @@
+/** Verify real server account persistence and revocation; do not mock requests. */
+import { test, expect } from '@playwright/test';
+
+for (const viewport of [{ width: 1280, height: 800 }, { width: 390, height: 844 }]) {
+  test(`server account lifecycle at ${viewport.width}px`, async ({ page, request }, testInfo) => {
+    const errors = [];
+    page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()); });
+    page.on('pageerror', (error) => errors.push(error.message));
+    await page.setViewportSize(viewport);
+    await page.goto('/');
+    await expect(page.getByRole('button', { name: 'Log in', exact: true })).toBeVisible();
+    await expect(page.getByRole('tabpanel')).toHaveCount(0);
+    await page.getByRole('button', { name: 'Create an account', exact: true }).click();
+    const username = `e2e-${Date.now()}-${viewport.width}`;
+    await page.getByLabel('Username').fill(username);
+    await page.getByLabel('Password').fill(' exact-e2e-password ');
+    const registered = page.waitForResponse((response) => response.url().endsWith('/api/v1/auth/register') && response.request().method() === 'POST');
+    await page.getByRole('button', { name: 'Create account', exact: true }).click();
+    const registration = await registered;
+    expect(registration.status()).toBe(201);
+    const account = await registration.json();
+    expect(account.username).toBe(username);
+    expect(account.id).toMatch(/^[0-9a-f-]{36}$/);
+    expect(account.password_hash).toBeUndefined();
+    await expect(page.getByRole('status')).toContainText('Account saved on the server');
+    await page.getByLabel('Username').fill(username);
+    await page.getByLabel('Password').fill('wrong');
+    const rejected = page.waitForResponse((response) => response.url().endsWith('/api/v1/auth/login'));
+    await page.getByRole('button', { name: 'Log in', exact: true }).click();
+    expect((await rejected).status()).toBe(401);
+    await expect(page.getByRole('alert')).toContainText('does not match');
+    await page.getByLabel('Password').fill(' exact-e2e-password ');
+    const loggedIn = page.waitForResponse((response) => response.url().endsWith('/api/v1/auth/login') && response.status() === 200);
+    await page.getByRole('button', { name: 'Log in', exact: true }).click();
+    const login = await (await loggedIn).json();
+    expect(login.account).toEqual(account);
+    await expect(page.locator('header')).toContainText(login.account.username);
+    await expect(page.getByRole('tab')).toHaveCount(7);
+    const restored = page.waitForResponse((response) => response.url().endsWith('/api/v1/auth/me'));
+    await page.reload();
+    const me = await restored;
+    expect(me.status()).toBe(200);
+    expect(await me.json()).toEqual(account);
+    await expect(page.getByRole('tabpanel', { name: 'Strategic Command' })).toBeVisible();
+    const logout = page.waitForResponse((response) => response.url().endsWith('/api/v1/auth/logout'));
+    await page.getByRole('button', { name: 'Log out', exact: true }).click();
+    expect((await logout).status()).toBe(204);
+    const revoked = await request.get('/api/v1/auth/me', { headers: { Authorization: `Bearer ${login.access_token}` } });
+    expect(revoked.status()).toBe(401);
+    await page.reload();
+    await expect(page.getByRole('button', { name: 'Log in', exact: true })).toBeVisible();
+    await expect(page.getByRole('tabpanel')).toHaveCount(0);
+    await page.getByLabel('Username').fill(username);
+    await page.getByLabel('Password').fill(' exact-e2e-password ');
+    const relogin = page.waitForResponse((response) => response.url().endsWith('/api/v1/auth/login') && response.status() === 200);
+    await page.getByRole('button', { name: 'Log in', exact: true }).click();
+    expect((await (await relogin).json()).account.id).toBe(account.id);
+    await expect(page.getByRole('tabpanel')).toBeVisible();
+    await page.screenshot({ path: testInfo.outputPath('server-access.png'), fullPage: true });
+    expect(errors).toEqual([]);
+  });
+}

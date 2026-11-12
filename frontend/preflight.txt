@@ -1,0 +1,1435 @@
+{
+  "viewport": "desktop",
+  "state": "login",
+  "tree": {
+    "role": "WebArea",
+    "name": "Canon Global CIO Command Center",
+    "children": [
+      {
+        "role": "link",
+        "name": "Skip to main content"
+      },
+      {
+        "role": "text",
+        "name": "Canon"
+      },
+      {
+        "role": "heading",
+        "name": "Global CIO Command Center",
+        "level": 1
+      },
+      {
+        "role": "main",
+        "name": "",
+        "children": [
+          {
+            "role": "text",
+            "name": "LOCAL DEMONSTRATION"
+          },
+          {
+            "role": "heading",
+            "name": "Log in to the command center",
+            "level": 2
+          },
+          {
+            "role": "text",
+            "name": "Demo access only. Credentials are stored unencrypted in this browser and can be inspected or edited. Never use a real password or confidential information."
+          },
+          {
+            "role": "text",
+            "name": "Username"
+          },
+          {
+            "role": "textbox",
+            "name": "Username",
+            "required": true
+          },
+          {
+            "role": "text",
+            "name": "Password"
+          },
+          {
+            "role": "textbox",
+            "name": "Password",
+            "required": true
+          },
+          {
+            "role": "button",
+            "name": "Log in"
+          },
+          {
+            "role": "text",
+            "name": "New to this browser?"
+          },
+          {
+            "role": "button",
+            "name": "Create a demo account"
+          }
+        ]
+      }
+    ]
+  },
+  "styles": {
+    "font": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "background": "rgba(0, 0, 0, 0)",
+    "width": 1280,
+    "scrollWidth": 1280
+  },
+  "html": "<!DOCTYPE html><html lang=\"en\"><head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <meta name=\"description\" content=\"Canon Global CIO Command Center — local demonstration access.\">\n    <meta name=\"theme-color\" content=\"#f7f6f3\">\n    <link rel=\"icon\" href=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23b51f24'/%3E%3Ctext x='8' y='24' font-size='24' font-family='Arial' fill='white'%3EC%3C/text%3E%3C/svg%3E\">\n    <title>Canon Global CIO Command Center</title>\n    <script type=\"module\" crossorigin=\"\" src=\"/assets/index-mg-CYr98.js\"></script>\n    <link rel=\"stylesheet\" crossorigin=\"\" href=\"/assets/index-CYCsDzNq.css\">\n  </head>\n  <body>\n    <div id=\"root\"><div class=\"app-shell\"><a class=\"skip-link\" href=\"#main-content\">Skip to main content</a><header class=\"app-header\"><div class=\"brand-block\"><span class=\"brand\">Canon</span><h1>Global CIO Command Center</h1></div></header><main id=\"main-content\" tabindex=\"-1\"><div class=\"auth-layout\"><section class=\"auth-card\" aria-labelledby=\"auth-title\"><p class=\"eyebrow\">Local demonstration</p><h2 id=\"auth-title\">Log in to the command center</h2><p class=\"muted\" id=\"demo-warning\">Demo access only. Credentials are stored unencrypted in this browser and can be inspected or edited. Never use a real password or confidential information.</p><form novalidate=\"\" aria-describedby=\"demo-warning\"><div class=\"field\"><label for=\"username\">Username</label><input id=\"username\" name=\"username\" autocomplete=\"username\" autocapitalize=\"none\" spellcheck=\"false\" required=\"\" aria-required=\"true\" aria-invalid=\"false\" value=\"\"></div><div class=\"field\"><label for=\"password\">Password</label><input id=\"password\" name=\"password\" type=\"password\" autocomplete=\"current-password\" required=\"\" aria-required=\"true\" aria-invalid=\"false\" value=\"\"></div><button type=\"submit\" class=\"button primary\">Log in</button></form><div class=\"mode-switch\"><span class=\"muted\">New to this browser?</span><button class=\"text-button\" type=\"button\">Create a demo account</button></div></section></div></main></div></div>\n  \n\n</body></html>"
+}
+
+{
+  "viewport": "desktop",
+  "state": "strategic",
+  "tree": {
+    "role": "WebArea",
+    "name": "Canon Global CIO Command Center",
+    "children": [
+      {
+        "role": "link",
+        "name": "Skip to main content"
+      },
+      {
+        "role": "text",
+        "name": "Canon"
+      },
+      {
+        "role": "heading",
+        "name": "Global CIO Command Center",
+        "level": 1
+      },
+      {
+        "role": "text",
+        "name": "P"
+      },
+      {
+        "role": "text",
+        "name": "Global CIO · Demo"
+      },
+      {
+        "role": "text",
+        "name": "preflight-desktop"
+      },
+      {
+        "role": "text",
+        "name": "Notifications unavailable in demo"
+      },
+      {
+        "role": "button",
+        "name": "Log out"
+      },
+      {
+        "role": "main",
+        "name": "",
+        "children": [
+          {
+            "role": "text",
+            "name": "Local demo access · Not secure authentication. Do not enter confidential information."
+          },
+          {
+            "role": "tab",
+            "name": "Strategic Command",
+            "selected": true
+          },
+          {
+            "role": "tab",
+            "name": "Executive Summary"
+          },
+          {
+            "role": "tab",
+            "name": "Business Impact"
+          },
+          {
+            "role": "tab",
+            "name": "Operations"
+          },
+          {
+            "role": "tab",
+            "name": "Risk & Governance"
+          },
+          {
+            "role": "tab",
+            "name": "Innovation"
+          },
+          {
+            "role": "tab",
+            "name": "Partnerships"
+          },
+          {
+            "role": "tabpanel",
+            "name": "Strategic Command",
+            "children": [
+              {
+                "role": "text",
+                "name": "COMMAND CENTER"
+              },
+              {
+                "role": "heading",
+                "name": "Strategic Command",
+                "level": 2
+              },
+              {
+                "role": "text",
+                "name": "Illustrative demo only — not live or verified enterprise data. Not validated advice."
+              },
+              {
+                "role": "text",
+                "name": " "
+              },
+              {
+                "role": "text",
+                "name": "Values, trends and AI insights have not been specified."
+              },
+              {
+                "role": "heading",
+                "name": "Business Impact",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Value"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "Trend"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "AI insight"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "heading",
+                "name": "Risk",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Value"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "Trend"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "AI insight"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "heading",
+                "name": "Innovation",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Value"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "Trend"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "AI insight"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "heading",
+                "name": "Strategic Priorities",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Not specified."
+              },
+              {
+                "role": "heading",
+                "name": "Recommended Actions",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Not specified."
+              },
+              {
+                "role": "heading",
+                "name": "Quick Actions",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Labels and outcomes: Not specified."
+              },
+              {
+                "role": "heading",
+                "name": "Strategic assistant topics",
+                "level": 3
+              },
+              {
+                "role": "button",
+                "name": "Q4 Board Presentation Ready"
+              },
+              {
+                "role": "button",
+                "name": "TCS Contract Expansion Analysis"
+              },
+              {
+                "role": "button",
+                "name": "Risk Mitigation Plan"
+              },
+              {
+                "role": "button",
+                "name": "Innovation Investment Strategy"
+              },
+              {
+                "role": "heading",
+                "name": "Twelve-Month Strategic Trends",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Compare Business Impact, Risk and Innovation across twelve relative monthly periods."
+              },
+              {
+                "role": "text",
+                "name": "Illustrative demo only — not live or verified enterprise data. Not validated advice."
+              },
+              {
+                "role": "text",
+                "name": " "
+              },
+              {
+                "role": "text",
+                "name": "No fixture values, units, scales or calculations have been specified. Month 1–12 are relative periods, not calendar dates."
+              },
+              {
+                "role": "text",
+                "name": "Chart data not specified. Missing values are not zero."
+              },
+              {
+                "role": "region",
+                "name": "Twelve-Month Strategic Trends textual data"
+              },
+              {
+                "role": "text",
+                "name": "These demonstration controls are inactive; no export or predictive analysis is performed."
+              },
+              {
+                "role": "button",
+                "name": "Export Data",
+                "description": "These demonstration controls are inactive; no export or predictive analysis is performed.",
+                "disabled": true
+              },
+              {
+                "role": "button",
+                "name": "Predictive Analysis",
+                "description": "These demonstration controls are inactive; no export or predictive analysis is performed.",
+                "disabled": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "role": "button",
+        "name": "Open local assistant"
+      }
+    ]
+  },
+  "styles": {
+    "font": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "background": "rgba(0, 0, 0, 0)",
+    "width": 1280,
+    "scrollWidth": 1280
+  },
+  "html": "<!DOCTYPE html><html lang=\"en\"><head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <meta name=\"description\" content=\"Canon Global CIO Command Center — local demonstration access.\">\n    <meta name=\"theme-color\" content=\"#f7f6f3\">\n    <link rel=\"icon\" href=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23b51f24'/%3E%3Ctext x='8' y='24' font-size='24' font-family='Arial' fill='white'%3EC%3C/text%3E%3C/svg%3E\">\n    <title>Canon Global CIO Command Center</title>\n    <script type=\"module\" crossorigin=\"\" src=\"/assets/index-mg-CYr98.js\"></script>\n    <link rel=\"stylesheet\" crossorigin=\"\" href=\"/assets/index-CYCsDzNq.css\">\n  </head>\n  <body>\n    <div id=\"root\"><div class=\"app-shell\"><a class=\"skip-link\" href=\"#main-content\">Skip to main content</a><header class=\"app-header\"><div class=\"brand-block\"><span class=\"brand\">Canon</span><h1>Global CIO Command Center</h1></div><div class=\"identity\"><span class=\"username\" role=\"img\" aria-label=\"preflight-desktop initials avatar\">P</span><div><p class=\"role-label\">Global CIO · Demo</p><p class=\"username\">preflight-desktop</p><p class=\"role-label\">Notifications unavailable in demo</p></div><button class=\"button secondary\" type=\"button\">Log out</button></div></header><main id=\"main-content\" tabindex=\"-1\"><div class=\"dashboard-layout\"><p class=\"demo-context\">Local demo access · Not secure authentication. Do not enter confidential information.</p><nav class=\"dashboard-navigation\" aria-label=\"Dashboard sections\"><div class=\"dashboard-tabs\" role=\"tablist\" aria-label=\"Dashboard views\" aria-orientation=\"horizontal\"><button type=\"button\" role=\"tab\" id=\"tab-strategic\" aria-controls=\"panel-strategic\" aria-selected=\"true\" tabindex=\"0\">Strategic Command</button><button type=\"button\" role=\"tab\" id=\"tab-executive\" aria-controls=\"panel-executive\" aria-selected=\"false\" tabindex=\"-1\">Executive Summary</button><button type=\"button\" role=\"tab\" id=\"tab-businessImpact\" aria-controls=\"panel-businessImpact\" aria-selected=\"false\" tabindex=\"-1\">Business Impact</button><button type=\"button\" role=\"tab\" id=\"tab-operations\" aria-controls=\"panel-operations\" aria-selected=\"false\" tabindex=\"-1\">Operations</button><button type=\"button\" role=\"tab\" id=\"tab-riskGovernance\" aria-controls=\"panel-riskGovernance\" aria-selected=\"false\" tabindex=\"-1\">Risk &amp; Governance</button><button type=\"button\" role=\"tab\" id=\"tab-innovation\" aria-controls=\"panel-innovation\" aria-selected=\"false\" tabindex=\"-1\">Innovation</button><button type=\"button\" role=\"tab\" id=\"tab-partnerships\" aria-controls=\"panel-partnerships\" aria-selected=\"false\" tabindex=\"-1\">Partnerships</button></div></nav><section role=\"tabpanel\" id=\"panel-strategic\" aria-labelledby=\"tab-strategic\" tabindex=\"0\" class=\"active-panel\"><p class=\"eyebrow\">Command center</p><h2>Strategic Command</h2><div class=\"strategic-content\"><p class=\"mock-notice\">Illustrative demo only — not live or verified enterprise data. Not validated advice.<span> Values, trends and AI insights have not been specified.</span></p><div class=\"metric-grid\"><article class=\"metric-card\" aria-label=\"Business Impact\"><h3>Business Impact</h3><dl><dt>Value</dt><dd class=\"metric-value\">Not specified</dd><dt>Trend</dt><dd>Not specified</dd><dt>AI insight</dt><dd>Not specified</dd></dl></article><article class=\"metric-card\" aria-label=\"Risk\"><h3>Risk</h3><dl><dt>Value</dt><dd class=\"metric-value\">Not specified</dd><dt>Trend</dt><dd>Not specified</dd><dt>AI insight</dt><dd>Not specified</dd></dl></article><article class=\"metric-card\" aria-label=\"Innovation\"><h3>Innovation</h3><dl><dt>Value</dt><dd class=\"metric-value\">Not specified</dd><dt>Trend</dt><dd>Not specified</dd><dt>AI insight</dt><dd>Not specified</dd></dl></article></div><div class=\"strategic-sections\"><section><h3>Strategic Priorities</h3><p class=\"muted\">Not specified.</p></section><section><h3>Recommended Actions</h3><p class=\"muted\">Not specified.</p></section><section><h3>Quick Actions</h3><p class=\"muted\">Labels and outcomes: Not specified.</p></section></div><section aria-labelledby=\"strategic-chip-title\"><h3 id=\"strategic-chip-title\">Strategic assistant topics</h3><div class=\"action-buttons assistant-chips\"><button type=\"button\" class=\"button secondary\">Q4 Board Presentation Ready</button><button type=\"button\" class=\"button secondary\">TCS Contract Expansion Analysis</button><button type=\"button\" class=\"button secondary\">Risk Mitigation Plan</button><button type=\"button\" class=\"button secondary\">Innovation Investment Strategy</button></div></section><section class=\"chart-panel\" aria-labelledby=\":r1:-title\" aria-describedby=\":r1:-description\"><h3 id=\":r1:-title\">Twelve-Month Strategic Trends</h3><p id=\":r1:-description\" class=\"muted\">Compare Business Impact, Risk and Innovation across twelve relative monthly periods.</p><p class=\"mock-notice\">Illustrative demo only — not live or verified enterprise data. Not validated advice.<span> No fixture values, units, scales or calculations have been specified. Month 1–12 are relative periods, not calendar dates.</span></p><p class=\"chart-empty\">Chart data not specified. Missing values are not zero.</p><div class=\"chart-table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Twelve-Month Strategic Trends textual data\"><table><caption>Twelve-Month Strategic Trends — textual data</caption><thead><tr><th scope=\"col\">Period / category</th><th scope=\"col\">Business Impact</th><th scope=\"col\">Risk</th><th scope=\"col\">Innovation</th></tr></thead><tbody><tr><th scope=\"row\">Month 1</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 2</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 3</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 4</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 5</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 6</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 7</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 8</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 9</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 10</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 11</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 12</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr></tbody></table></div></section><div class=\"strategic-controls\"><p id=\"strategic-actions-note\" class=\"muted\">These demonstration controls are inactive; no export or predictive analysis is performed.</p><div class=\"action-buttons\"><button type=\"button\" class=\"button secondary\" aria-disabled=\"true\" aria-describedby=\"strategic-actions-note\">Export Data</button><button type=\"button\" class=\"button secondary\" aria-disabled=\"true\" aria-describedby=\"strategic-actions-note\">Predictive Analysis</button></div></div></div></section></div></main><aside class=\"assistant-disclosure\" aria-label=\"Local assistant controls\"><button type=\"button\" class=\"button secondary assistant-toggle\" aria-expanded=\"false\" aria-controls=\"assistant-panel\">Open local assistant</button></aside></div></div>\n  \n\n</body></html>"
+}
+
+{
+  "viewport": "desktop",
+  "state": "assistant",
+  "tree": {
+    "role": "WebArea",
+    "name": "Canon Global CIO Command Center",
+    "children": [
+      {
+        "role": "link",
+        "name": "Skip to main content"
+      },
+      {
+        "role": "text",
+        "name": "Canon"
+      },
+      {
+        "role": "heading",
+        "name": "Global CIO Command Center",
+        "level": 1
+      },
+      {
+        "role": "text",
+        "name": "P"
+      },
+      {
+        "role": "text",
+        "name": "Global CIO · Demo"
+      },
+      {
+        "role": "text",
+        "name": "preflight-desktop"
+      },
+      {
+        "role": "text",
+        "name": "Notifications unavailable in demo"
+      },
+      {
+        "role": "button",
+        "name": "Log out"
+      },
+      {
+        "role": "main",
+        "name": "",
+        "children": [
+          {
+            "role": "text",
+            "name": "Local demo access · Not secure authentication. Do not enter confidential information."
+          },
+          {
+            "role": "tab",
+            "name": "Strategic Command",
+            "selected": true
+          },
+          {
+            "role": "tab",
+            "name": "Executive Summary"
+          },
+          {
+            "role": "tab",
+            "name": "Business Impact"
+          },
+          {
+            "role": "tab",
+            "name": "Operations"
+          },
+          {
+            "role": "tab",
+            "name": "Risk & Governance"
+          },
+          {
+            "role": "tab",
+            "name": "Innovation"
+          },
+          {
+            "role": "tab",
+            "name": "Partnerships"
+          },
+          {
+            "role": "tabpanel",
+            "name": "Strategic Command",
+            "children": [
+              {
+                "role": "text",
+                "name": "COMMAND CENTER"
+              },
+              {
+                "role": "heading",
+                "name": "Strategic Command",
+                "level": 2
+              },
+              {
+                "role": "text",
+                "name": "Illustrative demo only — not live or verified enterprise data. Not validated advice."
+              },
+              {
+                "role": "text",
+                "name": " "
+              },
+              {
+                "role": "text",
+                "name": "Values, trends and AI insights have not been specified."
+              },
+              {
+                "role": "heading",
+                "name": "Business Impact",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Value"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "Trend"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "AI insight"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "heading",
+                "name": "Risk",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Value"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "Trend"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "AI insight"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "heading",
+                "name": "Innovation",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Value"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "Trend"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "AI insight"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "heading",
+                "name": "Strategic Priorities",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Not specified."
+              },
+              {
+                "role": "heading",
+                "name": "Recommended Actions",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Not specified."
+              },
+              {
+                "role": "heading",
+                "name": "Quick Actions",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Labels and outcomes: Not specified."
+              },
+              {
+                "role": "heading",
+                "name": "Strategic assistant topics",
+                "level": 3
+              },
+              {
+                "role": "button",
+                "name": "Q4 Board Presentation Ready"
+              },
+              {
+                "role": "button",
+                "name": "TCS Contract Expansion Analysis"
+              },
+              {
+                "role": "button",
+                "name": "Risk Mitigation Plan"
+              },
+              {
+                "role": "button",
+                "name": "Innovation Investment Strategy"
+              },
+              {
+                "role": "heading",
+                "name": "Twelve-Month Strategic Trends",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Compare Business Impact, Risk and Innovation across twelve relative monthly periods."
+              },
+              {
+                "role": "text",
+                "name": "Illustrative demo only — not live or verified enterprise data. Not validated advice."
+              },
+              {
+                "role": "text",
+                "name": " "
+              },
+              {
+                "role": "text",
+                "name": "No fixture values, units, scales or calculations have been specified. Month 1–12 are relative periods, not calendar dates."
+              },
+              {
+                "role": "text",
+                "name": "Chart data not specified. Missing values are not zero."
+              },
+              {
+                "role": "region",
+                "name": "Twelve-Month Strategic Trends textual data"
+              },
+              {
+                "role": "text",
+                "name": "These demonstration controls are inactive; no export or predictive analysis is performed."
+              },
+              {
+                "role": "button",
+                "name": "Export Data",
+                "description": "These demonstration controls are inactive; no export or predictive analysis is performed.",
+                "disabled": true
+              },
+              {
+                "role": "button",
+                "name": "Predictive Analysis",
+                "description": "These demonstration controls are inactive; no export or predictive analysis is performed.",
+                "disabled": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "role": "heading",
+        "name": "Local assistant",
+        "level": 2
+      },
+      {
+        "role": "button",
+        "name": "Close assistant"
+      },
+      {
+        "role": "text",
+        "name": "Local rule-based simulation — not live or generative AI; not validated advice."
+      },
+      {
+        "role": "text",
+        "name": "Non-modal panel. Dashboard controls remain available. Escape closes this panel."
+      },
+      {
+        "role": "log",
+        "name": "Assistant response history"
+      },
+      {
+        "role": "text",
+        "name": "Assistant prompt"
+      },
+      {
+        "role": "textbox",
+        "name": "Assistant prompt",
+        "description": "Local rule-based simulation — not live or generative AI; not validated advice.",
+        "focused": true
+      },
+      {
+        "role": "button",
+        "name": "Get local response"
+      },
+      {
+        "role": "button",
+        "name": "Hide local assistant",
+        "expanded": true
+      }
+    ]
+  },
+  "styles": {
+    "font": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "background": "rgba(0, 0, 0, 0)",
+    "width": 1280,
+    "scrollWidth": 1280
+  },
+  "html": "<!DOCTYPE html><html lang=\"en\"><head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <meta name=\"description\" content=\"Canon Global CIO Command Center — local demonstration access.\">\n    <meta name=\"theme-color\" content=\"#f7f6f3\">\n    <link rel=\"icon\" href=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23b51f24'/%3E%3Ctext x='8' y='24' font-size='24' font-family='Arial' fill='white'%3EC%3C/text%3E%3C/svg%3E\">\n    <title>Canon Global CIO Command Center</title>\n    <script type=\"module\" crossorigin=\"\" src=\"/assets/index-mg-CYr98.js\"></script>\n    <link rel=\"stylesheet\" crossorigin=\"\" href=\"/assets/index-CYCsDzNq.css\">\n  </head>\n  <body>\n    <div id=\"root\"><div class=\"app-shell\"><a class=\"skip-link\" href=\"#main-content\">Skip to main content</a><header class=\"app-header\"><div class=\"brand-block\"><span class=\"brand\">Canon</span><h1>Global CIO Command Center</h1></div><div class=\"identity\"><span class=\"username\" role=\"img\" aria-label=\"preflight-desktop initials avatar\">P</span><div><p class=\"role-label\">Global CIO · Demo</p><p class=\"username\">preflight-desktop</p><p class=\"role-label\">Notifications unavailable in demo</p></div><button class=\"button secondary\" type=\"button\">Log out</button></div></header><main id=\"main-content\" tabindex=\"-1\"><div class=\"dashboard-layout\"><p class=\"demo-context\">Local demo access · Not secure authentication. Do not enter confidential information.</p><nav class=\"dashboard-navigation\" aria-label=\"Dashboard sections\"><div class=\"dashboard-tabs\" role=\"tablist\" aria-label=\"Dashboard views\" aria-orientation=\"horizontal\"><button type=\"button\" role=\"tab\" id=\"tab-strategic\" aria-controls=\"panel-strategic\" aria-selected=\"true\" tabindex=\"0\">Strategic Command</button><button type=\"button\" role=\"tab\" id=\"tab-executive\" aria-controls=\"panel-executive\" aria-selected=\"false\" tabindex=\"-1\">Executive Summary</button><button type=\"button\" role=\"tab\" id=\"tab-businessImpact\" aria-controls=\"panel-businessImpact\" aria-selected=\"false\" tabindex=\"-1\">Business Impact</button><button type=\"button\" role=\"tab\" id=\"tab-operations\" aria-controls=\"panel-operations\" aria-selected=\"false\" tabindex=\"-1\">Operations</button><button type=\"button\" role=\"tab\" id=\"tab-riskGovernance\" aria-controls=\"panel-riskGovernance\" aria-selected=\"false\" tabindex=\"-1\">Risk &amp; Governance</button><button type=\"button\" role=\"tab\" id=\"tab-innovation\" aria-controls=\"panel-innovation\" aria-selected=\"false\" tabindex=\"-1\">Innovation</button><button type=\"button\" role=\"tab\" id=\"tab-partnerships\" aria-controls=\"panel-partnerships\" aria-selected=\"false\" tabindex=\"-1\">Partnerships</button></div></nav><section role=\"tabpanel\" id=\"panel-strategic\" aria-labelledby=\"tab-strategic\" tabindex=\"0\" class=\"active-panel\"><p class=\"eyebrow\">Command center</p><h2>Strategic Command</h2><div class=\"strategic-content\"><p class=\"mock-notice\">Illustrative demo only — not live or verified enterprise data. Not validated advice.<span> Values, trends and AI insights have not been specified.</span></p><div class=\"metric-grid\"><article class=\"metric-card\" aria-label=\"Business Impact\"><h3>Business Impact</h3><dl><dt>Value</dt><dd class=\"metric-value\">Not specified</dd><dt>Trend</dt><dd>Not specified</dd><dt>AI insight</dt><dd>Not specified</dd></dl></article><article class=\"metric-card\" aria-label=\"Risk\"><h3>Risk</h3><dl><dt>Value</dt><dd class=\"metric-value\">Not specified</dd><dt>Trend</dt><dd>Not specified</dd><dt>AI insight</dt><dd>Not specified</dd></dl></article><article class=\"metric-card\" aria-label=\"Innovation\"><h3>Innovation</h3><dl><dt>Value</dt><dd class=\"metric-value\">Not specified</dd><dt>Trend</dt><dd>Not specified</dd><dt>AI insight</dt><dd>Not specified</dd></dl></article></div><div class=\"strategic-sections\"><section><h3>Strategic Priorities</h3><p class=\"muted\">Not specified.</p></section><section><h3>Recommended Actions</h3><p class=\"muted\">Not specified.</p></section><section><h3>Quick Actions</h3><p class=\"muted\">Labels and outcomes: Not specified.</p></section></div><section aria-labelledby=\"strategic-chip-title\"><h3 id=\"strategic-chip-title\">Strategic assistant topics</h3><div class=\"action-buttons assistant-chips\"><button type=\"button\" class=\"button secondary\">Q4 Board Presentation Ready</button><button type=\"button\" class=\"button secondary\">TCS Contract Expansion Analysis</button><button type=\"button\" class=\"button secondary\">Risk Mitigation Plan</button><button type=\"button\" class=\"button secondary\">Innovation Investment Strategy</button></div></section><section class=\"chart-panel\" aria-labelledby=\":r1:-title\" aria-describedby=\":r1:-description\"><h3 id=\":r1:-title\">Twelve-Month Strategic Trends</h3><p id=\":r1:-description\" class=\"muted\">Compare Business Impact, Risk and Innovation across twelve relative monthly periods.</p><p class=\"mock-notice\">Illustrative demo only — not live or verified enterprise data. Not validated advice.<span> No fixture values, units, scales or calculations have been specified. Month 1–12 are relative periods, not calendar dates.</span></p><p class=\"chart-empty\">Chart data not specified. Missing values are not zero.</p><div class=\"chart-table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Twelve-Month Strategic Trends textual data\"><table><caption>Twelve-Month Strategic Trends — textual data</caption><thead><tr><th scope=\"col\">Period / category</th><th scope=\"col\">Business Impact</th><th scope=\"col\">Risk</th><th scope=\"col\">Innovation</th></tr></thead><tbody><tr><th scope=\"row\">Month 1</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 2</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 3</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 4</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 5</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 6</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 7</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 8</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 9</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 10</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 11</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 12</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr></tbody></table></div></section><div class=\"strategic-controls\"><p id=\"strategic-actions-note\" class=\"muted\">These demonstration controls are inactive; no export or predictive analysis is performed.</p><div class=\"action-buttons\"><button type=\"button\" class=\"button secondary\" aria-disabled=\"true\" aria-describedby=\"strategic-actions-note\">Export Data</button><button type=\"button\" class=\"button secondary\" aria-disabled=\"true\" aria-describedby=\"strategic-actions-note\">Predictive Analysis</button></div></div></div></section></div></main><aside class=\"assistant-disclosure\" aria-label=\"Local assistant controls\"><section id=\"assistant-panel\" class=\"assistant-panel\" aria-labelledby=\"assistant-title\" aria-describedby=\"assistant-disclosure\"><div class=\"assistant-heading\"><h2 id=\"assistant-title\">Local assistant</h2><button type=\"button\" class=\"button secondary\">Close assistant</button></div><p id=\"assistant-disclosure\" class=\"muted\">Local rule-based simulation — not live or generative AI; not validated advice.</p><p class=\"muted\">Non-modal panel. Dashboard controls remain available. Escape closes this panel.</p><div class=\"assistant-history\" role=\"log\" aria-label=\"Assistant response history\" aria-live=\"polite\" tabindex=\"0\"><p>No saved responses yet.</p></div><form><div class=\"field\"><label for=\"assistant-input\">Assistant prompt</label><input id=\"assistant-input\" name=\"assistant-prompt\" type=\"text\" autocomplete=\"off\" aria-describedby=\"assistant-disclosure\" value=\"\"></div><button type=\"submit\" class=\"button primary\">Get local response</button></form></section><button type=\"button\" class=\"button secondary assistant-toggle\" aria-expanded=\"true\" aria-controls=\"assistant-panel\">Hide local assistant</button></aside></div></div>\n  \n\n</body></html>"
+}
+
+{
+  "viewport": "mobile",
+  "state": "login",
+  "tree": {
+    "role": "WebArea",
+    "name": "Canon Global CIO Command Center",
+    "children": [
+      {
+        "role": "link",
+        "name": "Skip to main content"
+      },
+      {
+        "role": "text",
+        "name": "Canon"
+      },
+      {
+        "role": "heading",
+        "name": "Global CIO Command Center",
+        "level": 1
+      },
+      {
+        "role": "main",
+        "name": "",
+        "children": [
+          {
+            "role": "text",
+            "name": "LOCAL DEMONSTRATION"
+          },
+          {
+            "role": "heading",
+            "name": "Log in to the command center",
+            "level": 2
+          },
+          {
+            "role": "text",
+            "name": "Demo access only. Credentials are stored unencrypted in this browser and can be inspected or edited. Never use a real password or confidential information."
+          },
+          {
+            "role": "text",
+            "name": "Username"
+          },
+          {
+            "role": "textbox",
+            "name": "Username",
+            "required": true
+          },
+          {
+            "role": "text",
+            "name": "Password"
+          },
+          {
+            "role": "textbox",
+            "name": "Password",
+            "required": true
+          },
+          {
+            "role": "button",
+            "name": "Log in"
+          },
+          {
+            "role": "text",
+            "name": "New to this browser?"
+          },
+          {
+            "role": "button",
+            "name": "Create a demo account"
+          }
+        ]
+      }
+    ]
+  },
+  "styles": {
+    "font": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "background": "rgba(0, 0, 0, 0)",
+    "width": 320,
+    "scrollWidth": 320
+  },
+  "html": "<!DOCTYPE html><html lang=\"en\"><head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <meta name=\"description\" content=\"Canon Global CIO Command Center — local demonstration access.\">\n    <meta name=\"theme-color\" content=\"#f7f6f3\">\n    <link rel=\"icon\" href=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23b51f24'/%3E%3Ctext x='8' y='24' font-size='24' font-family='Arial' fill='white'%3EC%3C/text%3E%3C/svg%3E\">\n    <title>Canon Global CIO Command Center</title>\n    <script type=\"module\" crossorigin=\"\" src=\"/assets/index-mg-CYr98.js\"></script>\n    <link rel=\"stylesheet\" crossorigin=\"\" href=\"/assets/index-CYCsDzNq.css\">\n  </head>\n  <body>\n    <div id=\"root\"><div class=\"app-shell\"><a class=\"skip-link\" href=\"#main-content\">Skip to main content</a><header class=\"app-header\"><div class=\"brand-block\"><span class=\"brand\">Canon</span><h1>Global CIO Command Center</h1></div></header><main id=\"main-content\" tabindex=\"-1\"><div class=\"auth-layout\"><section class=\"auth-card\" aria-labelledby=\"auth-title\"><p class=\"eyebrow\">Local demonstration</p><h2 id=\"auth-title\">Log in to the command center</h2><p class=\"muted\" id=\"demo-warning\">Demo access only. Credentials are stored unencrypted in this browser and can be inspected or edited. Never use a real password or confidential information.</p><form novalidate=\"\" aria-describedby=\"demo-warning\"><div class=\"field\"><label for=\"username\">Username</label><input id=\"username\" name=\"username\" autocomplete=\"username\" autocapitalize=\"none\" spellcheck=\"false\" required=\"\" aria-required=\"true\" aria-invalid=\"false\" value=\"\"></div><div class=\"field\"><label for=\"password\">Password</label><input id=\"password\" name=\"password\" type=\"password\" autocomplete=\"current-password\" required=\"\" aria-required=\"true\" aria-invalid=\"false\" value=\"\"></div><button type=\"submit\" class=\"button primary\">Log in</button></form><div class=\"mode-switch\"><span class=\"muted\">New to this browser?</span><button class=\"text-button\" type=\"button\">Create a demo account</button></div></section></div></main></div></div>\n  \n\n</body></html>"
+}
+
+{
+  "viewport": "mobile",
+  "state": "strategic",
+  "tree": {
+    "role": "WebArea",
+    "name": "Canon Global CIO Command Center",
+    "children": [
+      {
+        "role": "link",
+        "name": "Skip to main content"
+      },
+      {
+        "role": "text",
+        "name": "Canon"
+      },
+      {
+        "role": "heading",
+        "name": "Global CIO Command Center",
+        "level": 1
+      },
+      {
+        "role": "text",
+        "name": "P"
+      },
+      {
+        "role": "text",
+        "name": "Global CIO · Demo"
+      },
+      {
+        "role": "text",
+        "name": "preflight-mobile"
+      },
+      {
+        "role": "text",
+        "name": "Notifications unavailable in demo"
+      },
+      {
+        "role": "button",
+        "name": "Log out"
+      },
+      {
+        "role": "main",
+        "name": "",
+        "children": [
+          {
+            "role": "text",
+            "name": "Local demo access · Not secure authentication. Do not enter confidential information."
+          },
+          {
+            "role": "tab",
+            "name": "Strategic Command",
+            "selected": true
+          },
+          {
+            "role": "tab",
+            "name": "Executive Summary"
+          },
+          {
+            "role": "tab",
+            "name": "Business Impact"
+          },
+          {
+            "role": "tab",
+            "name": "Operations"
+          },
+          {
+            "role": "tab",
+            "name": "Risk & Governance"
+          },
+          {
+            "role": "tab",
+            "name": "Innovation"
+          },
+          {
+            "role": "tab",
+            "name": "Partnerships"
+          },
+          {
+            "role": "tabpanel",
+            "name": "Strategic Command",
+            "children": [
+              {
+                "role": "text",
+                "name": "COMMAND CENTER"
+              },
+              {
+                "role": "heading",
+                "name": "Strategic Command",
+                "level": 2
+              },
+              {
+                "role": "text",
+                "name": "Illustrative demo only — not live or verified enterprise data. Not validated advice."
+              },
+              {
+                "role": "text",
+                "name": " "
+              },
+              {
+                "role": "text",
+                "name": "Values, trends and AI insights have not been specified."
+              },
+              {
+                "role": "heading",
+                "name": "Business Impact",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Value"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "Trend"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "AI insight"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "heading",
+                "name": "Risk",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Value"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "Trend"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "AI insight"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "heading",
+                "name": "Innovation",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Value"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "Trend"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "AI insight"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "heading",
+                "name": "Strategic Priorities",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Not specified."
+              },
+              {
+                "role": "heading",
+                "name": "Recommended Actions",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Not specified."
+              },
+              {
+                "role": "heading",
+                "name": "Quick Actions",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Labels and outcomes: Not specified."
+              },
+              {
+                "role": "heading",
+                "name": "Strategic assistant topics",
+                "level": 3
+              },
+              {
+                "role": "button",
+                "name": "Q4 Board Presentation Ready"
+              },
+              {
+                "role": "button",
+                "name": "TCS Contract Expansion Analysis"
+              },
+              {
+                "role": "button",
+                "name": "Risk Mitigation Plan"
+              },
+              {
+                "role": "button",
+                "name": "Innovation Investment Strategy"
+              },
+              {
+                "role": "heading",
+                "name": "Twelve-Month Strategic Trends",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Compare Business Impact, Risk and Innovation across twelve relative monthly periods."
+              },
+              {
+                "role": "text",
+                "name": "Illustrative demo only — not live or verified enterprise data. Not validated advice."
+              },
+              {
+                "role": "text",
+                "name": " "
+              },
+              {
+                "role": "text",
+                "name": "No fixture values, units, scales or calculations have been specified. Month 1–12 are relative periods, not calendar dates."
+              },
+              {
+                "role": "text",
+                "name": "Chart data not specified. Missing values are not zero."
+              },
+              {
+                "role": "region",
+                "name": "Twelve-Month Strategic Trends textual data"
+              },
+              {
+                "role": "text",
+                "name": "These demonstration controls are inactive; no export or predictive analysis is performed."
+              },
+              {
+                "role": "button",
+                "name": "Export Data",
+                "description": "These demonstration controls are inactive; no export or predictive analysis is performed.",
+                "disabled": true
+              },
+              {
+                "role": "button",
+                "name": "Predictive Analysis",
+                "description": "These demonstration controls are inactive; no export or predictive analysis is performed.",
+                "disabled": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "role": "button",
+        "name": "Open local assistant"
+      }
+    ]
+  },
+  "styles": {
+    "font": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "background": "rgba(0, 0, 0, 0)",
+    "width": 320,
+    "scrollWidth": 320
+  },
+  "html": "<!DOCTYPE html><html lang=\"en\"><head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <meta name=\"description\" content=\"Canon Global CIO Command Center — local demonstration access.\">\n    <meta name=\"theme-color\" content=\"#f7f6f3\">\n    <link rel=\"icon\" href=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23b51f24'/%3E%3Ctext x='8' y='24' font-size='24' font-family='Arial' fill='white'%3EC%3C/text%3E%3C/svg%3E\">\n    <title>Canon Global CIO Command Center</title>\n    <script type=\"module\" crossorigin=\"\" src=\"/assets/index-mg-CYr98.js\"></script>\n    <link rel=\"stylesheet\" crossorigin=\"\" href=\"/assets/index-CYCsDzNq.css\">\n  </head>\n  <body>\n    <div id=\"root\"><div class=\"app-shell\"><a class=\"skip-link\" href=\"#main-content\">Skip to main content</a><header class=\"app-header\"><div class=\"brand-block\"><span class=\"brand\">Canon</span><h1>Global CIO Command Center</h1></div><div class=\"identity\"><span class=\"username\" role=\"img\" aria-label=\"preflight-mobile initials avatar\">P</span><div><p class=\"role-label\">Global CIO · Demo</p><p class=\"username\">preflight-mobile</p><p class=\"role-label\">Notifications unavailable in demo</p></div><button class=\"button secondary\" type=\"button\">Log out</button></div></header><main id=\"main-content\" tabindex=\"-1\"><div class=\"dashboard-layout\"><p class=\"demo-context\">Local demo access · Not secure authentication. Do not enter confidential information.</p><nav class=\"dashboard-navigation\" aria-label=\"Dashboard sections\"><div class=\"dashboard-tabs\" role=\"tablist\" aria-label=\"Dashboard views\" aria-orientation=\"horizontal\"><button type=\"button\" role=\"tab\" id=\"tab-strategic\" aria-controls=\"panel-strategic\" aria-selected=\"true\" tabindex=\"0\">Strategic Command</button><button type=\"button\" role=\"tab\" id=\"tab-executive\" aria-controls=\"panel-executive\" aria-selected=\"false\" tabindex=\"-1\">Executive Summary</button><button type=\"button\" role=\"tab\" id=\"tab-businessImpact\" aria-controls=\"panel-businessImpact\" aria-selected=\"false\" tabindex=\"-1\">Business Impact</button><button type=\"button\" role=\"tab\" id=\"tab-operations\" aria-controls=\"panel-operations\" aria-selected=\"false\" tabindex=\"-1\">Operations</button><button type=\"button\" role=\"tab\" id=\"tab-riskGovernance\" aria-controls=\"panel-riskGovernance\" aria-selected=\"false\" tabindex=\"-1\">Risk &amp; Governance</button><button type=\"button\" role=\"tab\" id=\"tab-innovation\" aria-controls=\"panel-innovation\" aria-selected=\"false\" tabindex=\"-1\">Innovation</button><button type=\"button\" role=\"tab\" id=\"tab-partnerships\" aria-controls=\"panel-partnerships\" aria-selected=\"false\" tabindex=\"-1\">Partnerships</button></div></nav><section role=\"tabpanel\" id=\"panel-strategic\" aria-labelledby=\"tab-strategic\" tabindex=\"0\" class=\"active-panel\"><p class=\"eyebrow\">Command center</p><h2>Strategic Command</h2><div class=\"strategic-content\"><p class=\"mock-notice\">Illustrative demo only — not live or verified enterprise data. Not validated advice.<span> Values, trends and AI insights have not been specified.</span></p><div class=\"metric-grid\"><article class=\"metric-card\" aria-label=\"Business Impact\"><h3>Business Impact</h3><dl><dt>Value</dt><dd class=\"metric-value\">Not specified</dd><dt>Trend</dt><dd>Not specified</dd><dt>AI insight</dt><dd>Not specified</dd></dl></article><article class=\"metric-card\" aria-label=\"Risk\"><h3>Risk</h3><dl><dt>Value</dt><dd class=\"metric-value\">Not specified</dd><dt>Trend</dt><dd>Not specified</dd><dt>AI insight</dt><dd>Not specified</dd></dl></article><article class=\"metric-card\" aria-label=\"Innovation\"><h3>Innovation</h3><dl><dt>Value</dt><dd class=\"metric-value\">Not specified</dd><dt>Trend</dt><dd>Not specified</dd><dt>AI insight</dt><dd>Not specified</dd></dl></article></div><div class=\"strategic-sections\"><section><h3>Strategic Priorities</h3><p class=\"muted\">Not specified.</p></section><section><h3>Recommended Actions</h3><p class=\"muted\">Not specified.</p></section><section><h3>Quick Actions</h3><p class=\"muted\">Labels and outcomes: Not specified.</p></section></div><section aria-labelledby=\"strategic-chip-title\"><h3 id=\"strategic-chip-title\">Strategic assistant topics</h3><div class=\"action-buttons assistant-chips\"><button type=\"button\" class=\"button secondary\">Q4 Board Presentation Ready</button><button type=\"button\" class=\"button secondary\">TCS Contract Expansion Analysis</button><button type=\"button\" class=\"button secondary\">Risk Mitigation Plan</button><button type=\"button\" class=\"button secondary\">Innovation Investment Strategy</button></div></section><section class=\"chart-panel\" aria-labelledby=\":r1:-title\" aria-describedby=\":r1:-description\"><h3 id=\":r1:-title\">Twelve-Month Strategic Trends</h3><p id=\":r1:-description\" class=\"muted\">Compare Business Impact, Risk and Innovation across twelve relative monthly periods.</p><p class=\"mock-notice\">Illustrative demo only — not live or verified enterprise data. Not validated advice.<span> No fixture values, units, scales or calculations have been specified. Month 1–12 are relative periods, not calendar dates.</span></p><p class=\"chart-empty\">Chart data not specified. Missing values are not zero.</p><div class=\"chart-table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Twelve-Month Strategic Trends textual data\"><table><caption>Twelve-Month Strategic Trends — textual data</caption><thead><tr><th scope=\"col\">Period / category</th><th scope=\"col\">Business Impact</th><th scope=\"col\">Risk</th><th scope=\"col\">Innovation</th></tr></thead><tbody><tr><th scope=\"row\">Month 1</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 2</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 3</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 4</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 5</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 6</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 7</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 8</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 9</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 10</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 11</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 12</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr></tbody></table></div></section><div class=\"strategic-controls\"><p id=\"strategic-actions-note\" class=\"muted\">These demonstration controls are inactive; no export or predictive analysis is performed.</p><div class=\"action-buttons\"><button type=\"button\" class=\"button secondary\" aria-disabled=\"true\" aria-describedby=\"strategic-actions-note\">Export Data</button><button type=\"button\" class=\"button secondary\" aria-disabled=\"true\" aria-describedby=\"strategic-actions-note\">Predictive Analysis</button></div></div></div></section></div></main><aside class=\"assistant-disclosure\" aria-label=\"Local assistant controls\"><button type=\"button\" class=\"button secondary assistant-toggle\" aria-expanded=\"false\" aria-controls=\"assistant-panel\">Open local assistant</button></aside></div></div>\n  \n\n</body></html>"
+}
+
+{
+  "viewport": "mobile",
+  "state": "assistant",
+  "tree": {
+    "role": "WebArea",
+    "name": "Canon Global CIO Command Center",
+    "children": [
+      {
+        "role": "link",
+        "name": "Skip to main content"
+      },
+      {
+        "role": "text",
+        "name": "Canon"
+      },
+      {
+        "role": "heading",
+        "name": "Global CIO Command Center",
+        "level": 1
+      },
+      {
+        "role": "text",
+        "name": "P"
+      },
+      {
+        "role": "text",
+        "name": "Global CIO · Demo"
+      },
+      {
+        "role": "text",
+        "name": "preflight-mobile"
+      },
+      {
+        "role": "text",
+        "name": "Notifications unavailable in demo"
+      },
+      {
+        "role": "button",
+        "name": "Log out"
+      },
+      {
+        "role": "main",
+        "name": "",
+        "children": [
+          {
+            "role": "text",
+            "name": "Local demo access · Not secure authentication. Do not enter confidential information."
+          },
+          {
+            "role": "tab",
+            "name": "Strategic Command",
+            "selected": true
+          },
+          {
+            "role": "tab",
+            "name": "Executive Summary"
+          },
+          {
+            "role": "tab",
+            "name": "Business Impact"
+          },
+          {
+            "role": "tab",
+            "name": "Operations"
+          },
+          {
+            "role": "tab",
+            "name": "Risk & Governance"
+          },
+          {
+            "role": "tab",
+            "name": "Innovation"
+          },
+          {
+            "role": "tab",
+            "name": "Partnerships"
+          },
+          {
+            "role": "tabpanel",
+            "name": "Strategic Command",
+            "children": [
+              {
+                "role": "text",
+                "name": "COMMAND CENTER"
+              },
+              {
+                "role": "heading",
+                "name": "Strategic Command",
+                "level": 2
+              },
+              {
+                "role": "text",
+                "name": "Illustrative demo only — not live or verified enterprise data. Not validated advice."
+              },
+              {
+                "role": "text",
+                "name": " "
+              },
+              {
+                "role": "text",
+                "name": "Values, trends and AI insights have not been specified."
+              },
+              {
+                "role": "heading",
+                "name": "Business Impact",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Value"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "Trend"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "AI insight"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "heading",
+                "name": "Risk",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Value"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "Trend"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "AI insight"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "heading",
+                "name": "Innovation",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Value"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "Trend"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "text",
+                "name": "AI insight"
+              },
+              {
+                "role": "text",
+                "name": "Not specified"
+              },
+              {
+                "role": "heading",
+                "name": "Strategic Priorities",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Not specified."
+              },
+              {
+                "role": "heading",
+                "name": "Recommended Actions",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Not specified."
+              },
+              {
+                "role": "heading",
+                "name": "Quick Actions",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Labels and outcomes: Not specified."
+              },
+              {
+                "role": "heading",
+                "name": "Strategic assistant topics",
+                "level": 3
+              },
+              {
+                "role": "button",
+                "name": "Q4 Board Presentation Ready"
+              },
+              {
+                "role": "button",
+                "name": "TCS Contract Expansion Analysis"
+              },
+              {
+                "role": "button",
+                "name": "Risk Mitigation Plan"
+              },
+              {
+                "role": "button",
+                "name": "Innovation Investment Strategy"
+              },
+              {
+                "role": "heading",
+                "name": "Twelve-Month Strategic Trends",
+                "level": 3
+              },
+              {
+                "role": "text",
+                "name": "Compare Business Impact, Risk and Innovation across twelve relative monthly periods."
+              },
+              {
+                "role": "text",
+                "name": "Illustrative demo only — not live or verified enterprise data. Not validated advice."
+              },
+              {
+                "role": "text",
+                "name": " "
+              },
+              {
+                "role": "text",
+                "name": "No fixture values, units, scales or calculations have been specified. Month 1–12 are relative periods, not calendar dates."
+              },
+              {
+                "role": "text",
+                "name": "Chart data not specified. Missing values are not zero."
+              },
+              {
+                "role": "region",
+                "name": "Twelve-Month Strategic Trends textual data"
+              },
+              {
+                "role": "text",
+                "name": "These demonstration controls are inactive; no export or predictive analysis is performed."
+              },
+              {
+                "role": "button",
+                "name": "Export Data",
+                "description": "These demonstration controls are inactive; no export or predictive analysis is performed.",
+                "disabled": true
+              },
+              {
+                "role": "button",
+                "name": "Predictive Analysis",
+                "description": "These demonstration controls are inactive; no export or predictive analysis is performed.",
+                "disabled": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "role": "heading",
+        "name": "Local assistant",
+        "level": 2
+      },
+      {
+        "role": "button",
+        "name": "Close assistant"
+      },
+      {
+        "role": "text",
+        "name": "Local rule-based simulation — not live or generative AI; not validated advice."
+      },
+      {
+        "role": "text",
+        "name": "Non-modal panel. Dashboard controls remain available. Escape closes this panel."
+      },
+      {
+        "role": "log",
+        "name": "Assistant response history"
+      },
+      {
+        "role": "text",
+        "name": "Assistant prompt"
+      },
+      {
+        "role": "textbox",
+        "name": "Assistant prompt",
+        "description": "Local rule-based simulation — not live or generative AI; not validated advice.",
+        "focused": true
+      },
+      {
+        "role": "button",
+        "name": "Get local response"
+      },
+      {
+        "role": "button",
+        "name": "Hide local assistant",
+        "expanded": true
+      }
+    ]
+  },
+  "styles": {
+    "font": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "background": "rgba(0, 0, 0, 0)",
+    "width": 320,
+    "scrollWidth": 320
+  },
+  "html": "<!DOCTYPE html><html lang=\"en\"><head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <meta name=\"description\" content=\"Canon Global CIO Command Center — local demonstration access.\">\n    <meta name=\"theme-color\" content=\"#f7f6f3\">\n    <link rel=\"icon\" href=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23b51f24'/%3E%3Ctext x='8' y='24' font-size='24' font-family='Arial' fill='white'%3EC%3C/text%3E%3C/svg%3E\">\n    <title>Canon Global CIO Command Center</title>\n    <script type=\"module\" crossorigin=\"\" src=\"/assets/index-mg-CYr98.js\"></script>\n    <link rel=\"stylesheet\" crossorigin=\"\" href=\"/assets/index-CYCsDzNq.css\">\n  </head>\n  <body>\n    <div id=\"root\"><div class=\"app-shell\"><a class=\"skip-link\" href=\"#main-content\">Skip to main content</a><header class=\"app-header\"><div class=\"brand-block\"><span class=\"brand\">Canon</span><h1>Global CIO Command Center</h1></div><div class=\"identity\"><span class=\"username\" role=\"img\" aria-label=\"preflight-mobile initials avatar\">P</span><div><p class=\"role-label\">Global CIO · Demo</p><p class=\"username\">preflight-mobile</p><p class=\"role-label\">Notifications unavailable in demo</p></div><button class=\"button secondary\" type=\"button\">Log out</button></div></header><main id=\"main-content\" tabindex=\"-1\"><div class=\"dashboard-layout\"><p class=\"demo-context\">Local demo access · Not secure authentication. Do not enter confidential information.</p><nav class=\"dashboard-navigation\" aria-label=\"Dashboard sections\"><div class=\"dashboard-tabs\" role=\"tablist\" aria-label=\"Dashboard views\" aria-orientation=\"horizontal\"><button type=\"button\" role=\"tab\" id=\"tab-strategic\" aria-controls=\"panel-strategic\" aria-selected=\"true\" tabindex=\"0\">Strategic Command</button><button type=\"button\" role=\"tab\" id=\"tab-executive\" aria-controls=\"panel-executive\" aria-selected=\"false\" tabindex=\"-1\">Executive Summary</button><button type=\"button\" role=\"tab\" id=\"tab-businessImpact\" aria-controls=\"panel-businessImpact\" aria-selected=\"false\" tabindex=\"-1\">Business Impact</button><button type=\"button\" role=\"tab\" id=\"tab-operations\" aria-controls=\"panel-operations\" aria-selected=\"false\" tabindex=\"-1\">Operations</button><button type=\"button\" role=\"tab\" id=\"tab-riskGovernance\" aria-controls=\"panel-riskGovernance\" aria-selected=\"false\" tabindex=\"-1\">Risk &amp; Governance</button><button type=\"button\" role=\"tab\" id=\"tab-innovation\" aria-controls=\"panel-innovation\" aria-selected=\"false\" tabindex=\"-1\">Innovation</button><button type=\"button\" role=\"tab\" id=\"tab-partnerships\" aria-controls=\"panel-partnerships\" aria-selected=\"false\" tabindex=\"-1\">Partnerships</button></div></nav><section role=\"tabpanel\" id=\"panel-strategic\" aria-labelledby=\"tab-strategic\" tabindex=\"0\" class=\"active-panel\"><p class=\"eyebrow\">Command center</p><h2>Strategic Command</h2><div class=\"strategic-content\"><p class=\"mock-notice\">Illustrative demo only — not live or verified enterprise data. Not validated advice.<span> Values, trends and AI insights have not been specified.</span></p><div class=\"metric-grid\"><article class=\"metric-card\" aria-label=\"Business Impact\"><h3>Business Impact</h3><dl><dt>Value</dt><dd class=\"metric-value\">Not specified</dd><dt>Trend</dt><dd>Not specified</dd><dt>AI insight</dt><dd>Not specified</dd></dl></article><article class=\"metric-card\" aria-label=\"Risk\"><h3>Risk</h3><dl><dt>Value</dt><dd class=\"metric-value\">Not specified</dd><dt>Trend</dt><dd>Not specified</dd><dt>AI insight</dt><dd>Not specified</dd></dl></article><article class=\"metric-card\" aria-label=\"Innovation\"><h3>Innovation</h3><dl><dt>Value</dt><dd class=\"metric-value\">Not specified</dd><dt>Trend</dt><dd>Not specified</dd><dt>AI insight</dt><dd>Not specified</dd></dl></article></div><div class=\"strategic-sections\"><section><h3>Strategic Priorities</h3><p class=\"muted\">Not specified.</p></section><section><h3>Recommended Actions</h3><p class=\"muted\">Not specified.</p></section><section><h3>Quick Actions</h3><p class=\"muted\">Labels and outcomes: Not specified.</p></section></div><section aria-labelledby=\"strategic-chip-title\"><h3 id=\"strategic-chip-title\">Strategic assistant topics</h3><div class=\"action-buttons assistant-chips\"><button type=\"button\" class=\"button secondary\">Q4 Board Presentation Ready</button><button type=\"button\" class=\"button secondary\">TCS Contract Expansion Analysis</button><button type=\"button\" class=\"button secondary\">Risk Mitigation Plan</button><button type=\"button\" class=\"button secondary\">Innovation Investment Strategy</button></div></section><section class=\"chart-panel\" aria-labelledby=\":r1:-title\" aria-describedby=\":r1:-description\"><h3 id=\":r1:-title\">Twelve-Month Strategic Trends</h3><p id=\":r1:-description\" class=\"muted\">Compare Business Impact, Risk and Innovation across twelve relative monthly periods.</p><p class=\"mock-notice\">Illustrative demo only — not live or verified enterprise data. Not validated advice.<span> No fixture values, units, scales or calculations have been specified. Month 1–12 are relative periods, not calendar dates.</span></p><p class=\"chart-empty\">Chart data not specified. Missing values are not zero.</p><div class=\"chart-table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Twelve-Month Strategic Trends textual data\"><table><caption>Twelve-Month Strategic Trends — textual data</caption><thead><tr><th scope=\"col\">Period / category</th><th scope=\"col\">Business Impact</th><th scope=\"col\">Risk</th><th scope=\"col\">Innovation</th></tr></thead><tbody><tr><th scope=\"row\">Month 1</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 2</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 3</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 4</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 5</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 6</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 7</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 8</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 9</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 10</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 11</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr><tr><th scope=\"row\">Month 12</th><td>Not specified</td><td>Not specified</td><td>Not specified</td></tr></tbody></table></div></section><div class=\"strategic-controls\"><p id=\"strategic-actions-note\" class=\"muted\">These demonstration controls are inactive; no export or predictive analysis is performed.</p><div class=\"action-buttons\"><button type=\"button\" class=\"button secondary\" aria-disabled=\"true\" aria-describedby=\"strategic-actions-note\">Export Data</button><button type=\"button\" class=\"button secondary\" aria-disabled=\"true\" aria-describedby=\"strategic-actions-note\">Predictive Analysis</button></div></div></div></section></div></main><aside class=\"assistant-disclosure\" aria-label=\"Local assistant controls\"><section id=\"assistant-panel\" class=\"assistant-panel\" aria-labelledby=\"assistant-title\" aria-describedby=\"assistant-disclosure\"><div class=\"assistant-heading\"><h2 id=\"assistant-title\">Local assistant</h2><button type=\"button\" class=\"button secondary\">Close assistant</button></div><p id=\"assistant-disclosure\" class=\"muted\">Local rule-based simulation — not live or generative AI; not validated advice.</p><p class=\"muted\">Non-modal panel. Dashboard controls remain available. Escape closes this panel.</p><div class=\"assistant-history\" role=\"log\" aria-label=\"Assistant response history\" aria-live=\"polite\" tabindex=\"0\"><p>No saved responses yet.</p></div><form><div class=\"field\"><label for=\"assistant-input\">Assistant prompt</label><input id=\"assistant-input\" name=\"assistant-prompt\" type=\"text\" autocomplete=\"off\" aria-describedby=\"assistant-disclosure\" value=\"\"></div><button type=\"submit\" class=\"button primary\">Get local response</button></form></section><button type=\"button\" class=\"button secondary assistant-toggle\" aria-expanded=\"true\" aria-controls=\"assistant-panel\">Hide local assistant</button></aside></div></div>\n  \n\n</body></html>"
+}

@@ -1,9 +1,9 @@
-/** Gate local access and isolate the selected dashboard content from the shared shell. */
+/** Gate server access and isolate the selected dashboard content from the shared shell. */
 import { useRef, useState } from 'react';
 import { AssistantPanel } from './components/AssistantPanel.jsx';
 import { ASSISTANT_CHIPS, ASSISTANT_RESPONSES } from './data/assistantResponses.js';
 import { readAssistantMessages, persistAssistantMessages, resolveAssistantPrompt } from './services/localAssistant.js';
-import { login, logout, readSession, registerAccount } from './services/localAuth.js';
+import { useServerAuth } from './hooks/useServerAuth.js';
 import { AuthForm } from './components/AuthForm.jsx';
 import { AppHeader } from './components/AppHeader.jsx';
 import { DashboardTabs, DASHBOARD_VIEWS } from './components/DashboardTabs.jsx';
@@ -16,13 +16,13 @@ import RiskGovernance from './views/RiskGovernance.jsx';
 import Innovation from './views/Innovation.jsx';
 import Partnerships from './views/Partnerships.jsx';
 
-/** Restore demo state once and handle authentication only on explicit activation. */
+/** Restore server identity and handle authentication only on explicit activation. */
 export default function App() {
-  const [session, setSession] = useState(readSession);
+  const auth = useServerAuth();
+  const session = { signedIn: Boolean(auth.account), username: auth.account?.username };
   const [mode, setMode] = useState('login');
   const [activeView, setActiveView] = useState('strategic');
   const [notice, setNotice] = useState('');
-  const [logoutError, setLogoutError] = useState('');
   const [assistant, setAssistant] = useState(() => {
     const restored = readAssistantMessages();
     return {
@@ -32,36 +32,26 @@ export default function App() {
   });
   const returnFocus = useRef(null);
   const view = DASHBOARD_VIEWS.find((item) => item.key === activeView);
-  const restoreNotice = session.code === 'STORAGE_UNAVAILABLE'
-    ? 'Local storage is unavailable. A demo session could not be restored.'
-    : session.code ? 'Saved session is damaged or unsupported. You are signed out; saved accounts have not been changed.' : '';
-
-  /** Route successful registration to login; open the shell only after a saved login. */
-  function handleSubmit(credentials) {
-    const result = mode === 'signup' ? registerAccount(credentials) : login(credentials);
+  /** Route successful server registration to login without automatic account migration. */
+  async function handleSubmit(credentials) {
+    const result = await auth.submit(mode, credentials);
     if (result.ok && mode === 'signup') {
       setMode('login');
-      setNotice('Demo account saved in this browser. Log in with your new credentials.');
+      setNotice('Account saved on the server. Log in with your new credentials.');
     } else if (result.ok) {
-      setSession({ signedIn: true, username: result.account.username, storageAvailable: true });
       setActiveView('strategic');
       setNotice('');
     }
     return result;
   }
 
-  /** Keep the authenticated shell when storage refuses to clear the session. */
-  function handleLogout() {
-    const result = logout();
-    if (!result.ok) {
-      setLogoutError('The local session could not be cleared. You are still signed in. Check browser storage permissions and try again.');
-      return;
-    }
-    setSession({ signedIn: false, storageAvailable: true });
+  /** Close the local assistant only after the server session is revoked. */
+  async function handleLogout() {
+    const result = await auth.logout();
+    if (!result.ok) return;
     setAssistant((current) => ({ ...current, open: false, input: '', prompt: '' }));
     setMode('login');
-    setNotice('Logged out. Your demo account remains in this browser.');
-    setLogoutError('');
+    setNotice('Logged out. Your account remains on the server.');
   }
 
   /** Append a response after activation, retaining memory even when saving fails.
@@ -102,22 +92,25 @@ export default function App() {
   return (
     <div className="app-shell">
       <a className="skip-link" href="#main-content">Skip to main content</a>
-      <AppHeader username={session.signedIn ? session.username : undefined} onLogout={handleLogout} />
+      <AppHeader username={session.signedIn ? session.username : undefined} onLogout={handleLogout} pending={auth.pending} />
       <main id="main-content" tabIndex={-1}>
-        {!session.signedIn ? (
+        {auth.error && <p role="alert" className="error">{auth.error}</p>}
+        {auth.loading ? (
+          <p role="status" className="notice">Checking server session…</p>
+        ) : !session.signedIn ? (
           <div className="auth-layout">
             <AuthForm
               key={mode}
               mode={mode}
               onSubmit={handleSubmit}
-              notice={notice || restoreNotice}
+              notice={notice}
+              pending={auth.pending}
               onModeChange={(next) => { setMode(next); setNotice(''); }}
             />
           </div>
         ) : (
           <div className="dashboard-layout">
-            <p className="demo-context">Local demo access · Not secure authentication. Do not enter confidential information.</p>
-            {logoutError && <p role="alert" className="error">{logoutError}</p>}
+            <p className="demo-context">Server account access · Dashboard fixtures and assistant remain illustrative. Do not enter confidential information.</p>
             <DashboardTabs activeView={activeView} onSelect={selectView} />
             <section
               role="tabpanel"

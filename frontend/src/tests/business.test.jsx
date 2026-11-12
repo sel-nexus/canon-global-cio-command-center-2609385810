@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import App from '../App.jsx';
 import BusinessImpact from '../views/BusinessImpact.jsx';
 import { BUSINESS_FIXTURES } from '../data/dashboardFixtures.js';
-import { STORAGE_KEYS } from '../services/localStorage.js';
+import { seedServerSession } from './serverAuthFixture.js';
 
 const chart = vi.hoisted(() => ({ props: null, fail: false }));
 // Replace only third-party drawing; exercise the real ChartPanel and its table.
@@ -167,7 +167,7 @@ describe('Business Impact', () => {
   });
 
   it('selects only business content by click and keyboard, preserving shell and assistant without requests or writes', async () => {
-    window.localStorage.setItem(STORAGE_KEYS.session, '{"version":1,"username":"synthetic"}');
+    seedServerSession();
     const writes = vi.spyOn(Storage.prototype, 'setItem');
     const fetch = vi.fn();
     vi.stubGlobal('fetch', fetch);
@@ -177,6 +177,7 @@ describe('Business Impact', () => {
     render(
       <App />
     );
+    await screen.findByRole('tabpanel', { name: 'Strategic Command' });
     await user.click(screen.getByRole('tab', { name: 'Business Impact', exact: true }));
     expect(screen.getAllByRole('tabpanel')).toHaveLength(1);
     const panel = screen.getByRole('tabpanel', { name: 'Business Impact' });

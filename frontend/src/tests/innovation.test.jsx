@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import App from '../App.jsx';
 import Innovation from '../views/Innovation.jsx';
 import { INNOVATION_FIXTURES } from '../data/dashboardFixtures.js';
-import { STORAGE_KEYS } from '../services/localStorage.js';
+import { seedServerSession } from './serverAuthFixture.js';
 
 const chart = vi.hoisted(() => ({ props: null, fail: false }));
 // Stub only external canvas drawing; preserve real shared components and tables.
@@ -153,7 +153,7 @@ describe('Innovation', () => {
   });
 
   it('mounts Innovation by click and keyboard without network calls or storage writes', async () => {
-    localStorage.setItem(STORAGE_KEYS.session, '{"version":1,"username":"synthetic"}');
+    seedServerSession();
     const writes = vi.spyOn(Storage.prototype, 'setItem');
     const fetch = vi.fn();
     vi.stubGlobal('fetch', fetch);
@@ -163,6 +163,7 @@ describe('Innovation', () => {
     render(
       <App />
     );
+    await screen.findByRole('tabpanel', { name: 'Strategic Command' });
     await user.click(screen.getByRole('tab', { name: 'Innovation', exact: true }));
     expect(screen.getAllByRole('tabpanel')).toHaveLength(1);
     expect(screen.getByRole('tabpanel', { name: 'Innovation', exact: true })).toHaveTextContent(emptyMessage);

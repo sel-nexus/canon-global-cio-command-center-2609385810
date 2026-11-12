@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import App from '../App.jsx';
 import RiskGovernance from '../views/RiskGovernance.jsx';
 import { RISK_FIXTURES } from '../data/dashboardFixtures.js';
-import { registerAccount, login } from '../services/localAuth.js';
+import { seedServerSession } from './serverAuthFixture.js';
 
 const labels = ['Compliance Score', 'Cybersecurity Maturity', 'Data Governance Score'];
 
@@ -97,11 +97,11 @@ describe('Risk & Governance', () => {
 
   it('mounts only the selected risk panel and preserves keyboard access through the real shell', async () => {
     const user = userEvent.setup();
-    expect(registerAccount({ username: 'risk.synthetic', password: 'a' }).ok).toBe(true);
-    expect(login({ username: 'risk.synthetic', password: 'a' }).ok).toBe(true);
+    seedServerSession('risk.synthetic');
     render(
       <App />
     );
+    await screen.findByRole('tabpanel', { name: 'Strategic Command' });
     expect(screen.queryByRole('heading', { name: labels[0] })).not.toBeInTheDocument();
     const tab = screen.getByRole('tab', { name: 'Risk & Governance', exact: true });
     await user.click(tab);

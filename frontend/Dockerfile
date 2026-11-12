@@ -3,6 +3,8 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --ignore-scripts
 COPY . .
+ARG VITE_API_BASE_URL=/
+ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
 RUN node node_modules/vite/bin/vite.js build
 
 FROM nginx:1.27.3-alpine

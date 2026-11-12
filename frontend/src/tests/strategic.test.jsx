@@ -9,7 +9,7 @@ import { MockDataNotice } from '../components/MockDataNotice.jsx';
 import { ChartPanel } from '../components/ChartPanel.jsx';
 import { PanelErrorBoundary } from '../components/PanelErrorBoundary.jsx';
 import { STRATEGIC_METRICS, STRATEGIC_PERIODS, STRATEGIC_SERIES } from '../data/dashboardFixtures.js';
-import { STORAGE_KEYS } from '../services/localStorage.js';
+import { seedServerSession } from './serverAuthFixture.js';
 
 const chart = vi.hoisted(() => ({ props: null, fail: false, viewFail: false }));
 // jsdom has no canvas; replace only the external drawing dependency, not our wrapper.
@@ -90,10 +90,11 @@ describe('Strategic acceptance', () => {
   });
 
   it('mounts Strategic by default within one named panel and preserves other shell headings', async () => {
-    window.localStorage.setItem(STORAGE_KEYS.session, '{"version":1,"username":"demo"}');
+    seedServerSession();
     render(
       <App />
     );
+    await screen.findByRole('tabpanel', { name: 'Strategic Command' });
     expect(screen.getAllByRole('tabpanel')).toHaveLength(1);
     expect(screen.getByRole('tabpanel', { name: 'Strategic Command' })).toContainElement(screen.getByRole('article', { name: 'Risk' }));
     const user = userEvent.setup();
@@ -145,10 +146,11 @@ describe('Strategic acceptance', () => {
   it('preserves shell and heading on view failure and recovers by switching views', async () => {
     const diagnostic = expectedDiagnostic();
     chart.viewFail = true;
-    window.localStorage.setItem(STORAGE_KEYS.session, '{"version":1,"username":"demo"}');
+    seedServerSession();
     render(
       <App />
     );
+    await screen.findByRole('tabpanel', { name: 'Strategic Command' });
     expect(screen.getByRole('alert')).toHaveTextContent('Panel unavailable');
     expect(screen.getByRole('heading', { name: 'Strategic Command' })).toBeVisible();
     expect(screen.getAllByRole('tab')).toHaveLength(7);

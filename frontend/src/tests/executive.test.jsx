@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import App from '../App.jsx';
 import ExecutiveSummary from '../views/ExecutiveSummary.jsx';
 import { EXECUTIVE_FIXTURES } from '../data/dashboardFixtures.js';
-import { STORAGE_KEYS } from '../services/localStorage.js';
+import { seedServerSession } from './serverAuthFixture.js';
 
 const chart = vi.hoisted(() => ({ props: null, fail: false }));
 // Replace only external canvas drawing, keeping the real chart wrapper and tables.
@@ -152,7 +152,7 @@ describe('Executive Summary', () => {
   });
 
   it('selects one executive panel by click and keyboard while preserving auth/assistant without requests or writes', async () => {
-    window.localStorage.setItem(STORAGE_KEYS.session, '{"version":1,"username":"synthetic"}');
+    seedServerSession();
     const writes = vi.spyOn(Storage.prototype, 'setItem');
     const fetch = vi.fn();
     vi.stubGlobal('fetch', fetch);
@@ -161,6 +161,7 @@ describe('Executive Summary', () => {
     render(
       <App />
     );
+    await screen.findByRole('tabpanel', { name: 'Strategic Command' });
     const user = userEvent.setup();
     await user.click(screen.getByRole('tab', { name: 'Executive Summary' }));
     expect(screen.getAllByRole('tabpanel')).toHaveLength(1);

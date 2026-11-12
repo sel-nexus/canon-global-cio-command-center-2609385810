@@ -4,6 +4,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from '../App.jsx';
+import { seedServerSession } from './serverAuthFixture.js';
 import { STORAGE_KEYS } from '../services/localStorage.js';
 
 const chips = [
@@ -14,14 +15,16 @@ const chips = [
 ];
 const fallback = 'Only the supported demo topics Q4, TCS, risk, and innovation are available.';
 
-/** Render a restored demo shell without bypassing any assistant implementation. */
-function renderDashboard() {
-  window.localStorage.setItem(STORAGE_KEYS.session, '{"version":1,"username":"demo"}');
-  return render(
+/** Render a server-restored shell without bypassing any assistant implementation. */
+async function renderDashboard() {
+  seedServerSession();
+  const view = render(
     <StrictMode>
       <App />
     </StrictMode>
   );
+  await screen.findByRole('tabpanel', { name: 'Strategic Command' });
+  return view;
 }
 
 /** Read the visible response history by its accessible name. */
@@ -30,8 +33,8 @@ function history() {
 }
 
 describe('assistant controls and chip journeys', () => {
-  it('renders four exact chips without opening, writing, or contacting a service', () => {
-    window.localStorage.setItem(STORAGE_KEYS.session, '{"version":1,"username":"demo"}');
+  it('renders four exact chips without opening, writing, or contacting an assistant service', async () => {
+    seedServerSession();
     const writes = vi.spyOn(Storage.prototype, 'setItem');
     const fetch = vi.fn();
     vi.stubGlobal('fetch', fetch);
@@ -41,6 +44,7 @@ describe('assistant controls and chip journeys', () => {
         <App />
       </StrictMode>
     );
+    await screen.findByRole('tabpanel', { name: 'Strategic Command' });
     const section = screen.getByRole('heading', { name: 'Strategic assistant topics' }).closest('section');
     expect(within(section).getAllByRole('button').map((button) => button.textContent)).toEqual(chips.map(([label]) => label));
     expect(screen.queryByRole('log')).not.toBeInTheDocument();
@@ -51,7 +55,7 @@ describe('assistant controls and chip journeys', () => {
   });
 
   it.each(chips)('opens, prefills and returns the exact response for %s only on activation', async (label, text) => {
-    renderDashboard();
+    await renderDashboard();
     const user = userEvent.setup();
     const chip = screen.getByRole('button', { name: label, exact: true });
     chip.focus();
@@ -71,7 +75,7 @@ describe('assistant controls and chip journeys', () => {
   });
 
   it('toggles, closes by button and Escape, restores focus and retains draft/history', async () => {
-    renderDashboard();
+    await renderDashboard();
     const user = userEvent.setup();
     const toggle = screen.getByRole('button', { name: 'Open local assistant' });
     await user.click(toggle);
@@ -95,7 +99,7 @@ describe('assistant controls and chip journeys', () => {
   });
 
   it('does not trap dashboard focus and falls back to toggle if chip is unmounted', async () => {
-    renderDashboard();
+    await renderDashboard();
     const user = userEvent.setup();
     await user.click(screen.getByRole('button', { name: chips[0][0] }));
     const operations = screen.getByRole('tab', { name: 'Operations' });
@@ -107,7 +111,7 @@ describe('assistant controls and chip journeys', () => {
   });
 
   it('refocuses input on a second chip while open and appends one response per activation', async () => {
-    renderDashboard();
+    await renderDashboard();
     const user = userEvent.setup();
     for (const [label] of chips) {
       await user.click(screen.getByRole('button', { name: label }));
@@ -122,7 +126,7 @@ describe('assistant controls and chip journeys', () => {
     ['innovation RISK', chips[2][1]], ['INNOVATION!', chips[3][1]],
     ['brisk innovations q40 tcs2', fallback], ['', fallback],
   ])('resolves submitted general input %j with documented priority and boundaries', async (prompt, response) => {
-    renderDashboard();
+    await renderDashboard();
     const user = userEvent.setup();
     await user.click(screen.getByRole('button', { name: 'Open local assistant' }));
     await user.type(screen.getByLabelText('Assistant prompt'), prompt || ' ');
@@ -131,7 +135,7 @@ describe('assistant controls and chip journeys', () => {
   });
 
   it('renders hostile user text as escaped text, never markup or stored prompts', async () => {
-    renderDashboard();
+    await renderDashboard();
     const user = userEvent.setup();
     const hostile = '<img src=x onerror="window.hacked=true"><script>alert(1)</script>';
     await user.click(screen.getByRole('button', { name: 'Open local assistant' }));
@@ -148,7 +152,7 @@ describe('assistant controls and chip journeys', () => {
 
 describe('assistant restoration and recoverable failures', () => {
   it('renders long supported and unsupported prompts safely and restores only assistant responses', async () => {
-    const view = renderDashboard();
+    const view = await renderDashboard();
     const user = userEvent.setup();
     const hostile = '<img src=x onerror="window.hacked=true"><script>alert(1)</script>';
     const padding = 'x'.repeat(10000);
@@ -184,7 +188,7 @@ describe('assistant restoration and recoverable failures', () => {
     }
     const saved = window.localStorage.getItem(STORAGE_KEYS.assistant);
     view.unmount();
-    renderDashboard();
+    await renderDashboard();
     await user.click(screen.getByRole('button', { name: 'Open local assistant' }));
     expect(screen.getByLabelText('Assistant prompt')).toHaveValue('');
     expect(screen.queryByText(/^Current prompt:/)).not.toBeInTheDocument();
@@ -193,11 +197,11 @@ describe('assistant restoration and recoverable failures', () => {
   });
 
   it('restores response-only history on remount and keeps IDs unique after reload', async () => {
-    const view = renderDashboard();
+    const view = await renderDashboard();
     const user = userEvent.setup();
     await user.click(screen.getByRole('button', { name: chips[0][0] }));
     view.unmount();
-    renderDashboard();
+    await renderDashboard();
     await user.click(screen.getByRole('button', { name: 'Open local assistant' }));
     expect(history()).toHaveTextContent(chips[0][1]);
     expect(screen.getByLabelText('Assistant prompt')).toHaveValue('');
@@ -209,7 +213,7 @@ describe('assistant restoration and recoverable failures', () => {
 
   it.each(['{broken', '{"version":2,"messages":[]}', '{"version":1,"messages":[{"role":"user","text":"private"}]}'])('rejects unsafe saved history %s without modifying it', async (raw) => {
     window.localStorage.setItem(STORAGE_KEYS.assistant, raw);
-    renderDashboard();
+    await renderDashboard();
     const user = userEvent.setup();
     await user.click(screen.getByRole('button', { name: 'Open local assistant' }));
     expect(screen.getByText('No saved responses yet.')).toBeVisible();
@@ -226,14 +230,14 @@ describe('assistant restoration and recoverable failures', () => {
       if (key === STORAGE_KEYS.assistant) throw new DOMException('denied', 'SecurityError');
       return original.call(this, key);
     });
-    renderDashboard();
+    await renderDashboard();
     await userEvent.setup().click(screen.getByRole('button', { name: 'Open local assistant' }));
     expect(screen.getByRole('status')).toHaveTextContent('unavailable');
     expect(screen.getByText('No saved responses yet.')).toBeVisible();
   });
 
   it.each(['SecurityError', 'QuotaExceededError'])('retains current responses and dashboard controls after %s, then recovers', async (name) => {
-    renderDashboard();
+    await renderDashboard();
     const user = userEvent.setup();
     await user.click(screen.getByRole('button', { name: chips[0][0] }));
     const previous = window.localStorage.getItem(STORAGE_KEYS.assistant);
@@ -255,15 +259,16 @@ describe('assistant restoration and recoverable failures', () => {
   });
 
   it('hides assistant when signed out and clears draft on successful logout', async () => {
-    const view = renderDashboard();
+    const view = await renderDashboard();
     const user = userEvent.setup();
     await user.click(screen.getByRole('button', { name: chips[0][0] }));
     await user.click(screen.getByRole('button', { name: 'Log out' }));
+    await screen.findByRole('button', { name: 'Log in', exact: true });
     expect(screen.queryByRole('log')).not.toBeInTheDocument();
     expect(screen.queryByRole('button', { name: 'Open local assistant' })).not.toBeInTheDocument();
     expect(window.localStorage.getItem(STORAGE_KEYS.assistant)).not.toBeNull();
     view.unmount();
-    renderDashboard();
+    await renderDashboard();
     await user.click(screen.getByRole('button', { name: 'Open local assistant' }));
     expect(screen.getByLabelText('Assistant prompt')).toHaveValue('');
     expect(history()).toHaveTextContent(chips[0][1]);
@@ -273,7 +278,7 @@ describe('assistant restoration and recoverable failures', () => {
     const fetch = vi.fn();
     vi.stubGlobal('fetch', fetch);
     const xhr = vi.spyOn(XMLHttpRequest.prototype, 'open');
-    renderDashboard();
+    await renderDashboard();
     const user = userEvent.setup();
     for (const [label] of chips) await user.click(screen.getByRole('button', { name: label }));
     await user.clear(screen.getByLabelText('Assistant prompt'));
