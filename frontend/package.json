@@ -9,7 +9,7 @@
     "preview": "node node_modules/vite/bin/vite.js preview",
     "test": "node node_modules/vitest/vitest.mjs run",
     "test:access": "node node_modules/vitest/vitest.mjs run src/tests/localStorage.test.js src/tests/localAuth.test.js src/tests/access.test.jsx",
-    "test:e2e": "node node_modules/@playwright/test/cli.js test"
+    "test:e2e": "node node_modules/@playwright/test/cli.js test --config playwright.config.cjs"
   },
   "dependencies": {
     "react": "18.3.1",

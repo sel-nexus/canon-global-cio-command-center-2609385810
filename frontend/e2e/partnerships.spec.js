@@ -1,12 +1,12 @@
-/** Exercise real demo access, partnership content and mobile keyboard navigation. */
+/** Exercise real server access, partnership content and mobile keyboard navigation. */
 import { test, expect } from '@playwright/test';
-import { guardBrowser, registerDemo, loginDemo } from './helpers.js';
+import { guardBrowser, registerAccount, loginAccount } from './helpers.js';
 
 test('Partnerships shows only approved content and inert intelligence areas', async ({ page }) => {
   const verifyBrowser = guardBrowser(page);
   await page.goto('/');
-  await registerDemo(page);
-  await loginDemo(page);
+  await registerAccount(page);
+  await loginAccount(page);
   await page.getByRole('tab', { name: 'Partnerships', exact: true }).click();
   const panel = page.getByRole('tabpanel', { name: 'Partnerships' });
   await expect(panel).toBeVisible();
@@ -23,6 +23,7 @@ test('Partnerships shows only approved content and inert intelligence areas', as
   await expect(panel.getByText('Categories and values: Not specified.')).toBeVisible();
   await expect(panel.getByText('Chart data not specified. Missing values are not zero.')).toBeVisible();
   await expect(panel.getByText(/Illustrative demo only/)).toHaveCount(2);
+  const apiCount = verifyBrowser.apiRequests.length;
   const before = await page.evaluate(() => ({ storage: JSON.stringify(localStorage), url: location.href }));
   for (const name of ['Summary', 'Opportunities', 'Actions']) {
     const area = panel.getByRole('region', { name, exact: true });
@@ -36,6 +37,7 @@ test('Partnerships shows only approved content and inert intelligence areas', as
   await expect(page.getByRole('button', { name: 'Open local assistant', exact: true })).toHaveAttribute('aria-expanded', 'false');
   await expect(page.getByRole('region', { name: 'Local assistant', exact: true })).toHaveCount(0);
   expect(await page.evaluate(() => ({ storage: JSON.stringify(localStorage), url: location.href }))).toEqual(before);
+  expect(verifyBrowser.apiRequests.length).toBe(apiCount);
   await expect(panel).not.toContainText(/[$€£%]|202[0-9]|TCS|recommended/i);
 
   await page.setViewportSize({ width: 375, height: 812 });

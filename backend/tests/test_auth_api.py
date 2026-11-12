@@ -2,8 +2,15 @@
 from datetime import datetime, timedelta, timezone
 from uuid import UUID, uuid4
 import pytest
-from sqlalchemy import select
+import httpx
+from sqlalchemy import select, func
+from sqlalchemy.exc import OperationalError
+from sqlalchemy.orm import Session
 from app.auth.model import User, AuthSession
+from app.auth.schema import Credentials
+from app.auth.service import AuthService
+from app.core.database import get_db
+from app.main import create_app
 from app.core.security import issue_token, decode_token
 
 
@@ -115,3 +122,55 @@ async def test_health_requires_no_database_or_lifespan():
         response = await client.get("/api/health")
     assert response.status_code == 200
     assert response.json() == {"status": "ok"}
+
+
+
+@pytest.mark.parametrize("failure_kind,status,detail", [
+    ("database", 503, "Service unavailable"),
+    ("unexpected", 500, "Internal server error"),
+])
+async def test_http_failures_are_sanitized_without_substituting_database(
+    db, settings, monkeypatch, caplog, failure_kind, status, detail
+):
+    """Exercise real HTTP exception handlers with a safe service-boundary fault."""
+    account = AuthService(db, settings).register(Credentials(username="original", password="keep"))
+    original_hash = db.get(User, account.id).password_hash
+    private_detail = "fault-marker SQL SELECT password_hash; password=private-password traceback"
+    injected = []
+
+    def fail_registration(service: AuthService, credentials: Credentials) -> None:
+        """Verify the live database before injecting the selected boundary failure."""
+        assert service.repo.db is db
+        assert service.repo.db.scalar(select(func.count()).select_from(User)) == 1
+        injected.append(failure_kind)
+        if failure_kind == "database":
+            raise OperationalError(private_detail, {"password": credentials.password}, RuntimeError(private_detail))
+        raise RuntimeError(private_detail)
+
+    def real_database() -> Session:
+        """Retain the test-owned PostgreSQL session in the app dependency."""
+        return db
+
+    application = create_app(settings)
+    application.dependency_overrides[get_db] = real_database
+    monkeypatch.setattr(AuthService, "register", fail_registration)
+    try:
+        async with httpx.AsyncClient(
+            transport=httpx.ASGITransport(app=application, raise_app_exceptions=False),
+            base_url="http://test",
+        ) as connection:
+            response = await connection.post("/api/v1/auth/register", json={
+                "username": "failed", "password": "private-password",
+            })
+    finally:
+        application.dependency_overrides.clear()
+    assert injected == [failure_kind]
+    assert response.status_code == status
+    assert response.json() == {"detail": detail}
+    for marker in ["fault-marker", "SELECT", "password_hash", "private-password", "traceback"]:
+        assert marker not in response.text
+        assert marker not in caplog.text
+    db.expire_all()
+    assert db.scalar(select(func.count()).select_from(User)) == 1
+    assert db.get(User, account.id).password_hash == original_hash
+    assert db.scalar(select(func.count()).select_from(AuthSession)) == 0

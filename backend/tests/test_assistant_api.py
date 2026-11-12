@@ -1,6 +1,6 @@
 """Exercise history HTTP validation, authorization and real PostgreSQL state."""
 from datetime import datetime, timedelta, timezone
-from uuid import uuid4
+from uuid import UUID, uuid4
 import pytest
 from sqlalchemy import select, func
 from app.auth.model import AuthSession
@@ -97,3 +97,36 @@ async def test_invalid_persisted_sessions_cannot_access_history(client, db, sett
     if method == "post": kwargs["json"] = {"prompt": "risk"}
     assert (await getattr(client, method)("/api/v1/assistant/messages", **kwargs)).status_code == 401
     assert db.scalar(select(func.count()).select_from(AssistantMessage)) == 0
+
+
+
+@pytest.mark.parametrize("suffix,expected", [
+    (" — riſk!", "Strengthen cybersecurity posture and compliance tracking across regions."),
+    (" — érisk中 q4界 _tcs innovation9", "Only the supported demo topics Q4, TCS, risk, and innovation are available."),
+], ids=["supported-unicode-fold", "unsupported-unicode-boundaries"])
+async def test_long_unicode_prompt_returns_201_and_persists_only_exact_response(client, db, settings, tokens, suffix, expected):
+    """Accept long Unicode HTTP input and reread only its resolved response from SQL."""
+    prompt = "private-unicode-prompt 🧭漢字é\u0301 " * 2500 + suffix
+    assert len(prompt) > 50_000
+    response = await client.post("/api/v1/assistant/messages", headers=headers(tokens[0]), json={"prompt": prompt})
+    assert response.status_code == 201
+    body = response.json()
+    assert set(body) == {"id", "role", "text", "created_at"}
+    assert body["role"] == "assistant"
+    assert body["text"] == expected
+    assert datetime.fromisoformat(body["created_at"]).tzinfo is not None
+    db.expire_all()
+    # Raw columns prevent an ORM-cached response from satisfying persistence checks.
+    rows = list(db.execute(select(AssistantMessage.__table__)).mappings())
+    assert len(rows) == 1
+    saved = rows[0]
+    assert set(saved) == {"id", "user_id", "role", "text", "created_at"}
+    assert saved["id"] == UUID(body["id"])
+    assert saved["user_id"] == decode_token(tokens[0], settings)[0]
+    assert saved["role"] == "assistant"
+    assert saved["text"] == expected
+    assert saved["created_at"] == datetime.fromisoformat(body["created_at"])
+    assert all("private-unicode-prompt" not in str(value) for value in saved.values())
+    history = await client.get("/api/v1/assistant/messages", headers=headers(tokens[0]))
+    assert history.status_code == 200
+    assert history.json() == {"items": [body], "total": 1}

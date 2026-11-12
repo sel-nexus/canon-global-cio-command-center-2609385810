@@ -1,11 +1,10 @@
 /** Verify real server account persistence and revocation; do not mock requests. */
 import { test, expect } from '@playwright/test';
+import { guardBrowser } from './helpers.js';
 
 for (const viewport of [{ width: 1280, height: 800 }, { width: 390, height: 844 }]) {
   test(`server account lifecycle at ${viewport.width}px`, async ({ page, request }, testInfo) => {
-    const errors = [];
-    page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()); });
-    page.on('pageerror', (error) => errors.push(error.message));
+    const assertGuards = guardBrowser(page);
     await page.setViewportSize(viewport);
     await page.goto('/');
     await expect(page.getByRole('button', { name: 'Log in', exact: true })).toBeVisible();
@@ -25,6 +24,7 @@ for (const viewport of [{ width: 1280, height: 800 }, { width: 390, height: 844 
     await expect(page.getByRole('status')).toContainText('Account saved on the server');
     await page.getByLabel('Username').fill(username);
     await page.getByLabel('Password').fill('wrong');
+    assertGuards.expectHttp('/api/v1/auth/login', 'POST', 401);
     const rejected = page.waitForResponse((response) => response.url().endsWith('/api/v1/auth/login'));
     await page.getByRole('button', { name: 'Log in', exact: true }).click();
     expect((await rejected).status()).toBe(401);
@@ -57,6 +57,6 @@ for (const viewport of [{ width: 1280, height: 800 }, { width: 390, height: 844 
     expect((await (await relogin).json()).account.id).toBe(account.id);
     await expect(page.getByRole('tabpanel')).toBeVisible();
     await page.screenshot({ path: testInfo.outputPath('server-access.png'), fullPage: true });
-    expect(errors).toEqual([]);
+    assertGuards();
   });
 }

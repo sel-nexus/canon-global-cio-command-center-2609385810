@@ -1,14 +1,14 @@
-/** Verify risk content through actual demo access on desktop and mobile without mocks. */
+/** Verify risk content through actual server access on desktop and mobile without mocks. */
 import { test, expect } from '@playwright/test';
-import { guardBrowser, registerDemo, loginDemo } from './helpers.js';
+import { guardBrowser, registerAccount, loginAccount } from './helpers.js';
 
 for (const viewport of [{ width: 1280, height: 900 }, { width: 375, height: 812 }]) {
   test(`Risk & Governance preserves caveats and keyboard navigation at ${viewport.width}px`, async ({ page }) => {
     const assertBrowser = guardBrowser(page);
     await page.setViewportSize(viewport);
     await page.goto('/');
-    await registerDemo(page);
-    await loginDemo(page);
+    await registerAccount(page);
+    await loginAccount(page);
     const tab = page.getByRole('tab', { name: 'Risk & Governance', exact: true });
     await tab.click();
     const panel = page.getByRole('tabpanel', { name: 'Risk & Governance' });

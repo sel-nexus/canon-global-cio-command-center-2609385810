@@ -4,6 +4,7 @@ from uuid import uuid4
 import pytest
 from sqlalchemy import select, func, delete
 from sqlalchemy.exc import IntegrityError
+from sqlalchemy.orm import Session
 from app.auth.model import User, AuthSession
 from app.auth.schema import Credentials
 from app.auth.service import AuthService, DuplicateUsername, InvalidCredentials
@@ -113,3 +114,62 @@ def test_database_enforces_foreign_key_unique_not_null_and_cascade(db, settings)
     db.execute(delete(User).where(User.id == account.id))
     db.flush()
     assert db.scalar(select(func.count()).select_from(AuthSession)) == 0
+
+
+
+def test_registration_save_time_unique_race_rolls_back_and_preserves_winner(db, settings, monkeypatch):
+    """Interleave a winning insert after lookup and exercise the real 23505 catch."""
+    service = AuthService(db, settings)
+    original_save = service.repo.save
+    winner_hash = hash_password("winning password")
+    winner = User(username="race", password_hash=winner_hash)
+
+    def save_after_winner(record: User | AuthSession) -> None:
+        """Commit the winner before the losing insert without replacing PostgreSQL."""
+        original_save(winner)
+        original_save(record)
+
+    monkeypatch.setattr(service.repo, "save", save_after_winner)
+    with pytest.raises(DuplicateUsername, match="Username already exists") as caught:
+        service.register(Credentials(username=" RACE ", password="losing password"))
+    assert isinstance(caught.value.__cause__, IntegrityError)
+    assert caught.value.__cause__.orig.sqlstate == "23505"
+    assert db.is_active
+    # A new identity map rereads PostgreSQL after the service's rollback.
+    with Session(bind=db.connection(), join_transaction_mode="create_savepoint") as reader:
+        rows = list(reader.scalars(select(User)))
+        assert len(rows) == 1
+        assert rows[0].id == winner.id
+        assert rows[0].username == "race"
+        assert rows[0].password_hash == winner_hash
+        assert verify_password("winning password", rows[0].password_hash)
+        assert not verify_password("losing password", rows[0].password_hash)
+
+
+def test_registration_nonunique_integrity_failure_propagates_after_rollback(db, settings, monkeypatch):
+    """Propagate a real PostgreSQL NOT NULL error rather than a username conflict."""
+    service = AuthService(db, settings)
+    account = service.register(Credentials(username="original", password="unchanged"))
+    original_hash = db.get(User, account.id).password_hash
+    original_save = service.repo.save
+    failures = []
+
+    def save_with_missing_hash(record: User | AuthSession) -> None:
+        """Inject an invalid record at save time and retain the actual SQL error."""
+        record.password_hash = None
+        try:
+            original_save(record)
+        except IntegrityError as exc:
+            failures.append(exc)
+            raise
+
+    monkeypatch.setattr(service.repo, "save", save_with_missing_hash)
+    with pytest.raises(IntegrityError) as caught:
+        service.register(Credentials(username="invalid", password="x"))
+    assert caught.value is failures[0]
+    assert caught.value.orig.sqlstate == "23502"
+    assert db.is_active
+    db.expire_all()
+    assert db.scalar(select(func.count()).select_from(User)) == 1
+    assert db.get(User, account.id).password_hash == original_hash
+    assert db.scalar(select(User).where(User.username == "invalid")) is None

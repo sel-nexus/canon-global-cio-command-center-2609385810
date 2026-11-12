@@ -2,6 +2,9 @@
 from contextlib import asynccontextmanager
 from collections.abc import AsyncIterator
 import logging
+from pathlib import Path
+from alembic import command
+from alembic.config import Config
 from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
@@ -10,7 +13,7 @@ from starlette.concurrency import run_in_threadpool
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import sessionmaker
 from app.core.config import Settings, get_settings
-from app.core.database import build_engine, provision_database
+from app.core.database import build_engine, database_url, provision_database
 from app.auth.router import router
 from app.assistant.router import router as assistant_router
 from app.auth.service import AuthService, InvalidCredentials
@@ -24,8 +27,9 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
     @asynccontextmanager
     async def lifespan(application: FastAPI) -> AsyncIterator[None]:
-        """Provision before connections and dispose the pool on shutdown."""
+        """Provision and migrate before pooling, then dispose on shutdown."""
         await run_in_threadpool(provision_database, configuration)
+        await run_in_threadpool(upgrade_database, configuration)
         engine = build_engine(configuration)
         application.state.session_factory = sessionmaker(engine, expire_on_commit=False)
         try:
@@ -73,6 +77,13 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return {"status": "ok"}
 
     return application
+
+
+def upgrade_database(configuration: Settings) -> None:
+    """Apply reviewed migrations to this app's database without changing the environment."""
+    migration_config = Config(str(Path(__file__).resolve().parents[1] / "alembic.ini"))
+    migration_config.attributes["database_url"] = database_url(configuration)
+    command.upgrade(migration_config, "head")
 
 
 def seed_account(application: FastAPI) -> None:

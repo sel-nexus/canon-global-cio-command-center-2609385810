@@ -1,14 +1,14 @@
-/** Verify Operations through actual demo login on desktop and mobile without mocks. */
+/** Verify Operations through actual server login on desktop and mobile without mocks. */
 import { test, expect } from '@playwright/test';
-import { guardBrowser, registerDemo, loginDemo } from './helpers.js';
+import { guardBrowser, registerAccount, loginAccount } from './helpers.js';
 
 for (const viewport of [{ width: 1280, height: 900 }, { width: 375, height: 812 }]) {
   test(`Operations preserves missing values, dual-axis context and keyboard access at ${viewport.width}px`, async ({ page }) => {
     const assertBrowser = guardBrowser(page);
     await page.setViewportSize(viewport);
     await page.goto('/');
-    await registerDemo(page);
-    await loginDemo(page);
+    await registerAccount(page);
+    await loginAccount(page);
     await page.getByRole('tab', { name: 'Operations', exact: true }).click();
     const panel = page.getByRole('tabpanel', { name: 'Operations' });
     await expect(page.getByRole('tabpanel')).toHaveCount(1);

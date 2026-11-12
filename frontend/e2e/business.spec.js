@@ -1,14 +1,14 @@
-/** Verify business content through local demo login on desktop and mobile. */
+/** Verify business content through server account login on desktop and mobile. */
 import { test, expect } from '@playwright/test';
-import { guardBrowser, registerDemo, loginDemo } from './helpers.js';
+import { guardBrowser, registerAccount, loginAccount } from './helpers.js';
 
 for (const viewport of [{ width: 1280, height: 900 }, { width: 375, height: 812 }]) {
   test(`Business Impact preserves neutral values and text equivalents at ${viewport.width}px`, async ({ page }) => {
     const assertBrowser = guardBrowser(page);
     await page.setViewportSize(viewport);
     await page.goto('/');
-    await registerDemo(page);
-    await loginDemo(page);
+    await registerAccount(page);
+    await loginAccount(page);
     await page.getByRole('tab', { name: 'Business Impact', exact: true }).click();
     const panel = page.getByRole('tabpanel', { name: 'Business Impact' });
     await expect(page.getByRole('tabpanel')).toHaveCount(1);

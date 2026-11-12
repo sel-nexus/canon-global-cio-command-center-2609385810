@@ -2,6 +2,40 @@
 import { test, expect } from '@playwright/test';
 import { ASSISTANT_CHIPS, ASSISTANT_RESPONSES, ASSISTANT_FALLBACK } from '../src/data/assistantResponses.js';
 
+/** Delay forwarding an issued request, then continue unchanged to the real backend (no response mocking). */
+async function whileHistoryRequestPending(page, method, activate, assertPending) {
+  const matches = (url) => url.pathname === '/api/v1/assistant/messages';
+  let release;
+  let intercepted = false;
+  let responded = false;
+  let forwarding;
+  const gate = new Promise((resolve) => { release = resolve; });
+  const handler = (route) => {
+    if (route.request().method() !== method) return route.continue();
+    intercepted = true;
+    forwarding = gate.then(() => route.continue());
+    return forwarding;
+  };
+  const onResponse = (response) => {
+    if (matches(new URL(response.url())) && response.request().method() === method) responded = true;
+  };
+  await page.route(matches, handler);
+  page.on('response', onResponse);
+  try {
+    await activate();
+    await expect.poll(() => intercepted, { message: `Real assistant ${method} request was issued` }).toBe(true);
+    await assertPending();
+    expect(responded, 'Pending UI is visible before any backend response arrives').toBe(false);
+  } finally {
+    release();
+    try { await forwarding; }
+    finally {
+      await page.unroute(matches, handler);
+      page.off('response', onResponse);
+    }
+  }
+}
+
 /** Register through the UI and then obtain a server-issued session through login. */
 async function signIn(page, username, register = true) {
   if (register) {
@@ -28,11 +62,16 @@ async function signIn(page, username, register = true) {
 async function openHistory(page) {
   const history = page.waitForResponse((res) => res.url().includes('/api/v1/assistant/messages?')
     && res.request().method() === 'GET');
-  await page.getByRole('button', { name: 'Open local assistant' }).click();
+  await whileHistoryRequestPending(page, 'GET',
+    () => page.getByRole('button', { name: 'Open local assistant' }).click(), async () => {
+      await expect(page.getByRole('status')).toHaveText('Loading server history…');
+      await expect(page.getByRole('button', { name: 'Get local response' })).toBeDisabled();
+    });
   const response = await history;
   expect(response.status()).toBe(200);
   const body = await response.json();
   await expect(page.getByRole('button', { name: 'Get local response' })).toBeEnabled();
+  await expect(page.getByText('Loading server history…', { exact: true })).toHaveCount(0);
   await expect(page.getByRole('log').getByRole('listitem')).toHaveText(body.items.map((item) => item.text));
   return body;
 }
@@ -58,7 +97,12 @@ for (const width of [1280, 390]) {
     for (const chip of ASSISTANT_CHIPS) {
       const created = page.waitForResponse((res) => res.url().endsWith('/api/v1/assistant/messages')
         && res.request().method() === 'POST');
-      await page.getByRole('button', { name: chip.label, exact: true }).click();
+      await whileHistoryRequestPending(page, 'POST',
+        () => page.getByRole('button', { name: chip.label, exact: true }).click(), async () => {
+          await expect(page.getByRole('status')).toHaveText('Saving server response…');
+          await expect(page.getByRole('button', { name: 'Get local response' })).toBeDisabled();
+          await expect(page.getByRole('log').getByRole('listitem')).toHaveText(saved.map((item) => item.text));
+        });
       const response = await created;
       expect(response.status()).toBe(201);
       expect(response.request().postDataJSON()).toEqual({ prompt: chip.label });
@@ -71,6 +115,7 @@ for (const width of [1280, 390]) {
       await expect(page.getByLabel('Assistant prompt')).toHaveValue(chip.label);
       await expect(page.getByLabel('Assistant prompt')).toBeFocused();
       await expect(page.getByRole('button', { name: 'Get local response' })).toBeEnabled();
+      await expect(page.getByText('Saving server response…', { exact: true })).toHaveCount(0);
     }
     const hostile = '<img src=x onerror="window.hacked=true"><script>alert(1)</script>';
     for (const [prompt, expected] of [

@@ -1,14 +1,14 @@
 /** Exercise the real strategic landing through UI authentication; defer execution to the parent. */
 import { test, expect } from '@playwright/test';
-import { guardBrowser, registerDemo, loginDemo } from './helpers.js';
+import { guardBrowser, registerAccount, loginAccount } from './helpers.js';
 
 for (const viewport of [{ name: 'desktop', width: 1280, height: 900 }, { name: 'mobile', width: 375, height: 812 }]) {
   test(`strategic default, text equivalents and inert controls on ${viewport.name}`, async ({ page }, testInfo) => {
     const assertBrowser = guardBrowser(page);
     await page.setViewportSize({ width: viewport.width, height: viewport.height });
     await page.goto('/');
-    await registerDemo(page);
-    await loginDemo(page);
+    await registerAccount(page);
+    await loginAccount(page);
     const panel = page.getByRole('tabpanel', { name: 'Strategic Command' });
     await expect(page.getByRole('tabpanel')).toHaveCount(1);
     await expect(panel.getByRole('article')).toHaveCount(3);
@@ -27,6 +27,7 @@ for (const viewport of [{ name: 'desktop', width: 1280, height: 900 }, { name: '
       await expect(table.getByRole('rowheader', { name: `Month ${month}`, exact: true })).toBeVisible();
     }
     await expect(table.getByRole('cell')).toHaveText(Array(36).fill('Not specified'));
+    const apiCount = assertBrowser.apiRequests.length;
     const before = await page.evaluate(() => ({
       content: document.querySelector('[role="tabpanel"]').textContent,
       storage: Object.entries(localStorage),
@@ -46,6 +47,7 @@ for (const viewport of [{ name: 'desktop', width: 1280, height: 900 }, { name: '
       storage: Object.entries(localStorage),
       url: location.href,
     }))).toEqual(before);
+    expect(assertBrowser.apiRequests.length).toBe(apiCount);
     await expect(page.getByRole('tabpanel')).toHaveCount(1);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     await page.screenshot({ path: testInfo.outputPath(`strategic-${viewport.name}.png`), fullPage: true });
