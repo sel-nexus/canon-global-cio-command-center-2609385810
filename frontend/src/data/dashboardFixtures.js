@@ -53,3 +53,24 @@ export const BUSINESS_FIXTURES = Object.freeze({
     data: Object.freeze([]),
   }))),
 });
+
+/** Keep the two operational signals independent without assuming units or periods. */
+export const OPERATIONS_CHART_LABELS = Object.freeze(['Incidents', 'Efficiency']);
+
+/** Preserve the exact requested metrics and leave unsupplied values unavailable. */
+export const OPERATIONS_METRICS = Object.freeze([
+  'Total incidents (MTD)',
+  'MTTR',
+  'Efficiency metrics',
+].map((label) => Object.freeze({ label, value: null, displayState: 'not-specified' })));
+
+/** Supply no operational values, dates, units or calculated defaults. */
+export const OPERATIONS_FIXTURES = Object.freeze({
+  metrics: OPERATIONS_METRICS,
+  labels: Object.freeze([]),
+  charts: Object.freeze(OPERATIONS_CHART_LABELS.map((label) => Object.freeze({
+    label,
+    displayState: 'not-specified',
+    data: Object.freeze([]),
+  }))),
+});

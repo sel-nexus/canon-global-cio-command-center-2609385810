@@ -11,6 +11,7 @@ import { PanelErrorBoundary } from './components/PanelErrorBoundary.jsx';
 import StrategicCommand from './views/StrategicCommand.jsx';
 import ExecutiveSummary from './views/ExecutiveSummary.jsx';
 import BusinessImpact from './views/BusinessImpact.jsx';
+import Operations from './views/Operations.jsx';
 
 /** Restore demo state once and handle authentication only on explicit activation. */
 export default function App() {
@@ -133,6 +134,9 @@ export default function App() {
                 )}
                 {activeView === 'businessImpact' && (
                   <BusinessImpact />
+                )}
+                {activeView === 'operations' && (
+                  <Operations />
                 )}
               </PanelErrorBoundary>
             </section>

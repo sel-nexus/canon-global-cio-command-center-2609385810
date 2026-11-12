@@ -26,6 +26,14 @@
       "_origin": "ast"
     },
     {
+      "id": "frontend_e2e_business_spec",
+      "label": "business.spec.js",
+      "file_type": "code",
+      "source_file": "frontend/e2e/business.spec.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_e2e_executive_spec",
       "label": "executive.spec.js",
       "file_type": "code",
@@ -561,7 +569,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -571,7 +579,7 @@
       "label": "handleSubmit()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L35",
+      "source_location": "L36",
       "_callable": true,
       "_origin": "ast",
       "community": 1
@@ -581,7 +589,7 @@
       "label": "handleLogout()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L49",
+      "source_location": "L50",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -591,7 +599,7 @@
       "label": "respond()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L67",
+      "source_location": "L68",
       "_callable": true,
       "_origin": "ast"
     },
@@ -600,7 +608,7 @@
       "label": "activateChip()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L84",
+      "source_location": "L85",
       "_callable": true,
       "_origin": "ast"
     },
@@ -609,7 +617,7 @@
       "label": "selectView()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L93",
+      "source_location": "L94",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -955,6 +963,30 @@
       "_origin": "ast"
     },
     {
+      "id": "frontend_src_data_dashboardfixtures_business_chart_labels",
+      "label": "BUSINESS_CHART_LABELS",
+      "file_type": "code",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L37",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_data_dashboardfixtures_business_metrics",
+      "label": "BUSINESS_METRICS",
+      "file_type": "code",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L40",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_data_dashboardfixtures_business_fixtures",
+      "label": "BUSINESS_FIXTURES",
+      "file_type": "code",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L47",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_main",
       "label": "main.jsx",
       "file_type": "code",
@@ -1218,6 +1250,38 @@
       "_origin": "ast"
     },
     {
+      "id": "frontend_src_tests_business_test",
+      "label": "business.test.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/business.test.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_tests_business_test_chart",
+      "label": "chart",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/business.test.jsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_tests_business_test_cardlabels",
+      "label": "cardLabels",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/business.test.jsx",
+      "source_location": "L27",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_tests_business_test_chartlabels",
+      "label": "chartLabels",
+      "file_type": "code",
+      "source_file": "frontend/src/tests/business.test.jsx",
+      "source_location": "L28",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_tests_executive_test",
       "label": "executive.test.jsx",
       "file_type": "code",
@@ -1350,6 +1414,32 @@
       "file_type": "code",
       "source_file": "frontend/src/tests/strategic.test.jsx",
       "source_location": "L44",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_views_businessimpact",
+      "label": "BusinessImpact.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_views_businessimpact_haslabel",
+      "label": "hasLabel()",
+      "file_type": "code",
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L10",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_views_businessimpact_businessimpact",
+      "label": "BusinessImpact()",
+      "file_type": "code",
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L24",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1541,6 +1631,61 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/assistant.spec.js",
       "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_business_spec",
+      "target": "ref_playwright_test",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/business.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_business_spec",
+      "target": "frontend_e2e_helpers",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/business.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_business_spec",
+      "target": "frontend_e2e_helpers_guardbrowser",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/business.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_business_spec",
+      "target": "frontend_e2e_helpers_registerdemo",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/business.spec.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_business_spec",
+      "target": "frontend_e2e_helpers_logindemo",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/business.spec.js",
+      "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2512,11 +2657,22 @@
     },
     {
       "source": "frontend_src_app",
+      "target": "frontend_src_views_businessimpact",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
       "target": "frontend_src_app_app",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2526,7 +2682,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2536,7 +2692,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L49",
+      "source_location": "L50",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2546,7 +2702,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L67",
+      "source_location": "L68",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2556,7 +2712,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L84",
+      "source_location": "L85",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2566,7 +2722,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L93",
+      "source_location": "L94",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2577,7 +2733,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L148",
+      "source_location": "L152",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2588,7 +2744,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L88",
+      "source_location": "L89",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3233,6 +3389,36 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/data/dashboardFixtures.js",
       "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_data_dashboardfixtures",
+      "target": "frontend_src_data_dashboardfixtures_business_chart_labels",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_data_dashboardfixtures",
+      "target": "frontend_src_data_dashboardfixtures_business_metrics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_data_dashboardfixtures",
+      "target": "frontend_src_data_dashboardfixtures_business_fixtures",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/data/dashboardFixtures.js",
+      "source_location": "L47",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4065,6 +4251,135 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_tests_business_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/business.test.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_business_test",
+      "target": "ref_testing_library_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/business.test.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_business_test",
+      "target": "ref_testing_library_user_event",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/business.test.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_business_test",
+      "target": "frontend_src_app",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/business.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_business_test",
+      "target": "frontend_src_views_businessimpact",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/business.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_business_test",
+      "target": "frontend_src_data_dashboardfixtures",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/business.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_business_test",
+      "target": "frontend_src_data_dashboardfixtures_business_fixtures",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/business.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_business_test",
+      "target": "frontend_src_services_localstorage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/business.test.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_business_test",
+      "target": "frontend_src_services_localstorage_storage_keys",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/business.test.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_business_test",
+      "target": "frontend_src_tests_business_test_chart",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/business.test.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_business_test",
+      "target": "frontend_src_tests_business_test_cardlabels",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/business.test.jsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_business_test",
+      "target": "frontend_src_tests_business_test_chartlabels",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/business.test.jsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_tests_executive_test",
       "target": "ref_vitest",
       "relation": "imports_from",
@@ -4770,6 +5085,181 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_views_businessimpact",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_businessimpact",
+      "target": "ref_prop_types",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_businessimpact",
+      "target": "frontend_src_components_chartpanel",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_businessimpact",
+      "target": "frontend_src_components_chartpanel_chartpanel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_businessimpact",
+      "target": "frontend_src_components_metriccard",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_businessimpact",
+      "target": "frontend_src_components_metriccard_metriccard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_businessimpact",
+      "target": "frontend_src_components_metriccard_displayvalue",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_businessimpact",
+      "target": "frontend_src_components_mockdatanotice",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_businessimpact",
+      "target": "frontend_src_components_mockdatanotice_mockdatanotice",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_businessimpact",
+      "target": "frontend_src_data_dashboardfixtures",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_businessimpact",
+      "target": "frontend_src_data_dashboardfixtures_business_chart_labels",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_businessimpact",
+      "target": "frontend_src_data_dashboardfixtures_business_fixtures",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_businessimpact",
+      "target": "frontend_src_data_dashboardfixtures_business_metrics",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_businessimpact",
+      "target": "frontend_src_views_businessimpact_haslabel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_businessimpact",
+      "target": "frontend_src_views_businessimpact_businessimpact",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_businessimpact_businessimpact",
+      "target": "frontend_src_views_businessimpact_haslabel",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_views_executivesummary",
       "target": "ref_react",
       "relation": "imports_from",
@@ -5152,6 +5642,17 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_app",
+      "target": "frontend_src_views_businessimpact_businessimpact",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_main",
       "target": "frontend_src_app_app",
       "relation": "imports",
@@ -5180,6 +5681,28 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/tests/assistant.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_business_test",
+      "target": "frontend_src_app_app",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/business.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_tests_business_test",
+      "target": "frontend_src_views_businessimpact_businessimpact",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/tests/business.test.jsx",
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast"
@@ -5235,7 +5758,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5246,7 +5769,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5257,7 +5780,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5268,7 +5791,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L50",
+      "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5279,7 +5802,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L72",
+      "source_location": "L73",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5290,7 +5813,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L148",
+      "source_location": "L152",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5416,6 +5939,17 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_views_businessimpact_businessimpact",
+      "target": "frontend_src_components_metriccard_displayvalue",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_views_executivesummary_executivesummary",
       "target": "frontend_src_components_metriccard_displayvalue",
       "relation": "calls",
@@ -5434,7 +5968,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5446,7 +5980,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L100",
+      "source_location": "L101",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5458,7 +5992,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L104",
+      "source_location": "L105",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5470,7 +6004,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L116",
+      "source_location": "L117",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5482,7 +6016,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L126",
+      "source_location": "L127",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5494,7 +6028,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L128",
+      "source_location": "L129",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5506,7 +6040,19 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L131",
+      "source_location": "L132",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_app",
+      "target": "frontend_src_views_businessimpact_businessimpact",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L135",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5518,7 +6064,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L139",
+      "source_location": "L143",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5530,7 +6076,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5542,7 +6088,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5554,7 +6100,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L50",
+      "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5566,7 +6112,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L72",
+      "source_location": "L73",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5627,6 +6173,42 @@
       "confidence_score": 1.0,
       "source_file": "frontend/src/tests/strategic.test.jsx",
       "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_businessimpact_businessimpact",
+      "target": "frontend_src_components_mockdatanotice_mockdatanotice",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_businessimpact_businessimpact",
+      "target": "frontend_src_components_chartpanel_chartpanel",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_views_businessimpact_businessimpact",
+      "target": "frontend_src_components_metriccard_metriccard",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/views/BusinessImpact.jsx",
+      "source_location": "L61",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5704,10 +6286,10 @@
     }
   ],
   "metadata": {
-    "built_at": "2026-11-12T12:29:43.399441+00:00",
+    "built_at": "2026-11-12T12:33:58.796781+00:00",
     "version": "graph_update-v1",
     "codebase_root": "C:\\artifacts-v2\\T0132PcJVCRTV000412112609385810\\developer",
     "force": true,
-    "files_scanned": 36
+    "files_scanned": 39
   }
 }
